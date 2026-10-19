@@ -10,7 +10,7 @@ Recorded 2026-10-18 from the owner's source checks. No rules have been written y
   Keep both as `not_allowed`, with a note to confirm with the administrator.
 - The treasurer's site does not yet mention the switch to Odyssey.
 
-## 2026-10-19: rules written (28 drafts)
+## 2026-10-19: rules written (29 drafts)
 - Purchase rules are in RSMo 166.705 (not 135.712) and 15 CSR 50-5.050. Program marked `settling`, so handbook-only
   "not allowed" items (instruments, sports equipment, furniture, field trips, memberships) show "Depends".
 - Reimbursement is `unknown`: 15 CSR 50-5.050(6)(A) allows qualified withdrawals, but Odyssey describes only Marketplace
