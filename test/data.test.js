@@ -52,7 +52,7 @@ test('Texas technology rules: statute source, approved-vendor condition, 10% cap
   const data = loadData();
   const tx = data.programs.find((p) => p.id === 'tx-tefa');
   const tier = (id) => tx.sources.find((s) => s.id === id).tier;
-  const tech = data.rules.filter((r) => r.program === 'tx-tefa' && r.category !== 'tech.game_console' && (r.category.startsWith('tech.') || r.category === 'software.educational'));
+  const tech = data.rules.filter((r) => r.program === 'tx-tefa' && r.status !== 'not_allowed' && (r.category.startsWith('tech.') || r.category === 'software.educational'));
   assert.ok(tech.length >= 9);
   assert.ok(tech.find((r) => r.category === 'tech.keyboard'));
   for (const r of tech) {
@@ -202,4 +202,18 @@ test('drafts are never published by a Pages production build', async () => {
   assert.equal(shouldIncludeDrafts({ WORKERS_CI: '1', WORKERS_CI_BRANCH: 'phase1-finder' }), true);
   assert.equal(shouldIncludeDrafts({ INCLUDE_DRAFT_RULES: 'true' }), true);
   assert.equal(shouldIncludeDrafts({}), false);
+});
+
+test('gap rules added 2026-10-19 get the expected labels', async () => {
+  const { evaluate } = await import('../src/lib/eligibility.js');
+  const data = loadData();
+  const label = (programId, categoryId, segment = 'home_education') =>
+    evaluate(data, { programId, segment, categoryId }, new Date('2026-10-19')).label;
+  assert.equal(label('al-choose', 'tech.printer_3d'), 'likely_not_eligible');
+  assert.equal(label('al-choose', 'toys.general'), 'likely_not_eligible');
+  assert.equal(label('al-choose', 'edu.lessons.language'), 'depends');
+  assert.equal(label('az-esa', 'tech.calculator'), 'likely_eligible');
+  assert.equal(label('tx-tefa', 'tech.phone'), 'likely_not_eligible');
+  assert.equal(label('tx-tefa', 'supplies.art'), 'depends');
+  assert.equal(label('tx-tefa', 'edu.lessons.music'), 'depends');
 });

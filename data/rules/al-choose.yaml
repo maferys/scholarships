@@ -97,6 +97,41 @@ rules:
       en: "Keyboards are limited to $100 each, two per student per school year. They also count as technological aids, limited to $500 per student per school year for all technology."
       es: "Los teclados tienen un límite de $100 cada uno, dos por estudiante por año escolar. También cuentan como ayudas tecnológicas, con un límite de $500 por estudiante por año escolar para toda la tecnología."
 
+  - category: tech.calculator
+    status: conditional
+    source: al-parent-guide
+    supporting_sources: [al-rule-810-28-1-06]
+    locator: "Parent guide p. 10, Technological Aids"
+    quote: "Calculators (including graphing)"
+    last_verified: 2026-10-19
+    review_flag: "Check the quote against p. 10 of the parent guide, and confirm that calculators are listed under Technological Aids (so the $500 yearly technology limit applies)."
+    conditions_text:
+      en: "Calculators, including graphing calculators, are on the approved list. They count as technological aids, limited to $500 per student per school year for all technology."
+      es: "Las calculadoras, incluidas las gráficas, están en la lista de artículos aprobados. Cuentan como ayudas tecnológicas, con un límite de $500 por estudiante por año escolar para toda la tecnología."
+
+  - category: tech.accessories
+    status: conditional
+    source: al-parent-guide
+    supporting_sources: [al-rule-810-28-1-06]
+    locator: "Parent guide p. 10, Technological Aids"
+    quote: "Mouse (limited to $40 each, two per participating student annually)"
+    last_verified: 2026-10-19
+    review_flag: "Check the quotes against p. 10 of the parent guide (mouse $40, mouse pad/USB $25, charging cords; external speakers and hard drives not approved). Monitors, webcams, cameras and hot spots are not named in the guide."
+    conditions_text:
+      en: "A mouse is limited to $40 each and a mouse pad or USB drive to $25 each, two of each per student per school year. Charging cords and cables are listed. External speakers and external hard drives will not be approved. The guide doesn't name monitors, webcams, cameras or hot spots, so ask before buying them. All of these count toward the $500 yearly technology limit."
+      es: "Un ratón tiene un límite de $40 cada uno y un mouse pad o memoria USB de $25 cada uno, dos de cada uno por estudiante por año escolar. Los cables de carga están en la lista. Las bocinas externas y los discos duros externos no se aprobarán. La guía no menciona monitores, cámaras web, cámaras ni hotspots, así que pregunte antes de comprarlos. Todo esto cuenta para el límite anual de $500 en tecnología."
+
+  - category: tech.printer_3d
+    status: not_allowed
+    source: al-parent-guide
+    locator: "Parent guide p. 10, Technological Aids"
+    quote: "(3D printers are not approved)"
+    last_verified: 2026-10-19
+    review_flag: "Check the quote against p. 10 of the parent guide."
+    conditions_text:
+      en: "3D printers are not approved."
+      es: "Las impresoras 3D no se aprueban."
+
   - category: tech.tv
     status: not_allowed
     source: al-parent-guide
@@ -114,6 +149,17 @@ rules:
     conditions_text:
       en: "Gaming items will not be approved."
       es: "Los artículos para videojuegos no se aprobarán."
+
+  - category: toys.general
+    status: not_allowed
+    source: al-parent-guide
+    locator: "Parent guide p. 10, Instructional materials"
+    quote: "NOT building blocks, puzzles, LEGOs, or other toy-like items"
+    last_verified: 2026-10-19
+    review_flag: "Check the quote against p. 10 of the parent guide. The same page also excludes standard games designed or advertised primarily for entertainment."
+    conditions_text:
+      en: "Building blocks, puzzles, LEGOs and other toy-like items are not approved, and neither are games made mainly for entertainment."
+      es: "No se aprueban bloques de construcción, rompecabezas, LEGO ni otros artículos parecidos a juguetes, ni los juegos hechos principalmente para entretener."
 
   - category: software.educational
     status: allowed
@@ -179,6 +225,32 @@ rules:
       en: "Voice and instrument lessons count as private tutoring, from an approved Education Service Provider."
       es: "Las clases de canto e instrumento cuentan como tutoría privada, con un Proveedor de Servicios Educativos aprobado."
 
+  - category: edu.lessons.language
+    status: conditional
+    conditions:
+      requires_approved_vendor: true
+    source: al-parent-guide
+    locator: "p. 11, Private tutoring"
+    quote: "Foreign Languages"
+    last_verified: 2026-10-19
+    review_flag: "Check against p. 11 of the parent guide that Foreign Languages is listed as an approved private tutoring subject."
+    conditions_text:
+      en: "Foreign language classes count as private tutoring, from an approved Education Service Provider, in person or online."
+      es: "Las clases de idiomas cuentan como tutoría privada, con un Proveedor de Servicios Educativos aprobado, en persona o en línea."
+
+  - category: edu.lessons.art
+    status: conditional
+    conditions:
+      requires_approved_vendor: true
+    source: al-parent-guide
+    locator: "p. 11, Private tutoring"
+    quote: "Art"
+    last_verified: 2026-10-19
+    review_flag: "Check against p. 11 of the parent guide that Art is listed as an approved private tutoring subject."
+    conditions_text:
+      en: "Art classes count as private tutoring, from an approved Education Service Provider, in person or online."
+      es: "Las clases de arte cuentan como tutoría privada, con un Proveedor de Servicios Educativos aprobado, en persona o en línea."
+
   - category: edu.online_classes
     status: conditional
     conditions:
@@ -230,6 +302,18 @@ rules:
     conditions_text:
       en: "Uniform fees are on the list of disallowed school fees."
       es: "Las cuotas de uniforme están en la lista de cuotas escolares no permitidas."
+
+  - category: edu.field_trip
+    segment: private_school
+    status: not_allowed
+    source: al-parent-guide
+    locator: "p. 9, Disallowed school fees"
+    quote: "Disallowed School Fees Include:"
+    last_verified: 2026-10-19
+    review_flag: "Check that \"Field trip\" is on the p. 9 list of disallowed school fees. The guide doesn't address museum or zoo tickets bought outside a school."
+    conditions_text:
+      en: "Field trip fees are on the list of disallowed school fees."
+      es: "Las cuotas de excursiones están en la lista de cuotas escolares no permitidas."
 
   - category: food.general
     segment: private_school

@@ -40,6 +40,15 @@ rules:
       en: "Printers are listed as allowed technology. The handbook does not mention ink, toner or cartridges."
       es: "Las impresoras aparecen como tecnología permitida. El manual no menciona la tinta, el tóner ni los cartuchos."
 
+  - category: tech.calculator
+    status: allowed
+    locator: "p. 16, Computer hardware and technological devices"
+    quote: "Includes calculators, personal computers, laptops, tablet devices, microscopes, telescopes, and printers."
+    last_verified: 2026-10-19
+    conditions_text:
+      en: "Calculators are listed as allowed technology (p. 16, and again on p. 26)."
+      es: "Las calculadoras aparecen como tecnología permitida (p. 16, y otra vez en la p. 26)."
+
   - category: tech.headphones
     status: allowed
     locator: "p. 27"

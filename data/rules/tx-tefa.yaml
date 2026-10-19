@@ -276,3 +276,231 @@ rules:
     conditions_text:
       en: "Game consoles are not in the list of approved expenses, and the list is closed. The only exception would be a device an approved provider requires or a physician prescribes, which is rare."
       es: "Las consolas de videojuegos no están en la lista de gastos aprobados, y la lista es cerrada. La única excepción sería un aparato que exija un proveedor aprobado o recete un médico, lo cual es raro."
+
+  - category: tech.phone
+    status: not_allowed
+    source: tx-tac-16
+    supporting_sources: [tx-families-page]
+    locator: "34 TAC §16.406 (closed list of approved expenses)"
+    quote: "Program money may be used only at an approved provider for the following"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Phones are not in the list of approved expenses, and the list is closed. The only exception would be a device an approved provider requires or a physician prescribes, which is rare."
+      es: "Los teléfonos no están en la lista de gastos aprobados, y la lista es cerrada. La única excepción sería un aparato que exija un proveedor aprobado o recete un médico, lo cual es raro."
+
+  - category: tech.smartwatch
+    status: not_allowed
+    source: tx-tac-16
+    supporting_sources: [tx-families-page]
+    locator: "34 TAC §16.406 (closed list of approved expenses)"
+    quote: "Program money may be used only at an approved provider for the following"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Smartwatches are not in the list of approved expenses, and the list is closed. The only exception would be a device an approved provider requires or a physician prescribes, which is rare."
+      es: "Los relojes inteligentes no están en la lista de gastos aprobados, y la lista es cerrada. La única excepción sería un aparato que exija un proveedor aprobado o recete un médico, lo cual es raro."
+
+  - category: tech.tv
+    status: not_allowed
+    source: tx-tac-16
+    supporting_sources: [tx-families-page]
+    locator: "34 TAC §16.406 (closed list of approved expenses)"
+    quote: "Program money may be used only at an approved provider for the following"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "TVs are not in the list of approved expenses, and the list is closed. The only exception would be a device an approved provider requires or a physician prescribes, which is rare."
+      es: "Los televisores no están en la lista de gastos aprobados, y la lista es cerrada. La única excepción sería un aparato que exija un proveedor aprobado o recete un médico, lo cual es raro."
+
+  - category: watch.general
+    status: not_allowed
+    source: tx-tac-16
+    supporting_sources: [tx-families-page]
+    locator: "34 TAC §16.406 (closed list of approved expenses)"
+    quote: "Program money may be used only at an approved provider for the following"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Watches are not in the list of approved expenses, and the list is closed."
+      es: "Los relojes no están en la lista de gastos aprobados, y la lista es cerrada."
+
+  - category: clothing.general
+    status: not_allowed
+    source: tx-tac-16
+    supporting_sources: [tx-families-page]
+    locator: "34 TAC §16.406 (closed list of approved expenses)"
+    quote: "Program money may be used only at an approved provider for the following"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Clothing is not in the list of approved expenses, and the list is closed. Only uniforms a private school requires are allowed."
+      es: "La ropa no está en la lista de gastos aprobados, y la lista es cerrada. Solo se permiten los uniformes que exige una escuela privada."
+
+  - category: bags.backpack
+    status: not_allowed
+    source: tx-tac-16
+    supporting_sources: [tx-families-page]
+    locator: "34 TAC §16.406 (closed list of approved expenses)"
+    quote: "Program money may be used only at an approved provider for the following"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Backpacks are not in the list of approved expenses, and the list is closed."
+      es: "Las mochilas no están en la lista de gastos aprobados, y la lista es cerrada."
+
+  - category: furniture.desk
+    status: not_allowed
+    source: tx-tac-16
+    supporting_sources: [tx-families-page]
+    locator: "34 TAC §16.406 (closed list of approved expenses)"
+    quote: "Program money may be used only at an approved provider for the following"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Desks and furniture are not in the list of approved expenses, and the list is closed."
+      es: "Los escritorios y muebles no están en la lista de gastos aprobados, y la lista es cerrada."
+
+  - category: sports.equipment
+    status: not_allowed
+    source: tx-tac-16
+    supporting_sources: [tx-families-page]
+    locator: "34 TAC §16.406 (closed list of approved expenses)"
+    quote: "Program money may be used only at an approved provider for the following"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Sports equipment is not in the list of approved expenses, and the list is closed."
+      es: "El equipo deportivo no está en la lista de gastos aprobados, y la lista es cerrada."
+
+  - category: membership.gym
+    status: not_allowed
+    source: tx-tac-16
+    supporting_sources: [tx-families-page]
+    locator: "34 TAC §16.406 (closed list of approved expenses)"
+    quote: "Program money may be used only at an approved provider for the following"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Gym and family memberships are not in the list of approved expenses, and the list is closed."
+      es: "Las membresías de gimnasio o familiares no están en la lista de gastos aprobados, y la lista es cerrada."
+
+  - category: edu.field_trip
+    status: not_allowed
+    source: tx-tac-16
+    supporting_sources: [tx-families-page]
+    locator: "34 TAC §16.406 (closed list of approved expenses)"
+    quote: "Program money may be used only at an approved provider for the following"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Museum, zoo and field-trip tickets are not in the list of approved expenses, and the list is closed."
+      es: "Las entradas a museos, zoológicos y excursiones no están en la lista de gastos aprobados, y la lista es cerrada."
+
+  - category: supplies.school
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [tx-sb2]
+    locator: "34 TAC §16.406(3); definition in §16.401"
+    quote: "Printed or digital materials, supplies, or equipment that convey educational information to a student"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred: the instructional-materials definition may or may not cover this item. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "School supplies may count as instructional materials if they convey educational information, bought from an approved vendor in the TEFA Marketplace. General supplies are not named."
+      es: "Los útiles escolares pueden contar como materiales de instrucción si transmiten información educativa, comprados con un vendedor aprobado en el TEFA Marketplace. Los útiles en general no se mencionan."
+
+  - category: supplies.art
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [tx-sb2]
+    locator: "34 TAC §16.406(3); definition in §16.401"
+    quote: "Printed or digital materials, supplies, or equipment that convey educational information to a student"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred: the instructional-materials definition may or may not cover this item. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Art supplies may count as instructional materials, bought from an approved vendor in the TEFA Marketplace. They are not named."
+      es: "Los materiales de arte pueden contar como materiales de instrucción, comprados con un vendedor aprobado en el TEFA Marketplace. No se mencionan."
+
+  - category: toys.general
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [tx-sb2]
+    locator: "34 TAC §16.406(3); definition in §16.401"
+    quote: "Printed or digital materials, supplies, or equipment that convey educational information to a student"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred: the instructional-materials definition may or may not cover this item. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Toys and games are not named. Only items that convey educational information may count as instructional materials, from an approved vendor."
+      es: "Los juguetes y juegos no se mencionan. Solo los artículos que transmiten información educativa pueden contar como materiales de instrucción, con un vendedor aprobado."
+
+  - category: instruments.accessories
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [tx-sb2]
+    locator: "34 TAC §16.406(3); definition in §16.401"
+    quote: "Printed or digital materials, supplies, or equipment that convey educational information to a student"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred: the instructional-materials definition may or may not cover this item. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Instrument accessories are not named. They may count as instructional materials, from an approved vendor."
+      es: "Los accesorios para instrumentos no se mencionan. Pueden contar como materiales de instrucción, con un vendedor aprobado."
+
+  - category: edu.lessons.music
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [tx-families-page]
+    locator: "34 TAC §16.406(6); §16.404"
+    quote: "fees for educational services provided by a private tutor or teaching service"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred: lessons are not named; this treats them as private tutoring or a teaching service. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Music lessons may count as private tutoring or a teaching service from an approved provider."
+      es: "Las clases de música pueden contar como tutoría privada o servicio de enseñanza con un proveedor aprobado."
+
+  - category: edu.lessons.art
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [tx-families-page]
+    locator: "34 TAC §16.406(6); §16.404"
+    quote: "fees for educational services provided by a private tutor or teaching service"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred: lessons are not named; this treats them as private tutoring or a teaching service. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Art classes may count as private tutoring or a teaching service from an approved provider."
+      es: "Las clases de arte pueden contar como tutoría privada o servicio de enseñanza con un proveedor aprobado."
+
+  - category: edu.lessons.language
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [tx-families-page]
+    locator: "34 TAC §16.406(6); §16.404"
+    quote: "fees for educational services provided by a private tutor or teaching service"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred: lessons are not named; this treats them as private tutoring or a teaching service. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Language classes may count as private tutoring or a teaching service from an approved provider."
+      es: "Las clases de idiomas pueden contar como tutoría privada o servicio de enseñanza con un proveedor aprobado."
+
+  - category: edu.lessons.sports
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [tx-families-page]
+    locator: "34 TAC §16.406(6); §16.404"
+    quote: "fees for educational services provided by a private tutor or teaching service"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred: lessons are not named; this treats them as private tutoring or a teaching service. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Sports or swim lessons are not named. They count only if the state treats them as an educational teaching service from an approved provider."
+      es: "Las clases de deporte o natación no se mencionan. Cuentan solo si el estado las considera un servicio de enseñanza educativo con un proveedor aprobado."
+
+  - category: edu.camp
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [tx-families-page]
+    locator: "34 TAC §16.406(6); §16.404"
+    quote: "fees for educational services provided by a private tutor or teaching service"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred: lessons are not named; this treats them as private tutoring or a teaching service. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Camps are not named. A camp counts only if it is an educational service from an approved provider."
+      es: "Los campamentos no se mencionan. Un campamento cuenta solo si es un servicio educativo con un proveedor aprobado."
