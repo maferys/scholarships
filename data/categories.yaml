@@ -44,12 +44,19 @@
     en: [calculator, graphing calculator, scientific calculator, ti-84]
     es: [calculadora, calculadora cientifica, calculadora grafica]
 
+- id: tech.keyboard
+  group: products
+  name: { en: "Computer keyboard", es: "Teclado de computadora" }
+  synonyms:
+    en: [keyboard, computer keyboard, wireless keyboard]
+    es: [teclado, teclado de computadora, teclado para computadora, teclado para la computadora, teclado inalambrico]
+
 - id: tech.accessories
   group: products
-  name: { en: "Monitor, webcam, camera, hot spot or computer accessory", es: "Monitor, cámara web, cámara, hotspot o accesorio de computadora" }
+  name: { en: "Monitor, webcam, camera, hot spot, mouse or other computer accessory", es: "Monitor, cámara web, cámara, hotspot, ratón u otro accesorio de computadora" }
   synonyms:
-    en: [monitor, webcam, camera, hot spot, hotspot, mouse, computer keyboard, computer accessories, usb drive]
-    es: [monitor, camara web, camara, hotspot, punto de acceso, raton, teclado de computadora, accesorios de computadora]
+    en: [monitor, webcam, camera, hot spot, hotspot, mouse, computer accessories, usb drive]
+    es: [monitor, camara web, camara, hotspot, punto de acceso, raton, accesorios de computadora]
 
 - id: tech.phone
   group: products
@@ -125,7 +132,7 @@
   group: products
   name: { en: "Musical instrument", es: "Instrumento musical" }
   synonyms:
-    en: [instrument, piano, keyboard piano, guitar, violin, ukulele, drum, flute]
+    en: [instrument, piano, keyboard piano, musical keyboard, electric piano, guitar, violin, ukulele, drum, flute]
     es: [instrumento, piano, guitarra, violin, ukulele, tambor, flauta]
 
 - id: sports.equipment

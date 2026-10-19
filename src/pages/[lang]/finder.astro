@@ -30,7 +30,8 @@ const states = [...new Set(data.programs.map((p) => p.state))].sort();
       </label>
     </div>
     <label>{s.queryLabel}
-      <input type="search" name="q" placeholder={s.queryPlaceholder} autocomplete="off" maxlength="120" />
+      <input type="search" name="q" placeholder={s.queryPlaceholder} autocomplete="off" maxlength="120" aria-describedby="q-privacy" />
+      <small id="q-privacy" class="field-note">{s.noPersonalDetails}</small>
     </label>
     <button type="submit">{s.checkButton}</button>
   </form>

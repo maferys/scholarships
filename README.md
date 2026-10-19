@@ -71,9 +71,30 @@ npx wrangler d1 execute scholarships --local --command "SELECT * FROM events"
 
 - `events`: program id, search text (lowercased, emails and phone numbers removed, max 120 characters), result label,
   and the hour of the search. Nothing else from the request.
-- `reports`: what the parent wrote, the answer it was about, and an email only if they chose to give one.
+- `reports`: what the parent wrote, the answer it was about, the search text (cleaned the same way as events),
+  and a contact email only if they chose to give one (stored as typed, not filtered).
 - `subscribers`: email, language, optional state.
 - No table stores IP addresses or user agents.
+- The search box and the report message both say "Do not include names or personal details."
+
+### Retention
+
+- `events` and `reports` are deleted once they are older than `RETENTION_MONTHS` (12) in
+  [`scripts/retention.mjs`](scripts/retention.mjs). Change the constant there to change the period.
+- `.github/workflows/retention.yml` runs the cleanup every Monday (and on demand from the Actions tab). It needs the
+  repository secrets `CLOUDFLARE_API_TOKEN` (with D1 edit permission) and `CLOUDFLARE_ACCOUNT_ID`; until they are
+  set, it skips with a warning and deletes nothing.
+- To run it by hand: `npx wrangler d1 execute scholarships --remote --command "$(node scripts/retention.mjs)"`
+  (use `--local` for the local database).
+- `subscribers` are kept until the person unsubscribes.
+
+## Before the first email
+
+Do not send any email to subscribers until every item is done:
+
+- [ ] Every email has a working unsubscribe link, and unsubscribing deletes the row from `subscribers`.
+- [ ] A sender address on the site's own domain is set up and can receive replies.
+- [ ] Every email links to the published privacy policy page.
 
 ## Deploy (Cloudflare Pages)
 

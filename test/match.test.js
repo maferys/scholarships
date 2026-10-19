@@ -10,6 +10,9 @@ const top = (q) => match(categories, q)[0]?.categoryId;
 // Real-style questions parents ask, in both languages.
 const CASES = [
   ['are laptops ESA eligible in Arizona?', 'tech.computer'],
+  ['wireless keyboard', 'tech.keyboard'],
+  ['teclado para la computadora', 'tech.keyboard'],
+  ['keyboard piano', 'instruments.musical'],
   ['iPad', 'tech.tablet'],
   ['Saxon Math workbook', 'curriculum.packaged'],
   ['piano lessons', 'edu.lessons.music'],

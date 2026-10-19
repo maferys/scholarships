@@ -45,3 +45,17 @@ test('no conflict element without a conflict note', () => {
   });
   assert.equal(card.querySelector('.conflict'), null);
 });
+
+for (const lang of ['en', 'es']) {
+  test(`report form tells people not to include personal details (${lang})`, () => {
+    const card = renderAnswer({ answer: answer(), category, lang, s: strings[lang], tip: null, query: 'laptop' });
+    const textarea = card.querySelector('form.report textarea[name="message"]');
+    const note = textarea.parentNode.querySelector('.field-note');
+    assert.equal(note.textContent, strings[lang].noPersonalDetails);
+  });
+}
+
+test('privacy note strings', () => {
+  assert.equal(strings.en.noPersonalDetails, 'Do not include names or personal details.');
+  assert.equal(strings.es.noPersonalDetails, 'No incluya nombres ni datos personales.');
+});

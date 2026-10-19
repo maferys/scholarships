@@ -2,6 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { hourTimestamp, sanitizeQuery } from '../functions/api/_shared.js';
 import { onRequestPost as postEvent } from '../functions/api/event.js';
+import { onRequestPost as postReport } from '../functions/api/report.js';
 
 function fakeDb() {
   const calls = [];
@@ -66,4 +67,25 @@ test('event endpoint rejects a malformed body without writing', async () => {
   const res = await postEvent({ request, env: { DB } });
   assert.equal(res.status, 400);
   assert.equal(DB.calls.length, 0);
+});
+
+test('report endpoint cleans the search text and keeps the contact email as given', async () => {
+  const DB = fakeDb();
+  const request = new Request('https://example.com/api/report', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({
+      program: 'tx-tefa', category: 'tech.computer', rule: 'tx-tefa.all.tech.computer', label: 'depends',
+      query: 'Laptop for Ana ana@mail.com 512 555 0199 grades 2026-2027',
+      message: 'This looks wrong', email: 'Parent.Name+tefa@Example.com', lang: 'es',
+    }),
+  });
+  const res = await postReport({ request, env: { DB } });
+  assert.equal(res.status, 200);
+  const { sql, args } = DB.calls[0];
+  const cols = sql.match(/\(([^)]+)\) VALUES/)[1].split(',').map((c) => c.trim());
+  const row = Object.fromEntries(cols.map((c, i) => [c, args[i]]));
+  assert.equal(row.query, 'laptop for ana grades');
+  assert.equal(row.email, 'Parent.Name+tefa@Example.com');
+  assert.equal(row.message, 'This looks wrong');
 });

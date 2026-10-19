@@ -48,7 +48,8 @@ function programNotices(program, notices, lang, s) {
 function reportForm(s, lang, context) {
   const status = el('p', { class: 'form-status', role: 'status' });
   const form = el('form', { class: 'stack report', hidden: true },
-    el('label', {}, s.reportLabel, el('textarea', { name: 'message', required: true, maxlength: '2000', rows: '3' })),
+    el('label', {}, s.reportLabel, el('textarea', { name: 'message', required: true, maxlength: '2000', rows: '3' }),
+      el('small', { class: 'field-note' }, s.noPersonalDetails)),
     el('label', {}, s.reportEmailLabel, el('input', { type: 'email', name: 'email', autocomplete: 'email' })),
     el('button', { type: 'submit' }, s.reportSend),
     status,

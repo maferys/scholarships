@@ -1,0 +1,29 @@
+# Weekly: delete search events and reports older than RETENTION_MONTHS (scripts/retention.mjs).
+# Needs repository secrets CLOUDFLARE_API_TOKEN (D1 edit) and CLOUDFLARE_ACCOUNT_ID.
+name: Data retention
+on:
+  schedule:
+    - cron: '0 15 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Delete expired rows
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::warning::CLOUDFLARE_API_TOKEN is not set, so nothing was deleted."
+            exit 0
+          fi
+          npx --yes wrangler@4 d1 execute scholarships --remote --command "$(node scripts/retention.mjs)"

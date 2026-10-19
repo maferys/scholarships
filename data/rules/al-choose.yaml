@@ -63,18 +63,39 @@ rules:
 
   - category: tech.headphones
     status: conditional
+    source: al-parent-guide
+    supporting_sources: [al-rule-810-28-1-06]
     conditions:
-      max_amount: 500
-    supporting_sources: [al-parent-guide]
-    locator: "Rule 810-28-1-.06, technological aids"
-    quote: "$500 per academic year for the participating student"
+      max_amount: 100
+      frequency: { count: 2, per_years: 1 }
+    locator: "Parent guide p. 10, Technological Aids"
+    quote: "Headphones / Headsets (limited to $100 each, two per participating student annually)"
+    last_verified: 2026-10-19
     conflict_note:
       en: "Ask ALDOR: Rule 810-28-1-.06 limits technological aids to $500 per academic year per student, and the parent guide limits technological devices to $500 total per academic year per student. It is unclear whether that $500 covers every device, including a computer, or only items other than computers, which have their own cap of one under $1,200 every two academic years. We show the stricter reading."
       es: "Consultar con ALDOR: la regla 810-28-1-.06 limita las ayudas tecnológicas a $500 por año académico por estudiante, y la guía para padres limita los dispositivos tecnológicos a $500 en total por año académico por estudiante. No está claro si esos $500 incluyen todo dispositivo, también una computadora, o solo los artículos que no son computadoras, que tienen su propio límite de una de menos de $1,200 cada dos años académicos. Mostramos la lectura más estricta."
-    review_flag: "Ask ALDOR whether the $500 yearly technology cap includes computers or only technological aids other than computers. Confirm the parent guide's school year (see the source's review flag). The earlier draft also cited a $100 per-item cap for headphones from a summary of the parent guide; it was not confirmed and is not shown. Check the guide's p. 10 table."
+    review_flag: "Check the quote against p. 10 of the parent guide and confirm the guide's school year (see the source's review flag). Ask ALDOR whether the $500 yearly technology cap includes computers or only technological aids other than computers."
     conditions_text:
-      en: "Headphones count as technological aids, limited to $500 per student per school year for all technology."
-      es: "Los audífonos cuentan como ayudas tecnológicas, con un límite de $500 por estudiante por año escolar para toda la tecnología."
+      en: "Headphones and headsets are limited to $100 each, two per student per school year. They also count as technological aids, limited to $500 per student per school year for all technology."
+      es: "Los audífonos tienen un límite de $100 cada uno, dos por estudiante por año escolar. También cuentan como ayudas tecnológicas, con un límite de $500 por estudiante por año escolar para toda la tecnología."
+
+  - category: tech.keyboard
+    status: conditional
+    source: al-parent-guide
+    supporting_sources: [al-rule-810-28-1-06]
+    conditions:
+      max_amount: 100
+      frequency: { count: 2, per_years: 1 }
+    locator: "Parent guide p. 10, Technological Aids"
+    quote: "Keyboards (limited to $100 each, two per participating student annually)"
+    last_verified: 2026-10-19
+    conflict_note:
+      en: "Ask ALDOR: Rule 810-28-1-.06 limits technological aids to $500 per academic year per student, and the parent guide limits technological devices to $500 total per academic year per student. It is unclear whether that $500 covers every device, including a computer, or only items other than computers, which have their own cap of one under $1,200 every two academic years. We show the stricter reading."
+      es: "Consultar con ALDOR: la regla 810-28-1-.06 limita las ayudas tecnológicas a $500 por año académico por estudiante, y la guía para padres limita los dispositivos tecnológicos a $500 en total por año académico por estudiante. No está claro si esos $500 incluyen todo dispositivo, también una computadora, o solo los artículos que no son computadoras, que tienen su propio límite de una de menos de $1,200 cada dos años académicos. Mostramos la lectura más estricta."
+    review_flag: "Check the quote against p. 10 of the parent guide and confirm the guide's school year (see the source's review flag). Ask ALDOR whether the $500 yearly technology cap includes computers or only technological aids other than computers."
+    conditions_text:
+      en: "Keyboards are limited to $100 each, two per student per school year. They also count as technological aids, limited to $500 per student per school year for all technology."
+      es: "Los teclados tienen un límite de $100 cada uno, dos por estudiante por año escolar. También cuentan como ayudas tecnológicas, con un límite de $500 por estudiante por año escolar para toda la tecnología."
 
   - category: tech.tv
     status: not_allowed

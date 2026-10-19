@@ -47,18 +47,33 @@ test('Texas: no reimbursement, cited by statute, rule and bulletin; funding sche
   ]);
 });
 
-test('Texas technology rules: tier 1 source, 10% cap, conflict note and review flag; capped at depends', async () => {
+test('Texas technology rules: statute source, approved-vendor condition, 10% cap, no conflict note; still depends', async () => {
   const { evaluate, LABELS } = await import('../src/lib/eligibility.js');
   const data = loadData();
+  const tx = data.programs.find((p) => p.id === 'tx-tefa');
+  const tier = (id) => tx.sources.find((s) => s.id === id).tier;
   const tech = data.rules.filter((r) => r.program === 'tx-tefa' && (r.category.startsWith('tech.') || r.category === 'software.educational'));
-  assert.ok(tech.length >= 8);
+  assert.ok(tech.length >= 9);
+  assert.ok(tech.find((r) => r.category === 'tech.keyboard'));
   for (const r of tech) {
-    assert.equal(r.source, 'tx-tac-16');
+    assert.equal(r.status, 'conditional');
+    assert.equal(r.source, 'tx-sb2');
+    assert.equal(tier(r.source), 1);
+    assert.match(r.locator, /§29\.359\(a\)\(8\)/);
+    assert.match(r.locator, /16\.406\(9\)/);
+    assert.deepEqual(r.supporting_sources, ['tx-tac-16', 'odyssey-purchase-restrictions']);
+    assert.equal(tier('odyssey-purchase-restrictions'), 3);
     assert.equal(r.conditions.pct_of_award_cap, 0.1);
-    assert.ok(r.conflict_note?.en && r.conflict_note?.es, `${r.id} conflict note`);
-    assert.ok(r.review_flag, `${r.id} review flag`);
-    const a = evaluate(data, { programId: 'tx-tefa', segment: 'home_education', categoryId: r.category }, '2026-10-19');
-    assert.equal(a.label, LABELS.DEPENDS);
+    assert.equal(r.conditions.requires_approved_vendor, true);
+    assert.equal(r.conflict_note, undefined, `${r.id} has no conflict note`);
+    assert.match(r.review_flag, /codified text of 34 TAC §16\.406\(9\)/);
+    assert.match(r.conditions_text.en, /only if an approved education provider or vendor requires it, for example an online course\. Being a homeschool family does not qualify on its own\./);
+    assert.match(r.conditions_text.es, /solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea\. Ser una familia que educa en casa no basta por sí solo\./);
+    for (const segment of ['home_education', 'private_school']) {
+      const a = evaluate(data, { programId: 'tx-tefa', segment, categoryId: r.category }, '2026-10-19');
+      assert.equal(a.label, LABELS.DEPENDS, `${r.id} ${segment}`);
+      assert.ok(!a.notices.includes('conflict'), `${r.id} no conflict notice`);
+    }
   }
   const printer3d = tech.find((r) => r.category === 'tech.printer_3d');
   assert.deepEqual(printer3d.conditions.frequency, { count: 1, per_years: 1 });
@@ -69,14 +84,35 @@ test('Texas technology rules: tier 1 source, 10% cap, conflict note and review f
 test('Alabama $500 note is a scope question, not two different amounts', () => {
   const { rules, programs } = loadData();
   const al = rules.filter((r) => r.program === 'al-choose' && r.conflict_note);
-  assert.deepEqual(al.map((r) => r.category).sort(), ['tech.computer', 'tech.headphones', 'tech.printer', 'tech.tablet']);
+  assert.deepEqual(al.map((r) => r.category).sort(), ['tech.computer', 'tech.headphones', 'tech.keyboard', 'tech.printer', 'tech.tablet']);
   for (const r of al) {
     assert.match(r.conflict_note.en, /ask ALDOR/i);
     assert.match(r.conflict_note.en, /unclear whether/);
-    assert.equal(r.conditions.max_amount, 500, 'stricter reading applied');
+  }
+  for (const c of ['tech.computer', 'tech.tablet', 'tech.printer']) {
+    assert.equal(al.find((r) => r.category === c).conditions.max_amount, 500, `${c}: stricter reading applied`);
   }
   const guide = programs.find((p) => p.id === 'al-choose').sources.find((s) => s.id === 'al-parent-guide');
   assert.ok(guide.review_flag, 'guide year must be confirmed');
+});
+
+test('Alabama: tablets share the computer limit; headphones and keyboards quote the guide', () => {
+  const { rules } = loadData();
+  const get = (c) => rules.find((r) => r.id === `al-choose.all.${c}`);
+  for (const c of ['tech.computer', 'tech.tablet']) assert.deepEqual(get(c).conditions.frequency, { count: 1, per_years: 2 });
+  for (const [c, quote] of [
+    ['tech.headphones', 'Headphones / Headsets (limited to $100 each, two per participating student annually)'],
+    ['tech.keyboard', 'Keyboards (limited to $100 each, two per participating student annually)'],
+  ]) {
+    const r = get(c);
+    assert.equal(r.source, 'al-parent-guide');
+    assert.equal(r.quote, quote);
+    assert.match(r.locator, /p\. 10/);
+    assert.equal(r.conditions.max_amount, 100);
+    assert.deepEqual(r.conditions.frequency, { count: 2, per_years: 1 });
+    assert.equal(r.review_status, 'draft');
+    assert.equal(r.es_reviewed, false);
+  }
 });
 
 test('Arizona: only supplemental-material and curriculum rules carry a review flag', () => {
