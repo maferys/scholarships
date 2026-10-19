@@ -11,6 +11,7 @@ administrator:
   email: null
 platform: classwallet
 reimbursement_available: false
+reimbursement_source_ids: [al-parent-guide]
 vendor_approval_required: true
 vendor_approval_source: "https://www.revenue.alabama.gov/tax-policy/the-choose-act/"
 student_segments: [private_school, home_education]
@@ -33,10 +34,13 @@ sources:
     url: "https://www.revenue.alabama.gov/wp-content/uploads/2025/01/Rule-810-28-1-.06-Qualifying-Educational-Expenses.pdf"
     document_date: 2025-01-11
     retrieved_at: 2026-10-18
-  - id: al-parent-guide-2026-27
+  - id: al-parent-guide
     tier: 3
-    title: "CHOOSE Act Parent Guide 2026-2027"
+    title: "CHOOSE Act Parent Guide (June 2026 update)"
     publisher: "ClassWallet, for the Alabama Department of Revenue"
     url: "https://classwallet.com/alchoose/assets/CHOOSE_ACT_parent_guide_2026-2027.pdf"
     document_date: null
     retrieved_at: 2026-10-18
+    note: "The file name says 2026-2027, but the guide is titled 2025-2026 (June 2026 update)."
+    review_flag: "Confirm which school year this guide covers before relying on it for 2026-27. Effective dates of rules citing it assume 2026-27."
+

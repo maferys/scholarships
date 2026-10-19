@@ -23,21 +23,27 @@ functions/api/*.js        Cloudflare Pages Functions: email signup, wrong-answer
 
 - **Likely eligible** only when the rule is `allowed`, cites a tier 1–3 source (statute/regulation, state agency, platform),
   is inside its effective dates, was verified in the last 120 days, and has no caps, vendor-approval need or source conflict.
-- **Depends** for `conditional` rules, caps, approved-vendor requirements, conflicting sources, and every `allowed` rule in a
-  program marked `settling` or `litigated`.
+- **Depends** for `conditional` rules, caps, approved-vendor requirements, and any rule with a `conflict_note`
+  (the note is shown on the answer card in EN and ES).
+- In a program marked `settling` or `litigated`, a rule whose `source` is tier 1 (statute or final regulation) keeps its
+  label; a rule resting on a tier 2–4 source is capped at **depends**. The "rules recently changed" banner always shows.
+  Paused programs answer **not verified**.
 - **Not verified, check with your program** when there is no rule, the rule is stale or out of date range, or the source is untrusted.
 - Sponsorship, affiliate and ownership flags are never passed to this logic.
 
 ## Reviewing rules (required before launch)
 
-Every rule starts as `review_status: draft`. **Production builds leave draft rules out**, so the live site shows
-"not verified" until a person checks each rule:
+Every rule starts as `review_status: draft` and `es_reviewed: false`. **Production builds publish a rule only when it is
+`reviewed` and `es_reviewed: true`**; CI fails if anything else reaches the site data (`scripts/check-published.mjs`).
+Until then the live site shows "not verified":
 
 1. Open the source link in the program file and go to the page in the rule's `locator`.
-2. Confirm the `quote` is word for word and the `conditions_text` (EN and ES) says the same thing.
-3. Change the rule to `review_status: reviewed`, `verified_by: <your name>`, `last_verified: <today>`.
+2. Confirm the `quote` is word for word and the English `conditions_text` says the same thing.
+   Set `review_status: reviewed`, `verified_by: <your name>`, `last_verified: <today>`.
+3. Check the Spanish text separately and set `es_reviewed: true`.
 
-Rules with `quote: null` need a quote added during review. Rules with a `conflict_note` need an answer from the administrator.
+Rules with `quote: null` need a quote added during review. A `review_flag` (on a rule or a source) says what must be
+checked first. A `conflict_note` needs an answer from the administrator.
 
 ## Develop
 
@@ -48,6 +54,26 @@ npm test               # data validation, eligibility logic, matcher cases (EN/E
 npm run build          # production: reviewed rules only
 npm run build:preview  # preview: drafts included
 ```
+
+## Run the API functions locally
+
+```sh
+npm run build:preview
+npx wrangler d1 migrations apply scholarships --local       # creates a local SQLite copy of the D1 schema
+npx wrangler pages dev                                      # serves dist/ and functions/ on http://localhost:8788, using wrangler.toml's DB binding
+# in another terminal:
+curl -X POST localhost:8788/api/event -H 'content-type: text/plain' \
+  -d '{"program":"az-esa","query":"Laptop me@x.com","label":"likely_eligible"}'
+npx wrangler d1 execute scholarships --local --command "SELECT * FROM events"
+```
+
+## Privacy of stored data
+
+- `events`: program id, search text (lowercased, emails and phone numbers removed, max 120 characters), result label,
+  and the hour of the search. Nothing else from the request.
+- `reports`: what the parent wrote, the answer it was about, and an email only if they chose to give one.
+- `subscribers`: email, language, optional state.
+- No table stores IP addresses or user agents.
 
 ## Deploy (Cloudflare Pages)
 

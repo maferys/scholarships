@@ -95,61 +95,6 @@ rules:
       en: "Only a fee-for-service transportation provider, for trips to and from approved providers."
       es: "Solo un proveedor de transporte que cobra por servicio, para ir y volver de proveedores aprobados."
 
-  - category: tech.computer
-    status: conditional
-    conditions:
-      requires_approved_vendor: true
-      pct_of_award_cap: 0.10
-    locator: "Education Code §29.359(a)(8)"
-    quote: "10 percent of the total amount transferred to the participating child's account that year"
-    conditions_text:
-      en: "Computer hardware and software together are capped at 10% of the money deposited for the child that year (about $200 for a $2,000 homeschool award)."
-      es: "El equipo de cómputo y el software juntos tienen un límite del 10% del dinero depositado para el niño ese año (unos $200 para una beca de $2,000 de educación en casa)."
-
-  - category: tech.tablet
-    status: conditional
-    conditions:
-      requires_approved_vendor: true
-      pct_of_award_cap: 0.10
-    locator: "Education Code §29.359(a)(8)"
-    quote: "10 percent of the total amount transferred to the participating child's account that year"
-    conditions_text:
-      en: "Tablets fall under the technology cap: 10% of the money deposited for the child that year."
-      es: "Las tabletas entran en el límite de tecnología: 10% del dinero depositado para el niño ese año."
-
-  - category: tech.printer
-    status: conditional
-    conditions:
-      requires_approved_vendor: true
-      pct_of_award_cap: 0.10
-    locator: "Education Code §29.359(a)(8)"
-    quote: "10 percent of the total amount transferred to the participating child's account that year"
-    conditions_text:
-      en: "Printers count as computer hardware, under the 10% technology cap."
-      es: "Las impresoras cuentan como equipo de cómputo, dentro del límite de tecnología del 10%."
-
-  - category: tech.headphones
-    status: conditional
-    conditions:
-      requires_approved_vendor: true
-      pct_of_award_cap: 0.10
-    locator: "Education Code §29.359(a)(8)"
-    quote: "10 percent of the total amount transferred to the participating child's account that year"
-    conditions_text:
-      en: "Headphones count as technology devices, under the 10% technology cap."
-      es: "Los audífonos cuentan como dispositivos de tecnología, dentro del límite de tecnología del 10%."
-
-  - category: software.educational
-    status: conditional
-    conditions:
-      requires_approved_vendor: true
-      pct_of_award_cap: 0.10
-    locator: "Education Code §29.359(a)(8)"
-    quote: "10 percent of the total amount transferred to the participating child's account that year"
-    conditions_text:
-      en: "Software shares the 10% technology cap with computer hardware."
-      es: "El software comparte el límite de tecnología del 10% con el equipo de cómputo."
-
   - category: food.general
     segment: private_school
     status: conditional
@@ -158,3 +103,152 @@ rules:
     conditions_text:
       en: "Only breakfast or lunch provided by the private school during the school day."
       es: "Solo el desayuno o almuerzo que da la escuela privada durante el día escolar."
+
+  - category: tech.computer
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [odyssey-purchase-restrictions]
+    conditions:
+      requires_approved_vendor: true
+      pct_of_award_cap: 0.10
+    locator: "34 TAC §16.406; item list from Odyssey purchase restrictions (updated 2026-10-05)"
+    quote: null
+    conflict_note:
+      en: "Odyssey's help articles disagree on who must require technology purchases. An older article says the private school or a physician; a newer one says the private school or the homeschool program. Whether homeschool families qualify, and on what condition, depends on 34 TAC §16.406, which has not been read in full yet."
+      es: "Los artículos de ayuda de Odyssey no coinciden sobre quién debe exigir las compras de tecnología. Uno anterior dice la escuela privada o un médico; uno más reciente dice la escuela privada o el programa de educación en casa. Si las familias que educan en casa califican, y con qué condición, depende de 34 TAC §16.406, que todavía no se ha leído completo."
+    review_flag: "Read 34 TAC §16.406 in full to settle who must require technology (private school, physician, or homeschool program); see the tx-tac-16 source's review flag. Add the exact quote from §16.406 during review."
+    conditions_text:
+      en: "Laptops and desktops fall under the technology cap. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
+      es: "Las laptops y computadoras de escritorio entran en el límite de tecnología. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
+
+  - category: tech.tablet
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [odyssey-purchase-restrictions]
+    conditions:
+      requires_approved_vendor: true
+      pct_of_award_cap: 0.10
+    locator: "34 TAC §16.406; item list from Odyssey purchase restrictions (updated 2026-10-05)"
+    quote: null
+    conflict_note:
+      en: "Odyssey's help articles disagree on who must require technology purchases. An older article says the private school or a physician; a newer one says the private school or the homeschool program. Whether homeschool families qualify, and on what condition, depends on 34 TAC §16.406, which has not been read in full yet."
+      es: "Los artículos de ayuda de Odyssey no coinciden sobre quién debe exigir las compras de tecnología. Uno anterior dice la escuela privada o un médico; uno más reciente dice la escuela privada o el programa de educación en casa. Si las familias que educan en casa califican, y con qué condición, depende de 34 TAC §16.406, que todavía no se ha leído completo."
+    review_flag: "Read 34 TAC §16.406 in full to settle who must require technology (private school, physician, or homeschool program); see the tx-tac-16 source's review flag. Add the exact quote from §16.406 during review."
+    conditions_text:
+      en: "Tablets fall under the technology cap. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
+      es: "Las tabletas entran en el límite de tecnología. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
+
+  - category: tech.printer
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [odyssey-purchase-restrictions]
+    conditions:
+      requires_approved_vendor: true
+      pct_of_award_cap: 0.10
+    locator: "34 TAC §16.406; item list from Odyssey purchase restrictions (updated 2026-10-05)"
+    quote: null
+    conflict_note:
+      en: "Odyssey's help articles disagree on who must require technology purchases. An older article says the private school or a physician; a newer one says the private school or the homeschool program. Whether homeschool families qualify, and on what condition, depends on 34 TAC §16.406, which has not been read in full yet."
+      es: "Los artículos de ayuda de Odyssey no coinciden sobre quién debe exigir las compras de tecnología. Uno anterior dice la escuela privada o un médico; uno más reciente dice la escuela privada o el programa de educación en casa. Si las familias que educan en casa califican, y con qué condición, depende de 34 TAC §16.406, que todavía no se ha leído completo."
+    review_flag: "Read 34 TAC §16.406 in full to settle who must require technology (private school, physician, or homeschool program); see the tx-tac-16 source's review flag. Add the exact quote from §16.406 during review."
+    conditions_text:
+      en: "Printers fall under the technology cap. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
+      es: "Las impresoras entran en el límite de tecnología. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
+
+  - category: tech.headphones
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [odyssey-purchase-restrictions]
+    conditions:
+      requires_approved_vendor: true
+      pct_of_award_cap: 0.10
+    locator: "34 TAC §16.406; item list from Odyssey purchase restrictions (updated 2026-10-05)"
+    quote: null
+    conflict_note:
+      en: "Odyssey's help articles disagree on who must require technology purchases. An older article says the private school or a physician; a newer one says the private school or the homeschool program. Whether homeschool families qualify, and on what condition, depends on 34 TAC §16.406, which has not been read in full yet."
+      es: "Los artículos de ayuda de Odyssey no coinciden sobre quién debe exigir las compras de tecnología. Uno anterior dice la escuela privada o un médico; uno más reciente dice la escuela privada o el programa de educación en casa. Si las familias que educan en casa califican, y con qué condición, depende de 34 TAC §16.406, que todavía no se ha leído completo."
+    review_flag: "Read 34 TAC §16.406 in full to settle who must require technology (private school, physician, or homeschool program); see the tx-tac-16 source's review flag. Add the exact quote from §16.406 during review."
+    conditions_text:
+      en: "Headphones fall under the technology cap. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
+      es: "Los audífonos entran en el límite de tecnología. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
+
+  - category: tech.calculator
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [odyssey-purchase-restrictions]
+    conditions:
+      requires_approved_vendor: true
+      pct_of_award_cap: 0.10
+    locator: "34 TAC §16.406; item list from Odyssey purchase restrictions (updated 2026-10-05)"
+    quote: null
+    conflict_note:
+      en: "Odyssey's help articles disagree on who must require technology purchases. An older article says the private school or a physician; a newer one says the private school or the homeschool program. Whether homeschool families qualify, and on what condition, depends on 34 TAC §16.406, which has not been read in full yet."
+      es: "Los artículos de ayuda de Odyssey no coinciden sobre quién debe exigir las compras de tecnología. Uno anterior dice la escuela privada o un médico; uno más reciente dice la escuela privada o el programa de educación en casa. Si las familias que educan en casa califican, y con qué condición, depende de 34 TAC §16.406, que todavía no se ha leído completo."
+    review_flag: "Read 34 TAC §16.406 in full to settle who must require technology (private school, physician, or homeschool program); see the tx-tac-16 source's review flag. Add the exact quote from §16.406 during review."
+    conditions_text:
+      en: "Calculators fall under the technology cap. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
+      es: "Las calculadoras entran en el límite de tecnología. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
+
+  - category: tech.accessories
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [odyssey-purchase-restrictions]
+    conditions:
+      requires_approved_vendor: true
+      pct_of_award_cap: 0.10
+    locator: "34 TAC §16.406; item list from Odyssey purchase restrictions (updated 2026-10-05)"
+    quote: null
+    conflict_note:
+      en: "Odyssey's help articles disagree on who must require technology purchases. An older article says the private school or a physician; a newer one says the private school or the homeschool program. Whether homeschool families qualify, and on what condition, depends on 34 TAC §16.406, which has not been read in full yet."
+      es: "Los artículos de ayuda de Odyssey no coinciden sobre quién debe exigir las compras de tecnología. Uno anterior dice la escuela privada o un médico; uno más reciente dice la escuela privada o el programa de educación en casa. Si las familias que educan en casa califican, y con qué condición, depende de 34 TAC §16.406, que todavía no se ha leído completo."
+    review_flag: "Read 34 TAC §16.406 in full to settle who must require technology (private school, physician, or homeschool program); see the tx-tac-16 source's review flag. Add the exact quote from §16.406 during review."
+    conditions_text:
+      en: "Monitors, webcams, cameras, hot spots and computer accessories fall under the technology cap. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
+      es: "Los monitores, cámaras web, cámaras, hotspots y accesorios de computadora entran en el límite de tecnología. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
+
+  - category: software.educational
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [odyssey-purchase-restrictions]
+    conditions:
+      requires_approved_vendor: true
+      pct_of_award_cap: 0.10
+    locator: "34 TAC §16.406; item list from Odyssey purchase restrictions (updated 2026-10-05)"
+    quote: null
+    conflict_note:
+      en: "Odyssey's help articles disagree on who must require technology purchases. An older article says the private school or a physician; a newer one says the private school or the homeschool program. Whether homeschool families qualify, and on what condition, depends on 34 TAC §16.406, which has not been read in full yet."
+      es: "Los artículos de ayuda de Odyssey no coinciden sobre quién debe exigir las compras de tecnología. Uno anterior dice la escuela privada o un médico; uno más reciente dice la escuela privada o el programa de educación en casa. Si las familias que educan en casa califican, y con qué condición, depende de 34 TAC §16.406, que todavía no se ha leído completo."
+    review_flag: "Read 34 TAC §16.406 in full to settle who must require technology (private school, physician, or homeschool program); see the tx-tac-16 source's review flag. Add the exact quote from §16.406 during review."
+    conditions_text:
+      en: "Software fall under the technology cap. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
+      es: "El software entran en el límite de tecnología. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
+
+  - category: tech.printer_3d
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [odyssey-purchase-restrictions]
+    conditions:
+      requires_approved_vendor: true
+      pct_of_award_cap: 0.10
+      frequency: { count: 1, per_years: 1 }
+    locator: "34 TAC §16.406; Odyssey purchase restrictions (updated 2026-10-05)"
+    quote: null
+    conflict_note:
+      en: "Odyssey's help articles disagree on who must require technology purchases. An older article says the private school or a physician; a newer one says the private school or the homeschool program. Whether homeschool families qualify, and on what condition, depends on 34 TAC §16.406, which has not been read in full yet."
+      es: "Los artículos de ayuda de Odyssey no coinciden sobre quién debe exigir las compras de tecnología. Uno anterior dice la escuela privada o un médico; uno más reciente dice la escuela privada o el programa de educación en casa. Si las familias que educan en casa califican, y con qué condición, depende de 34 TAC §16.406, que todavía no se ha leído completo."
+    review_flag: "Read 34 TAC §16.406 in full to settle who must require technology (private school, physician, or homeschool program); see the tx-tac-16 source's review flag. Add the exact quote from §16.406 during review."
+    conditions_text:
+      en: "One 3D printer per year, and it counts toward the technology cap. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
+      es: "Una impresora 3D por año, y cuenta para el límite de tecnología. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
+
+  - category: instruments.musical
+    status: conditional
+    source: odyssey-purchase-restrictions
+    conditions:
+      requires_approved_vendor: true
+      max_amount: 1200
+    locator: "Price caps table"
+    quote: "Price cap of $1200"
+    conditions_text:
+      en: "Musical instruments have a price cap of $1,200. They are not part of the 10% technology cap."
+      es: "Los instrumentos musicales tienen un precio máximo de $1,200. No forman parte del límite de tecnología del 10%."

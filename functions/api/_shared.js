@@ -12,3 +12,24 @@ export async function readBody(request) {
   if (type.includes('form')) return Object.fromEntries(await request.formData());
   return JSON.parse(await request.text()); // sendBeacon sends text/plain
 }
+
+const EMAIL = /[^\s@]+@[^\s@]+\.[^\s@]+/g;
+// 7+ digits, optionally separated by spaces, dots, dashes or parentheses, with an optional leading +.
+const PHONE = /\+?\(?\d[\d\s().-]{5,}\d/g;
+
+// Search text as stored in events: lowercased, emails and phone numbers removed, whitespace collapsed.
+export function sanitizeQuery(text) {
+  if (typeof text !== 'string') return null;
+  const cleaned = text
+    .normalize('NFKC')
+    .toLowerCase()
+    .replace(EMAIL, ' ')
+    .replace(PHONE, (m) => (m.replace(/\D/g, '').length >= 7 ? ' ' : m))
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, 120);
+  return cleaned || null;
+}
+
+// Event time rounded down to the hour, so an event can't be matched to a request log by exact time.
+export const hourTimestamp = (date = new Date()) => `${date.toISOString().slice(0, 13)}:00:00Z`;

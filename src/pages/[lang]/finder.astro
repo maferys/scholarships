@@ -76,9 +76,9 @@ const states = [...new Set(data.programs.map((p) => p.state))].sort();
     }
 
     function logEvent(payload) {
-      // Fire-and-forget usage log for improving answers. No personal data.
+      // Fire-and-forget usage log: program, search text and label only (the server strips emails and phone numbers).
       try {
-        navigator.sendBeacon?.('/api/event', JSON.stringify({ lang, ...payload }));
+        navigator.sendBeacon?.('/api/event', JSON.stringify(payload));
       } catch {}
     }
 
@@ -88,7 +88,7 @@ const states = [...new Set(data.programs.map((p) => p.state))].sort();
       const answer = evaluate(data, { programId: program.id, segment, categoryId }, today);
       const category = data.categories.find((c) => c.id === categoryId);
       results.replaceChildren(renderAnswer({ answer, category, lang, s, tip: data.tips[program.id], query }));
-      logEvent({ program: program.id, segment, query, category: categoryId, label: answer.label });
+      logEvent({ program: program.id, query, label: answer.label });
     }
 
     function run() {
@@ -102,7 +102,7 @@ const states = [...new Set(data.programs.map((p) => p.state))].sort();
       const candidates = match(data.categories, query);
       if (candidates.length === 0) {
         results.replaceChildren(renderNotSure({ s, lang, program, categories: data.categories, onPick: (id) => show(id, query) }));
-        logEvent({ program: program.id, query, category: null, label: 'no_match' });
+        logEvent({ program: program.id, query, label: 'no_match' });
         return;
       }
       show(candidates[0].categoryId, query);

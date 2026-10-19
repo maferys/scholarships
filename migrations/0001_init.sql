@@ -11,8 +11,9 @@ CREATE TABLE IF NOT EXISTS reports (
   message TEXT NOT NULL, email TEXT, lang TEXT,
   created_at TEXT NOT NULL
 );
+-- Anonymous finder usage: sanitized search text (no emails or phone numbers), program, label, hour.
 CREATE TABLE IF NOT EXISTS events (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  program TEXT, segment TEXT, query TEXT, category TEXT, label TEXT, lang TEXT,
+  program TEXT, query TEXT, label TEXT,
   created_at TEXT NOT NULL
 );

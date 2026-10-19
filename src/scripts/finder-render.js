@@ -82,7 +82,10 @@ export function renderAnswer({ answer, category, lang, s, tip, query }) {
           el('h3', {}, s.whatItDependsOn),
           el('p', {}, rule.conditions_text[lang]),
           rule.conditions?.requires_approved_vendor ? el('p', {}, s.approvedVendorNote) : null,
-          notices.includes('conflict') ? el('p', { class: 'muted' }, s.conflictNote) : null)
+          rule.conflict_note
+            ? el('div', { class: 'banner banner-warn conflict', role: 'note' },
+                el('strong', {}, s.conflictTitle), ' ', rule.conflict_note[lang])
+            : null)
       : el('section', {}, el('p', {}, s.reasons[reason] ?? s.reasons.no_rule), contactBlock(program, s)),
     verified && source
       ? el('section', { class: 'source' },
@@ -92,7 +95,11 @@ export function renderAnswer({ answer, category, lang, s, tip, query }) {
           el('p', { class: 'muted' }, `${s.lastVerified}: ${formatDate(rule.last_verified, lang)}`))
       : null,
     verified && tip ? el('section', {}, el('h3', {}, s.howToSubmit), el('p', {}, (rule.submit_tip ?? tip)[lang])) : null,
-    notices.includes('draft') ? el('p', { class: 'banner banner-draft' }, s.draftBadge) : null,
+    notices.includes('draft')
+      ? el('div', { class: 'banner banner-draft' },
+          el('p', {}, s.draftBadge),
+          rule?.review_flag ? el('p', {}, `${s.reviewFlag}: ${rule.review_flag}`) : null)
+      : null,
     el('p', { class: 'disclaimer' }, s.disclaimer),
     reportForm(s, lang, { program: program.id, category: category.id, label, rule: rule?.id ?? null, query }),
   );

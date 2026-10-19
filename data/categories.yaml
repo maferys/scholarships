@@ -30,6 +30,27 @@
     en: [headphones, headset, earbuds, airpods, earphones]
     es: [audifonos, auriculares, cascos, airpods]
 
+- id: tech.printer_3d
+  group: products
+  name: { en: "3D printer", es: "Impresora 3D" }
+  synonyms:
+    en: [3d printer, 3-d printer, 3d printing]
+    es: [impresora 3d]
+
+- id: tech.calculator
+  group: products
+  name: { en: "Calculator", es: "Calculadora" }
+  synonyms:
+    en: [calculator, graphing calculator, scientific calculator, ti-84]
+    es: [calculadora, calculadora cientifica, calculadora grafica]
+
+- id: tech.accessories
+  group: products
+  name: { en: "Monitor, webcam, camera, hot spot or computer accessory", es: "Monitor, cámara web, cámara, hotspot o accesorio de computadora" }
+  synonyms:
+    en: [monitor, webcam, camera, hot spot, hotspot, mouse, computer keyboard, computer accessories, usb drive]
+    es: [monitor, camara web, camara, hotspot, punto de acceso, raton, teclado de computadora, accesorios de computadora]
+
 - id: tech.phone
   group: products
   name: { en: "Cell phone", es: "Teléfono celular" }

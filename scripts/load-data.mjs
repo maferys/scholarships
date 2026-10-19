@@ -13,8 +13,11 @@ const yamlFiles = (dir) => readdirSync(dir).filter((f) => f.endsWith('.yaml')).s
 
 const REQUIRED_RULE_FIELDS = [
   'category', 'segment', 'status', 'conditions_text', 'source', 'locator',
-  'effective_from', 'last_verified', 'verified_by', 'review_status',
+  'effective_from', 'last_verified', 'verified_by', 'review_status', 'es_reviewed',
 ];
+
+// A rule reaches the live site only after a person reviewed both the rule and its Spanish text.
+export const isPublishable = (rule) => rule.review_status === 'reviewed' && rule.es_reviewed === true;
 
 export function loadData(root = ROOT) {
   const ajv = new Ajv({ allErrors: true });
@@ -48,6 +51,12 @@ export function loadData(root = ROOT) {
     const p = readYaml(join(root, file));
     if (!check('program', p, file)) continue;
     if (`${p.id}.yaml` !== f) errors.push(`${file}: file name must match program id ${p.id}`);
+    const sourceIds = new Set(p.sources.map((s) => s.id));
+    const cited = [
+      ...(p.reimbursement_source_ids ?? []),
+      ...(p.funding_schedule ?? []).flatMap((f) => [f.source, ...(f.supporting_sources ?? [])]),
+    ];
+    for (const id of cited) if (!sourceIds.has(id)) errors.push(`${file}: unknown source ${id}`);
     programs.push(p);
   }
   const programById = new Map(programs.map((p) => [p.id, p]));
@@ -68,6 +77,7 @@ export function loadData(root = ROOT) {
     for (const [i, raw] of doc.rules.entries()) {
       const where = `${file}: rules[${i}] (${raw.category ?? '?'})`;
       const rule = {
+        es_reviewed: false,
         ...doc.defaults,
         ...raw,
         conditions: { ...(doc.defaults.conditions ?? {}), ...(raw.conditions ?? {}) },
@@ -77,7 +87,9 @@ export function loadData(root = ROOT) {
         if (rule[field] === undefined) errors.push(`${where}: missing ${field}`);
       }
       if (!categoryIds.has(rule.category)) errors.push(`${where}: unknown category ${rule.category}`);
-      if (!program.sources.some((s) => s.id === rule.source)) errors.push(`${where}: unknown source ${rule.source}`);
+      for (const id of [rule.source, ...(rule.supporting_sources ?? [])]) {
+        if (!program.sources.some((s) => s.id === id)) errors.push(`${where}: unknown source ${id}`);
+      }
       if (rule.segment !== 'all' && !program.student_segments.includes(rule.segment)) {
         errors.push(`${where}: segment ${rule.segment} is not a segment of ${program.id}`);
       }

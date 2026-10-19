@@ -6,12 +6,12 @@ const TODAY = '2026-10-19';
 const source = (id, tier = 2) => ({ id, tier, title: id, publisher: 'x', url: 'https://example.gov', retrieved_at: TODAY });
 const program = (over = {}) => ({
   id: 'zz-esa', program_status: 'active', requires_funded_account_gate: false,
-  student_segments: ['all'], sources: [source('s1'), source('blog', 4)], ...over,
+  student_segments: ['all'], sources: [source('s1'), source('blog', 4), source('statute', 1)], ...over,
 });
 const rule = (over = {}) => ({
   program: 'zz-esa', segment: 'all', category: 'tech.computer', status: 'allowed', conditions: {},
   source: 's1', effective_from: '2026-07-01', effective_to: null, last_verified: '2026-10-01',
-  review_status: 'reviewed', ...over,
+  review_status: 'reviewed', es_reviewed: true, ...over,
 });
 const run = (p, rules, q = {}) => evaluate({ programs: [p], rules }, { programId: 'zz-esa', categoryId: 'tech.computer', ...q }, TODAY);
 
@@ -36,11 +36,35 @@ test('stale, out-of-date-range and untrusted-source rules are not verified', () 
   assert.equal(run(program(), [rule({ source: 'blog' })]).reason, 'untrusted_source');
 });
 
-test('settling programs never show likely eligible and always carry the banner', () => {
-  const r = run(program({ program_status: 'settling' }), [rule()]);
-  assert.equal(r.label, LABELS.DEPENDS);
-  assert.ok(r.notices.includes('settling'));
-  assert.equal(run(program({ program_status: 'litigated' }), [rule({ status: 'not_allowed' })]).label, LABELS.LIKELY_NOT_ELIGIBLE);
+test('settling program + tier 1 rule keeps its label and the banner', () => {
+  const settling = program({ program_status: 'settling' });
+  const allowed = run(settling, [rule({ source: 'statute' })]);
+  assert.equal(allowed.label, LABELS.LIKELY_ELIGIBLE);
+  assert.ok(allowed.notices.includes('settling'));
+  assert.equal(run(settling, [rule({ source: 'statute', status: 'not_allowed' })]).label, LABELS.LIKELY_NOT_ELIGIBLE);
+});
+
+test('settling program + tier 2 rule is capped at depends', () => {
+  const allowed = run(program({ program_status: 'settling' }), [rule({ source: 's1' })]);
+  assert.equal(allowed.label, LABELS.DEPENDS);
+  assert.equal(allowed.reason, 'program_settling');
+  assert.equal(run(program({ program_status: 'litigated' }), [rule({ status: 'not_allowed' })]).label, LABELS.DEPENDS);
+});
+
+test('settling program + tier 1 but stale rule is not verified', () => {
+  const r = run(program({ program_status: 'settling' }), [rule({ source: 'statute', last_verified: '2026-06-01' })]);
+  assert.equal(r.label, LABELS.NOT_VERIFIED);
+  assert.equal(r.reason, 'stale');
+});
+
+test('a conflict note caps every status at depends', () => {
+  const note = { en: 'Scope unclear', es: 'Alcance no claro' };
+  for (const status of ['allowed', 'not_allowed']) {
+    const r = run(program(), [rule({ status, source: 'statute', conflict_note: note })]);
+    assert.equal(r.label, LABELS.DEPENDS);
+    assert.equal(r.reason, 'sources_conflict');
+    assert.ok(r.notices.includes('conflict'));
+  }
 });
 
 test('paused programs are not verified', () => {
@@ -50,15 +74,14 @@ test('paused programs are not verified', () => {
 test('vendor approval, caps and conflicts downgrade allowed to depends', () => {
   assert.equal(run(program(), [rule({ conditions: { requires_approved_vendor: true } })]).reason, 'needs_approved_vendor');
   assert.equal(run(program(), [rule({ conditions: { max_amount: 1200 } })]).reason, 'has_conditions');
-  const conflict = run(program(), [rule({ conflict_note: 'differs' })]);
-  assert.equal(conflict.label, LABELS.DEPENDS);
-  assert.ok(conflict.notices.includes('conflict'));
 });
 
 test('funded-account gate and draft notices are attached', () => {
   const r = run(program({ requires_funded_account_gate: true }), [rule({ review_status: 'draft' })]);
   assert.ok(r.notices.includes('funded_account_gate'));
   assert.ok(r.notices.includes('draft'));
+  const esPending = run(program(), [rule({ es_reviewed: false })]);
+  assert.ok(esPending.notices.includes('draft'), 'unreviewed Spanish is flagged as draft');
 });
 
 test('segment-specific rule wins over the all-students rule', () => {

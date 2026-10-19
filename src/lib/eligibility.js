@@ -52,16 +52,28 @@ export function evaluate(data, { programId, segment = 'all', categoryId }, today
     return result(LABELS.NOT_VERIFIED, 'outside_effective_dates', rule, source);
   }
   if (daysBetween(rule.last_verified, today) > MAX_RULE_AGE_DAYS) return result(LABELS.NOT_VERIFIED, 'stale', rule, source);
-  if (rule.review_status !== 'reviewed') notices.push('draft');
+  if (rule.review_status !== 'reviewed' || rule.es_reviewed !== true) notices.push('draft');
   if (rule.conflict_note) notices.push('conflict');
 
-  if (rule.status === 'not_allowed') return result(LABELS.LIKELY_NOT_ELIGIBLE, 'rule_not_allowed', rule, source);
-  if (rule.status === 'conditional') return result(LABELS.DEPENDS, 'rule_conditional', rule, source);
+  let label;
+  let reason;
+  if (rule.status === 'not_allowed') {
+    [label, reason] = [LABELS.LIKELY_NOT_ELIGIBLE, 'rule_not_allowed'];
+  } else if (rule.status === 'conditional') {
+    [label, reason] = [LABELS.DEPENDS, 'rule_conditional'];
+  } else if (rule.conditions?.requires_approved_vendor) {
+    [label, reason] = [LABELS.DEPENDS, 'needs_approved_vendor'];
+  } else if (hasConditions(rule.conditions)) {
+    [label, reason] = [LABELS.DEPENDS, 'has_conditions'];
+  } else {
+    [label, reason] = [LABELS.LIKELY_ELIGIBLE, 'rule_allowed'];
+  }
 
-  // status === 'allowed'
-  if (SETTLING.has(program.program_status)) return result(LABELS.DEPENDS, 'program_settling', rule, source);
-  if (rule.conflict_note) return result(LABELS.DEPENDS, 'sources_conflict', rule, source);
-  if (rule.conditions?.requires_approved_vendor) return result(LABELS.DEPENDS, 'needs_approved_vendor', rule, source);
-  if (hasConditions(rule.conditions)) return result(LABELS.DEPENDS, 'has_conditions', rule, source);
-  return result(LABELS.LIKELY_ELIGIBLE, 'rule_allowed', rule, source);
+  // Caps: nothing above "depends" when official sources disagree, or when a settling
+  // or litigated program's rule rests on anything weaker than a statute or final regulation.
+  if (label !== LABELS.DEPENDS) {
+    if (rule.conflict_note) [label, reason] = [LABELS.DEPENDS, 'sources_conflict'];
+    else if (SETTLING.has(program.program_status) && source.tier !== 1) [label, reason] = [LABELS.DEPENDS, 'program_settling'];
+  }
+  return result(label, reason, rule, source);
 }

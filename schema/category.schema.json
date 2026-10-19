@@ -7,7 +7,7 @@
     "additionalProperties": false,
     "required": ["id", "group", "name", "synonyms"],
     "properties": {
-      "id": { "type": "string", "pattern": "^[a-z]+(\\.[a-z_]+)+$" },
+      "id": { "type": "string", "pattern": "^[a-z]+(\\.[a-z0-9_]+)+$" },
       "group": { "enum": ["products", "education"] },
       "name": { "$ref": "#/definitions/i18n" },
       "synonyms": {

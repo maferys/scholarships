@@ -56,3 +56,5 @@ blockquote { margin: .25rem 0; padding-left: .75rem; border-left: 3px solid var(
 .suggestions { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }
 .chip { background: var(--unk-bg); color: var(--text); font-weight: 500; padding: .35rem .8rem; border-radius: 999px; min-height: 36px; }
 .form-status:empty { display: none; }
+.banner p { margin: 0; }
+.banner p + p { margin-top: .4rem; }

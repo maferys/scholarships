@@ -12,6 +12,7 @@ defaults:
 submit_tip:
   en: "Choose the matching expense category in ClassWallet and keep an itemized receipt with the vendor's name, date and transaction number."
   es: "Elija la categoría de gasto correspondiente en ClassWallet y guarde un recibo detallado con el nombre del vendedor, la fecha y el número de transacción."
+submit_tip_review_flag: "Receipt requirements: confirm against ADE before review. Read \"A message from Supt Horne about supplemental curriculum\" (https://www.azed.gov/node/3742); do not rely on third-party guides for any July 2026 documentation change."
 
 rules:
   - category: tech.computer
@@ -80,6 +81,7 @@ rules:
 
   - category: software.educational
     status: allowed
+    review_flag: "Supplemental curriculum materials: before reviewing, read ADE's \"A message from Supt Horne about supplemental curriculum\" (https://www.azed.gov/node/3742). The only source found for a July 2026 documentation change is a third-party guide, which is not acceptable."
     locator: "p. 23, Supplementary materials"
     quote: "Educational software & apps"
     conditions_text:
@@ -88,6 +90,7 @@ rules:
 
   - category: supplies.school
     status: allowed
+    review_flag: "Supplemental curriculum materials: before reviewing, read ADE's \"A message from Supt Horne about supplemental curriculum\" (https://www.azed.gov/node/3742). The only source found for a July 2026 documentation change is a third-party guide, which is not acceptable."
     locator: "p. 24, Supplementary materials"
     quote: "Writing utensils (pens, markers, pencils, highlighters, crayons, chalk)"
     conditions_text:
@@ -96,6 +99,7 @@ rules:
 
   - category: supplies.art
     status: allowed
+    review_flag: "Supplemental curriculum materials: before reviewing, read ADE's \"A message from Supt Horne about supplemental curriculum\" (https://www.azed.gov/node/3742). The only source found for a July 2026 documentation change is a third-party guide, which is not acceptable."
     locator: "p. 23, Supplementary materials"
     quote: "Art supplies (paint, watercolors, paint brushes, canvas, drawing paper, clay,"
     conditions_text:
@@ -104,6 +108,7 @@ rules:
 
   - category: books.textbooks
     status: allowed
+    review_flag: "Supplemental curriculum materials: before reviewing, read ADE's \"A message from Supt Horne about supplemental curriculum\" (https://www.azed.gov/node/3742). The only source found for a July 2026 documentation change is a third-party guide, which is not acceptable."
     locator: "p. 23, Supplementary materials"
     quote: "Books (including audio, digital, players)/coloring books/magazines"
     conditions_text:
@@ -114,6 +119,7 @@ rules:
     status: conditional
     conditions:
       requires_documentation: [curriculum_documentation]
+    review_flag: "Supplemental curriculum materials: before reviewing, read ADE's \"A message from Supt Horne about supplemental curriculum\" (https://www.azed.gov/node/3742). The only source found for a July 2026 documentation change is a third-party guide, which is not acceptable."
     locator: "p. 20, Curricula"
     quote: "curriculum documentation must include:"
     conditions_text:
@@ -122,6 +128,7 @@ rules:
 
   - category: toys.general
     status: conditional
+    review_flag: "Supplemental curriculum materials: before reviewing, read ADE's \"A message from Supt Horne about supplemental curriculum\" (https://www.azed.gov/node/3742). The only source found for a July 2026 documentation change is a third-party guide, which is not acceptable."
     locator: "p. 23, Supplementary materials"
     quote: "Educational toys"
     conditions_text:
@@ -130,6 +137,7 @@ rules:
 
   - category: instruments.musical
     status: conditional
+    review_flag: "Supplemental curriculum materials: before reviewing, read ADE's \"A message from Supt Horne about supplemental curriculum\" (https://www.azed.gov/node/3742). The only source found for a July 2026 documentation change is a third-party guide, which is not acceptable."
     locator: "p. 22, Supplementary materials"
     quote: "Instruments"
     conditions_text:
@@ -138,6 +146,7 @@ rules:
 
   - category: sports.equipment
     status: allowed
+    review_flag: "Supplemental curriculum materials: before reviewing, read ADE's \"A message from Supt Horne about supplemental curriculum\" (https://www.azed.gov/node/3742). The only source found for a July 2026 documentation change is a third-party guide, which is not acceptable."
     locator: "p. 23, Supplementary materials"
     quote: "Basic sport items such as bats, balls, gloves, racquets, and protective equipment"
     conditions_text:
@@ -146,6 +155,7 @@ rules:
 
   - category: furniture.desk
     status: conditional
+    review_flag: "Supplemental curriculum materials: before reviewing, read ADE's \"A message from Supt Horne about supplemental curriculum\" (https://www.azed.gov/node/3742). The only source found for a July 2026 documentation change is a third-party guide, which is not acceptable."
     locator: "p. 23, Supplementary materials"
     quote: "Desk (which can accommodate up to two people) and chair for ESA student"
     conditions_text:
@@ -271,6 +281,7 @@ rules:
 
   - category: edu.field_trip
     status: allowed
+    review_flag: "Supplemental curriculum materials: before reviewing, read ADE's \"A message from Supt Horne about supplemental curriculum\" (https://www.azed.gov/node/3742). The only source found for a July 2026 documentation change is a third-party guide, which is not acceptable."
     locator: "p. 23, Supplementary materials"
     quote: "Single tickets for educational events or venues such as zoos, science or art museums"
     conditions_text:
@@ -279,6 +290,7 @@ rules:
 
   - category: edu.camp
     status: conditional
+    review_flag: "Supplemental curriculum materials: before reviewing, read ADE's \"A message from Supt Horne about supplemental curriculum\" (https://www.azed.gov/node/3742). The only source found for a July 2026 documentation change is a third-party guide, which is not acceptable."
     locator: "p. 22, Supplementary materials"
     quote: "Educational camps (travel, overnight accommodations and food are not an allowable expense)"
     conditions_text:

@@ -1,12 +1,12 @@
-import { clip, json, lang, now, readBody } from './_shared.js';
+import { clip, hourTimestamp, json, readBody, sanitizeQuery } from './_shared.js';
 
-// Anonymous finder usage: what was asked and what we answered. No IP, no user agent.
+// Anonymous finder usage. Stores only: sanitized search text, program id, result label, hour.
+// Never stores IP, user agent, email, segment, language or anything else from the request.
 export async function onRequestPost({ request, env }) {
   const body = await readBody(request).catch(() => null);
-  if (!body) return json({ error: 'bad_request' }, 400);
-  await env.DB.prepare('INSERT INTO events (program, segment, query, category, label, lang, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)')
-    .bind(clip(body.program, 40), clip(body.segment, 30), clip(body.query, 120), clip(body.category, 60),
-      clip(body.label, 30), lang(body.lang), now())
+  if (!body || typeof body !== 'object') return json({ error: 'bad_request' }, 400);
+  await env.DB.prepare('INSERT INTO events (program, query, label, created_at) VALUES (?, ?, ?, ?)')
+    .bind(clip(body.program, 40), sanitizeQuery(body.query), clip(body.label, 30), hourTimestamp())
     .run();
   return json({ ok: true });
 }
