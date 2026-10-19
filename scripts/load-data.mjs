@@ -19,6 +19,14 @@ const REQUIRED_RULE_FIELDS = [
 // A rule reaches the live site only after a person reviewed both the rule and its Spanish text.
 export const isPublishable = (rule) => rule.review_status === 'reviewed' && rule.es_reviewed === true;
 
+// Drafts go into local dev, `build:preview`, and Cloudflare Pages preview deployments (any branch but
+// main). A Pages production build of main never includes them.
+export const PRODUCTION_BRANCH = 'main';
+export function shouldIncludeDrafts(env = process.env) {
+  if (env.CF_PAGES === '1') return env.CF_PAGES_BRANCH !== PRODUCTION_BRANCH;
+  return env.INCLUDE_DRAFT_RULES === 'true';
+}
+
 export function loadData(root = ROOT) {
   const ajv = new Ajv({ allErrors: true });
   addFormats(ajv);

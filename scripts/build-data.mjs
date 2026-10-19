@@ -1,9 +1,9 @@
 // Validates data/ and writes src/generated/data.json for the site.
-// Only rules reviewed in both languages are published, unless INCLUDE_DRAFT_RULES=true (local dev and previews).
+// Only rules reviewed in both languages are published, except in dev and preview builds (see shouldIncludeDrafts).
 import { mkdirSync, writeFileSync } from 'node:fs';
-import { isPublishable, loadData } from './load-data.mjs';
+import { isPublishable, loadData, shouldIncludeDrafts } from './load-data.mjs';
 
-const includeDrafts = process.env.INCLUDE_DRAFT_RULES === 'true';
+const includeDrafts = shouldIncludeDrafts();
 const { categories, programs, rules, tips, errors } = loadData();
 
 if (errors.length) {

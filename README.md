@@ -98,11 +98,22 @@ Do not send any email to subscribers until every item is done:
 
 ## Deploy (Cloudflare Pages)
 
-1. Create a Pages project from this repo. Build command `npm run build`, output `dist`.
-   Use `npm run build:preview` for preview deployments.
-2. Create the D1 database (`npx wrangler d1 create scholarships`), put its id in `wrangler.toml`, and run
-   `npx wrangler d1 migrations apply scholarships --remote`. Bind it to the Pages project as `DB`.
-3. Optional: set `PUBLIC_CF_ANALYTICS_TOKEN` (Cloudflare Web Analytics, cookie-free) and `SITE_URL`.
+`wrangler.toml` is the source of truth for bindings, so the dashboard shows them read-only.
+
+1. **D1 database.** In the Cloudflare dashboard, open Storage & Databases > D1 SQL Database > Create, and name it
+   `scholarships`. Put its Database ID in both `database_id` lines in `wrangler.toml` (the id is not a secret).
+2. **GitHub secrets.** Create a Cloudflare API token (My Profile > API Tokens > Create Token > Custom token) with
+   the permission Account > D1 > Edit. Add it to the repository secrets as `CLOUDFLARE_API_TOKEN`, together with
+   `CLOUDFLARE_ACCOUNT_ID` (shown on the dashboard's account home). The `D1 migrations` and `Data retention`
+   workflows use them.
+3. **Tables.** Run the `D1 migrations` workflow from the Actions tab (it also runs when main gets a new migration).
+4. **Pages project.** Workers & Pages > Create > Pages > Connect to Git, choose this repository, and set the production
+   branch `main`, build command `npm run build`, and output directory `dist`. Node 22 comes from `.node-version`.
+   - Production (main) publishes only rules with `review_status: reviewed` and `es_reviewed: true`.
+   - Every other branch gets a preview deployment that includes drafts (`CF_PAGES_BRANCH` is not `main`).
+   - Previews use the same database for now.
+5. **Optional.** Set `SITE_URL` to the production URL and `PUBLIC_CF_ANALYTICS_TOKEN` (Cloudflare Web Analytics, cookie-free)
+   as build variables.
 
 ## Keeping data fresh
 

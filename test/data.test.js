@@ -191,3 +191,12 @@ test('New Hampshire: tier 1 sources, CSF caps, drafts only', async () => {
   assert.equal(label('tech.game_console'), LABELS.NOT_VERIFIED, 'CSF-only items are held');
   assert.ok(evaluate(data, { programId: 'nh-efa', categoryId: 'books.textbooks' }, '2026-10-19').notices.includes('funded_account_gate'));
 });
+
+test('drafts are never published by a Pages production build', async () => {
+  const { shouldIncludeDrafts } = await import('../scripts/load-data.mjs');
+  assert.equal(shouldIncludeDrafts({ CF_PAGES: '1', CF_PAGES_BRANCH: 'main' }), false);
+  assert.equal(shouldIncludeDrafts({ CF_PAGES: '1', CF_PAGES_BRANCH: 'main', INCLUDE_DRAFT_RULES: 'true' }), false);
+  assert.equal(shouldIncludeDrafts({ CF_PAGES: '1', CF_PAGES_BRANCH: 'phase1-finder' }), true);
+  assert.equal(shouldIncludeDrafts({ INCLUDE_DRAFT_RULES: 'true' }), true);
+  assert.equal(shouldIncludeDrafts({}), false);
+});
