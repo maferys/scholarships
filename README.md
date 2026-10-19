@@ -109,6 +109,9 @@ dashboard shows them read-only.
    - Branch control: production branch `main`, with **Enable Preview Builds** turned on.
      The preview command is the default, `npx wrangler preview`.
    - Node 22 comes from `.node-version`.
+   - `wrangler.jsonc` also runs `npm run build` before every deploy or preview, so the site still builds if a
+     dashboard build command is wrong or empty. "Retry build" reuses the settings the build started with; after
+     changing a setting, push a commit to get a build that uses it.
 3. **What each build publishes.**
    - Production (main) publishes only rules with `review_status: reviewed` and `es_reviewed: true`.
    - Every other branch gets a preview URL that includes drafts (`WORKERS_CI_BRANCH` is not `main`).
