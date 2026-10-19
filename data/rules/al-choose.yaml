@@ -1,0 +1,215 @@
+# Alabama CHOOSE Act rules. Rule 810-28-1-.06 is the regulation (tier 1); the
+# 2026-27 parent guide is platform documentation (tier 3).
+program: al-choose
+defaults:
+  segment: all
+  source: al-rule-810-28-1-06
+  effective_from: 2026-07-01
+  effective_to: 2027-06-30
+  last_verified: 2026-10-18
+  verified_by: claude
+  review_status: draft
+submit_tip:
+  en: "Pay through ClassWallet (Marketplace or Pay Vendor). Alabama does not reimburse families, so don't pay out of pocket expecting to be paid back."
+  es: "Pague por ClassWallet (Marketplace o Pay Vendor). Alabama no reembolsa a las familias, así que no pague de su bolsillo esperando que le devuelvan el dinero."
+
+rules:
+  - category: tech.computer
+    status: conditional
+    conditions:
+      max_amount: 1200
+      frequency: { count: 1, per_years: 2 }
+    source: al-parent-guide-2026-27
+    locator: "p. 10, Technology"
+    quote: "The purchase of computers is limited to $1,200 for one item within this category every two academic years"
+    conditions_text:
+      en: "One laptop, desktop or tablet under $1,200 every two school years. Gaming computers are not approved."
+      es: "Una laptop, computadora de escritorio o tableta de menos de $1,200 cada dos años escolares. Las computadoras para videojuegos no se aprueban."
+
+  - category: tech.tablet
+    status: conditional
+    conditions:
+      max_amount: 1200
+      frequency: { count: 1, per_years: 2 }
+    source: al-parent-guide-2026-27
+    locator: "p. 10, Technology"
+    quote: "Laptop, desktop, and tablet computers under $1,200 per participating student"
+    conditions_text:
+      en: "Tablets count as computers: one under $1,200 every two school years."
+      es: "Las tabletas cuentan como computadoras: una de menos de $1,200 cada dos años escolares."
+
+  - category: tech.printer
+    status: conditional
+    conditions:
+      max_amount: 500
+      frequency: { count: 1, per_years: 1 }
+    locator: "Rule 810-28-1-.06, technological aids"
+    quote: "$500 per academic year for the participating student"
+    conflict_note: "Rule caps technological aids at $500 per year; the 2026-27 guide says technological devices are limited to $500 total per year. Wording differs; confirm with ALDOR."
+    conditions_text:
+      en: "Printers and ink count as technological aids, limited to $500 per student per school year."
+      es: "Las impresoras y la tinta cuentan como ayudas tecnológicas, con un límite de $500 por estudiante por año escolar."
+
+  - category: tech.headphones
+    status: conditional
+    conditions:
+      max_amount: 100
+    source: al-parent-guide-2026-27
+    locator: "p. 10, Technology"
+    quote: "Technological devices purchases are limited to $500 total per academic year, per participating student."
+    conflict_note: "Per-item cap of $100 for headphones is from the guide's summary table and needs checking against the PDF."
+    conditions_text:
+      en: "Headphones count toward the $500 yearly technology limit, with a lower per-item cap in the parent guide."
+      es: "Los audífonos cuentan para el límite anual de $500 en tecnología, con un tope menor por artículo en la guía para padres."
+
+  - category: tech.tv
+    status: not_allowed
+    source: al-parent-guide-2026-27
+    locator: "p. 10, Technology"
+    quote: "External speakers, external hard drives, SMARTboards and TVs will not be approved."
+    conditions_text:
+      en: "TVs and SMARTboards will not be approved."
+      es: "Los televisores y las pizarras inteligentes no se aprobarán."
+
+  - category: tech.game_console
+    status: not_allowed
+    source: al-parent-guide-2026-27
+    locator: "p. 10, Technology"
+    quote: "Computer and technological items identified as \"gaming\" will not be approved."
+    conditions_text:
+      en: "Gaming items will not be approved."
+      es: "Los artículos para videojuegos no se aprobarán."
+
+  - category: software.educational
+    status: allowed
+    locator: "Rule 810-28-1-.06(1)(g)"
+    quote: null
+    conditions_text:
+      en: "Educational software and applications are a qualifying expense, including assistive software for students with special needs."
+      es: "El software y las aplicaciones educativas son un gasto calificado, incluido el software de apoyo para estudiantes con necesidades especiales."
+
+  - category: supplies.school
+    status: conditional
+    source: al-parent-guide-2026-27
+    locator: "p. 10, Instructional materials"
+    quote: "Instructional Materials (no bulk orders, individual student use only)"
+    conditions_text:
+      en: "Supplies for the student's own use are allowed. Bulk orders are not."
+      es: "Se permiten útiles para el uso propio del estudiante. Los pedidos al por mayor no."
+
+  - category: supplies.art
+    status: conditional
+    source: al-parent-guide-2026-27
+    locator: "p. 10, Instructional materials"
+    quote: "Instructional Materials (no bulk orders, individual student use only)"
+    conditions_text:
+      en: "Art supplies count as instructional materials for the student's own use. Bulk orders are not allowed."
+      es: "Los materiales de arte cuentan como materiales de instrucción para el uso propio del estudiante. No se permiten pedidos al por mayor."
+
+  - category: books.textbooks
+    status: conditional
+    locator: "Rule 810-28-1-.06(1)(b)"
+    quote: null
+    conditions_text:
+      en: "Textbooks are allowed in the approved subjects (such as English, math, science, social studies, foreign languages, art and music)."
+      es: "Se permiten libros de texto de las materias aprobadas (como inglés, matemáticas, ciencias, estudios sociales, idiomas, arte y música)."
+
+  - category: curriculum.packaged
+    status: allowed
+    locator: "Rule 810-28-1-.06(1)(e)"
+    quote: null
+    conditions_text:
+      en: "Curricula and instructional materials for the student's own use are a qualifying expense."
+      es: "El currículo y los materiales de instrucción para el uso propio del estudiante son un gasto calificado."
+
+  - category: edu.tutoring
+    status: conditional
+    conditions:
+      requires_approved_vendor: true
+    source: al-parent-guide-2026-27
+    locator: "p. 8, Education Service Providers"
+    quote: "A private tutor must either be accredited or have a bachelor's degree or state certification, to be approved as an ESP."
+    conditions_text:
+      en: "The tutor must be an ALDOR-approved Education Service Provider and teach an approved subject."
+      es: "El tutor debe ser un Proveedor de Servicios Educativos aprobado por ALDOR y enseñar una materia aprobada."
+
+  - category: edu.lessons.music
+    status: conditional
+    conditions:
+      requires_approved_vendor: true
+    source: al-parent-guide-2026-27
+    locator: "p. 11, Private tutoring"
+    quote: "Music (including voice or musical instrument lessons)"
+    conditions_text:
+      en: "Voice and instrument lessons count as private tutoring, from an approved Education Service Provider."
+      es: "Las clases de canto e instrumento cuentan como tutoría privada, con un Proveedor de Servicios Educativos aprobado."
+
+  - category: edu.online_classes
+    status: conditional
+    conditions:
+      requires_approved_vendor: true
+    source: al-parent-guide-2026-27
+    locator: "p. 11, Online learning"
+    quote: "Tuition and Fees for an Approved Nonpublic K5-12 Online Learning Program"
+    conditions_text:
+      en: "Allowed only for an approved nonpublic online learning program."
+      es: "Se permite solo para un programa en línea no público aprobado."
+
+  - category: edu.private_school_tuition
+    segment: private_school
+    status: conditional
+    conditions:
+      requires_approved_vendor: true
+    locator: "Rule 810-28-1-.06(1)(a)"
+    quote: null
+    conditions_text:
+      en: "Tuition and most fees at a participating school are allowed. Athletic, uniform, transportation, field trip, food and child-care fees are not."
+      es: "Se permiten la colegiatura y la mayoría de las cuotas de una escuela participante. No se permiten las cuotas de deportes, uniformes, transporte, excursiones, comida ni guardería."
+
+  - category: edu.therapy
+    status: conditional
+    conditions:
+      student_requirement: disability
+      requires_approved_vendor: true
+    locator: "Rule 810-28-1-.06(1)(i)"
+    quote: null
+    conditions_text:
+      en: "For students with disabilities, from a licensed or accredited provider (for example speech, occupational or physical therapy)."
+      es: "Para estudiantes con discapacidades, con un proveedor con licencia o acreditado (por ejemplo, terapia de lenguaje, ocupacional o física)."
+
+  - category: edu.testing
+    status: allowed
+    source: al-parent-guide-2026-27
+    locator: "p. 11, Assessments"
+    quote: "Fees for Standardized and Nationally Recognized Assessments, including college admissions tests"
+    conditions_text:
+      en: "Standardized test fees, including AP and college admissions tests, are allowed."
+      es: "Se permiten las cuotas de exámenes estandarizados, incluidos los exámenes AP y de admisión a la universidad."
+
+  - category: clothing.uniform
+    segment: private_school
+    status: not_allowed
+    source: al-parent-guide-2026-27
+    locator: "p. 9, Disallowed school fees"
+    quote: "Disallowed School Fees Include:"
+    conditions_text:
+      en: "Uniform fees are on the list of disallowed school fees."
+      es: "Las cuotas de uniforme están en la lista de cuotas escolares no permitidas."
+
+  - category: food.general
+    segment: private_school
+    status: not_allowed
+    source: al-parent-guide-2026-27
+    locator: "p. 9, Disallowed school fees"
+    quote: "Disallowed School Fees Include:"
+    conditions_text:
+      en: "Food fees are on the list of disallowed school fees."
+      es: "Las cuotas de comida están en la lista de cuotas escolares no permitidas."
+
+  - category: transport.general
+    status: not_allowed
+    locator: "Rule 810-28-1-.06(1)(a), exclusions"
+    quote: null
+    conditions_text:
+      en: "Transportation fees are excluded, including a tutor's travel."
+      es: "Las cuotas de transporte están excluidas, incluido el traslado del tutor."

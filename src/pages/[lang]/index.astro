@@ -1,0 +1,61 @@
+---
+import Base from '../../layouts/Base.astro';
+import { LANGS, t } from '../../i18n/strings.js';
+import data from '../../generated/data.json';
+
+export const getStaticPaths = () => LANGS.map((lang) => ({ params: { lang } }));
+const { lang } = Astro.params;
+const s = t(lang);
+---
+<Base lang={lang}>
+  <section class="hero">
+    <h1>{s.heroTitle}</h1>
+    <p>{s.heroBody}</p>
+    <a class="button" href={`/${lang}/finder/`}>{s.heroCta}</a>
+  </section>
+
+  <section>
+    <h2>{s.howTitle}</h2>
+    <ol class="steps">
+      <li>{s.how1}</li>
+      <li>{s.how2}</li>
+      <li>{s.how3}</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>{s.statesTitle}</h2>
+    <ul class="program-list">
+      {data.programs.map((p) => <li><strong>{p.state}</strong> · {p.name[lang]}</li>)}
+    </ul>
+    <p class="muted">{s.statesNote}</p>
+  </section>
+
+  <section class="card" id="updates">
+    <h2>{s.emailTitle}</h2>
+    <p>{s.emailBody}</p>
+    <form id="subscribe" class="stack" data-thanks={s.emailThanks} data-error={s.emailError}>
+      <input type="hidden" name="lang" value={lang} />
+      <label>{s.emailLabel}<input type="email" name="email" required autocomplete="email" /></label>
+      <label>{s.emailStateLabel}<input type="text" name="state" maxlength="40" /></label>
+      <button type="submit">{s.emailButton}</button>
+      <p class="form-status" role="status"></p>
+    </form>
+  </section>
+
+  <script>
+    const form = document.getElementById('subscribe');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const status = form.querySelector('.form-status');
+      try {
+        const res = await fetch('/api/subscribe', { method: 'POST', body: new FormData(form) });
+        if (!res.ok) throw new Error(String(res.status));
+        status.textContent = form.dataset.thanks;
+        form.reset();
+      } catch {
+        status.textContent = form.dataset.error;
+      }
+    });
+  </script>
+</Base>

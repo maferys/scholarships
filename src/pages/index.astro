@@ -1,0 +1,16 @@
+---
+// Root: send Spanish-language browsers to /es/, everyone else to /en/.
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Scholarship Finder</title>
+    <meta http-equiv="refresh" content="0; url=/en/" />
+    <script is:inline>
+      if ((navigator.language || '').toLowerCase().startsWith('es')) location.replace('/es/');
+    </script>
+  </head>
+  <body><a href="/en/">English</a> · <a href="/es/">Español</a></body>
+</html>

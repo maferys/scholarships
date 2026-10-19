@@ -1,0 +1,13 @@
+# Cloudflare Pages project config. Create the D1 database with
+#   npx wrangler d1 create scholarships
+# then paste its id below and run
+#   npx wrangler d1 migrations apply scholarships --remote
+name = "scholarships"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-10-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "scholarships"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+migrations_dir = "migrations"

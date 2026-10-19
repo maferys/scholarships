@@ -1,0 +1,44 @@
+id: tx-tefa
+state: TX
+name:
+  en: "Texas Education Freedom Accounts (TEFA)"
+  es: "Cuentas de Libertad Educativa de Texas (TEFA)"
+funding_type: esa
+administrator:
+  name: "Texas Comptroller of Public Accounts (with Odyssey)"
+  url: "https://educationfreedom.texas.gov/"
+  phone: null
+  email: null
+platform: odyssey
+reimbursement_available: false
+vendor_approval_required: true
+vendor_approval_source: "https://finder.educationfreedom.texas.gov/"
+student_segments: [private_school, home_education]
+award_amounts:
+  - { segment: private_school, amount: 10474, per: student_year }
+  - { segment: home_education, amount: 2000, per: student_year }
+school_year: "2026-27"
+program_status: settling
+status_note:
+  en: "New program. Rules and guidance are still being published."
+  es: "Programa nuevo. Las reglas y guías todavía se están publicando."
+status_verified_date: 2026-10-18
+who_gets_funds_note:
+  en: "Funds are awarded by priority group and lottery. Being eligible does not mean your child has a funded account."
+  es: "Los fondos se otorgan por grupo de prioridad y lotería. Ser elegible no significa que su hijo tenga una cuenta con fondos."
+requires_funded_account_gate: true
+sources:
+  - id: tx-sb2
+    tier: 1
+    title: "Senate Bill 2, 89th Legislature (Texas Education Code §29.359-29.360)"
+    publisher: "Texas Legislature"
+    url: "https://capitol.texas.gov/tlodocs/89R/billtext/pdf/SB00002F.pdf"
+    document_date: null
+    retrieved_at: 2026-10-18
+  - id: tx-families-page
+    tier: 2
+    title: "TEFA Families page: Approved expenses"
+    publisher: "Texas Comptroller of Public Accounts"
+    url: "https://educationfreedom.texas.gov/families/#approved-expenses"
+    document_date: 2026-09-29
+    retrieved_at: 2026-10-18

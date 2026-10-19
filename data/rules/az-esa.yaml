@@ -1,0 +1,302 @@
+# Arizona ESA rules. Every quote and page number comes from the source listed.
+# review_status: draft means a human has not yet checked the quote against the PDF.
+program: az-esa
+defaults:
+  segment: all
+  source: az-handbook-2025-26
+  effective_from: 2025-07-01
+  effective_to: null
+  last_verified: 2026-10-18
+  verified_by: claude
+  review_status: draft
+submit_tip:
+  en: "Choose the matching expense category in ClassWallet and keep an itemized receipt with the vendor's name, date and transaction number."
+  es: "Elija la categoría de gasto correspondiente en ClassWallet y guarde un recibo detallado con el nombre del vendedor, la fecha y el número de transacción."
+
+rules:
+  - category: tech.computer
+    status: allowed
+    locator: "p. 16, Computer hardware and technological devices"
+    quote: "Includes calculators, personal computers, laptops, tablet devices, microscopes, telescopes, and printers."
+    conditions_text:
+      en: "Computers are allowed when used for the student's education. Devices that are mainly for entertainment are not."
+      es: "Las computadoras se permiten si se usan para la educación del estudiante. Los aparatos principalmente para entretenimiento no."
+
+  - category: tech.tablet
+    status: allowed
+    locator: "p. 16, Computer hardware and technological devices"
+    quote: "Includes calculators, personal computers, laptops, tablet devices, microscopes, telescopes, and printers."
+    conditions_text:
+      en: "Tablets are listed as allowed technology when used for the student's education."
+      es: "Las tabletas aparecen como tecnología permitida si se usan para la educación del estudiante."
+
+  - category: tech.printer
+    status: allowed
+    locator: "p. 16, Computer hardware and technological devices"
+    quote: "Includes calculators, personal computers, laptops, tablet devices, microscopes, telescopes, and printers."
+    conditions_text:
+      en: "Printers are listed as allowed technology."
+      es: "Las impresoras aparecen como tecnología permitida."
+
+  - category: tech.headphones
+    status: allowed
+    locator: "p. 27"
+    quote: "audio equipment primarily used for education, such as headphones or earbuds, are an allowable expense"
+    conditions_text:
+      en: "Headphones and earbuds are allowed when they are mainly for school use."
+      es: "Los audífonos se permiten si son principalmente para uso escolar."
+
+  - category: tech.phone
+    status: not_allowed
+    locator: "p. 40, Non-approved items"
+    quote: "Telephones"
+    conditions_text:
+      en: "Telephones are on the handbook's list of items that are not allowed."
+      es: "Los teléfonos están en la lista de artículos no permitidos del manual."
+
+  - category: tech.smartwatch
+    status: not_allowed
+    locator: "p. 41, Non-approved items"
+    quote: "Smartwatches with cellular service"
+    conditions_text:
+      en: "Smartwatches with cellular service are not allowed. The handbook lists ordinary watches separately as supplemental material."
+      es: "Los relojes inteligentes con servicio celular no se permiten. El manual menciona los relojes comunes por separado como material complementario."
+
+  - category: tech.tv
+    status: not_allowed
+    locator: "p. 40, Non-approved items"
+    quote: "Televisions"
+    conditions_text:
+      en: "Televisions are on the list of items that are not allowed."
+      es: "Los televisores están en la lista de artículos no permitidos."
+
+  - category: tech.game_console
+    status: not_allowed
+    locator: "p. 40, Non-approved items"
+    quote: "Video game consoles and accessories"
+    conditions_text:
+      en: "Video game consoles and their accessories are not allowed."
+      es: "Las consolas de videojuegos y sus accesorios no se permiten."
+
+  - category: software.educational
+    status: allowed
+    locator: "p. 23, Supplementary materials"
+    quote: "Educational software & apps"
+    conditions_text:
+      en: "Educational software and apps are listed as supplementary materials."
+      es: "El software y las aplicaciones educativas aparecen como materiales complementarios."
+
+  - category: supplies.school
+    status: allowed
+    locator: "p. 24, Supplementary materials"
+    quote: "Writing utensils (pens, markers, pencils, highlighters, crayons, chalk)"
+    conditions_text:
+      en: "School supplies such as paper, notebooks, binders and writing utensils are allowed."
+      es: "Se permiten útiles escolares como papel, cuadernos, carpetas y lápices o plumas."
+
+  - category: supplies.art
+    status: allowed
+    locator: "p. 23, Supplementary materials"
+    quote: "Art supplies (paint, watercolors, paint brushes, canvas, drawing paper, clay,"
+    conditions_text:
+      en: "Art supplies are listed as supplementary materials."
+      es: "Los materiales de arte aparecen como materiales complementarios."
+
+  - category: books.textbooks
+    status: allowed
+    locator: "p. 23, Supplementary materials"
+    quote: "Books (including audio, digital, players)/coloring books/magazines"
+    conditions_text:
+      en: "Books, including audio and digital books, are listed as supplementary materials."
+      es: "Los libros, incluidos los audiolibros y libros digitales, aparecen como materiales complementarios."
+
+  - category: curriculum.packaged
+    status: conditional
+    conditions:
+      requires_documentation: [curriculum_documentation]
+    locator: "p. 20, Curricula"
+    quote: "curriculum documentation must include:"
+    conditions_text:
+      en: "A curriculum is allowed, but you must submit curriculum documentation: the course of study, learning objectives and lesson plans or activities."
+      es: "El currículo se permite, pero debe presentar documentación del currículo: el plan de estudios, los objetivos de aprendizaje y las lecciones o actividades."
+
+  - category: toys.general
+    status: conditional
+    locator: "p. 23, Supplementary materials"
+    quote: "Educational toys"
+    conditions_text:
+      en: "Only educational toys are listed. Toys bought for entertainment are not."
+      es: "Solo aparecen los juguetes educativos. Los juguetes de entretenimiento no."
+
+  - category: instruments.musical
+    status: conditional
+    locator: "p. 22, Supplementary materials"
+    quote: "Instruments"
+    conditions_text:
+      en: "Musical instruments are listed as supplementary material. Keep documentation showing how the instrument is used for instruction."
+      es: "Los instrumentos musicales aparecen como material complementario. Guarde documentación que muestre cómo se usa el instrumento para la enseñanza."
+
+  - category: sports.equipment
+    status: allowed
+    locator: "p. 23, Supplementary materials"
+    quote: "Basic sport items such as bats, balls, gloves, racquets, and protective equipment"
+    conditions_text:
+      en: "Basic sports items are allowed. Pools, large trampolines and bounce houses are not."
+      es: "Se permiten artículos deportivos básicos. Las piscinas, los trampolines grandes y los inflables no."
+
+  - category: furniture.desk
+    status: conditional
+    locator: "p. 23, Supplementary materials"
+    quote: "Desk (which can accommodate up to two people) and chair for ESA student"
+    conditions_text:
+      en: "A desk for up to two students and a chair for the ESA student are allowed. Other home furniture is not."
+      es: "Se permite un escritorio para hasta dos estudiantes y una silla para el estudiante ESA. Otros muebles del hogar no."
+
+  - category: clothing.general
+    status: not_allowed
+    locator: "p. 40, Non-approved items"
+    quote: "Clothing (separate from uniform requirements)"
+    conditions_text:
+      en: "Clothing is not allowed unless it is a required uniform."
+      es: "La ropa no se permite, salvo que sea un uniforme obligatorio."
+
+  - category: clothing.uniform
+    status: conditional
+    locator: "p. 16, Qualified school tuition and fees"
+    quote: "Uniforms must be purchased from or through a qualified school or vendor that the school recommends or requires."
+    conditions_text:
+      en: "Uniforms are allowed only when bought from or through the school, or a vendor the school recommends or requires."
+      es: "Los uniformes se permiten solo si se compran en la escuela o con un vendedor que la escuela recomiende o exija."
+
+  - category: bags.backpack
+    status: not_allowed
+    locator: "p. 40, Non-approved items"
+    quote: "Backpacks, lunch boxes, and water bottles"
+    conditions_text:
+      en: "Backpacks, lunch boxes and water bottles are not allowed."
+      es: "Las mochilas, loncheras y botellas de agua no se permiten."
+
+  - category: food.general
+    status: not_allowed
+    locator: "p. 40, Non-approved items"
+    quote: "Food (including animal feed/food)"
+    conditions_text:
+      en: "Food is not allowed."
+      es: "La comida no se permite."
+
+  - category: edu.private_school_tuition
+    status: allowed
+    locator: "p. 15, Qualified school"
+    quote: "A qualified school is defined as a nongovernmental primary or secondary school"
+    conditions_text:
+      en: "Tuition and fees at a qualified (nongovernmental) school are allowed."
+      es: "Se permiten la colegiatura y las cuotas de una escuela calificada (no gubernamental)."
+
+  - category: edu.online_classes
+    status: allowed
+    locator: "p. 24, Online programs"
+    quote: "Can only be used for online learning programs or subscriptions for the contract year."
+    conditions_text:
+      en: "Online programs are allowed for the current contract year only. Family subscriptions must be itemized per student."
+      es: "Los programas en línea se permiten solo para el año de contrato actual. Las suscripciones familiares deben estar detalladas por estudiante."
+
+  - category: edu.tutoring
+    status: conditional
+    conditions:
+      requires_documentation: [provider_credential]
+    locator: "p. 17, Tutoring or teaching services"
+    quote: "the individual must submit an approved accreditation or credential"
+    conditions_text:
+      en: "Tutoring is allowed if the tutor has a current credential. For an individual tutor, a high school diploma or higher counts."
+      es: "La tutoría se permite si el tutor tiene una credencial vigente. Para un tutor individual, cuenta un diploma de preparatoria o superior."
+
+  - category: edu.lessons.music
+    status: conditional
+    conditions:
+      requires_documentation: [provider_credential]
+    locator: "p. 18, Tutoring or teaching services"
+    quote: "Examples of allowable tutoring and teaching services include but are not limited to:"
+    conditions_text:
+      en: "Music is on the list of allowed teaching services. The teacher must provide a credential, as for tutoring."
+      es: "La música está en la lista de servicios de enseñanza permitidos. El maestro debe presentar una credencial, igual que en la tutoría."
+
+  - category: edu.lessons.art
+    status: conditional
+    conditions:
+      requires_documentation: [provider_credential]
+    locator: "p. 18, Tutoring or teaching services"
+    quote: "Examples of allowable tutoring and teaching services include but are not limited to:"
+    conditions_text:
+      en: "Art is on the list of allowed teaching services. The teacher must provide a credential."
+      es: "El arte está en la lista de servicios de enseñanza permitidos. El maestro debe presentar una credencial."
+
+  - category: edu.lessons.language
+    status: conditional
+    conditions:
+      requires_documentation: [provider_credential]
+    locator: "p. 18, Tutoring or teaching services"
+    quote: "Examples of allowable tutoring and teaching services include but are not limited to:"
+    conditions_text:
+      en: "Foreign language is on the list of allowed teaching services. The teacher or school must provide a credential."
+      es: "Los idiomas están en la lista de servicios de enseñanza permitidos. El maestro o la escuela debe presentar una credencial."
+
+  - category: edu.lessons.sports
+    status: conditional
+    conditions:
+      requires_documentation: [provider_credential]
+    locator: "p. 18, Tutoring or teaching services"
+    quote: "Examples of allowable tutoring and teaching services include but are not limited to:"
+    conditions_text:
+      en: "Physical education and swimming are on the list of allowed teaching services. The instructor must provide a credential."
+      es: "La educación física y la natación están en la lista de servicios de enseñanza permitidos. El instructor debe presentar una credencial."
+
+  - category: edu.therapy
+    status: conditional
+    conditions:
+      student_requirement: disability
+      requires_documentation: [provider_license]
+    locator: "p. 28, Educational therapy services"
+    quote: "Educational therapy services must be provided by a licensed or accredited practitioner."
+    conditions_text:
+      en: "Only for students identified with a disability, and the provider must be licensed or accredited."
+      es: "Solo para estudiantes identificados con una discapacidad, y el proveedor debe tener licencia o acreditación."
+
+  - category: edu.testing
+    status: allowed
+    locator: "p. 15, Qualified expenses"
+    quote: "Fees for nationally standardized norm-referenced achievement tests"
+    conditions_text:
+      en: "Fees for nationally standardized achievement tests are allowed."
+      es: "Se permiten las cuotas de exámenes nacionales estandarizados de rendimiento."
+
+  - category: edu.field_trip
+    status: allowed
+    locator: "p. 23, Supplementary materials"
+    quote: "Single tickets for educational events or venues such as zoos, science or art museums"
+    conditions_text:
+      en: "Single tickets for the ESA student to educational places like zoos and museums are allowed."
+      es: "Se permiten boletos individuales del estudiante ESA para lugares educativos como zoológicos y museos."
+
+  - category: edu.camp
+    status: conditional
+    locator: "p. 22, Supplementary materials"
+    quote: "Educational camps (travel, overnight accommodations and food are not an allowable expense)"
+    conditions_text:
+      en: "Educational camps are allowed, but travel, overnight stays and food are not."
+      es: "Se permiten los campamentos educativos, pero no el viaje, el hospedaje ni la comida."
+
+  - category: transport.general
+    status: conditional
+    locator: "p. 26, Transportation"
+    quote: "Empowerment Scholarships can be used for public transportation within the state of Arizona"
+    conditions_text:
+      en: "Only public transportation within Arizona is mentioned. Rideshares and gas are not listed."
+      es: "Solo se menciona el transporte público dentro de Arizona. No aparecen los viajes compartidos ni la gasolina."
+
+  - category: membership.gym
+    status: conditional
+    locator: "p. 22, Physical education"
+    quote: "individual memberships for ESA student only, family memberships are not allowed"
+    conditions_text:
+      en: "Only an individual membership for the ESA student. Family memberships are not allowed."
+      es: "Solo una membresía individual para el estudiante ESA. Las membresías familiares no se permiten."

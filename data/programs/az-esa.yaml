@@ -1,0 +1,32 @@
+id: az-esa
+state: AZ
+name:
+  en: "Empowerment Scholarship Account (ESA)"
+  es: "Cuenta de Becas de Empoderamiento (ESA)"
+funding_type: esa
+administrator:
+  name: "Arizona Department of Education"
+  url: "https://www.azed.gov/esa"
+  phone: "602-364-1969"
+  email: "ESACallCenter@azed.gov"
+platform: classwallet
+reimbursement_available: true
+vendor_approval_required: false
+vendor_approval_source: null
+student_segments: [all]
+school_year: "2025-26"
+program_status: active
+status_note:
+  en: "azed.gov still lists the 2025-26 Parent Handbook as the current handbook."
+  es: "azed.gov todavía muestra el Manual para Padres 2025-26 como el manual vigente."
+status_verified_date: 2026-10-18
+who_gets_funds_note: null
+requires_funded_account_gate: false
+sources:
+  - id: az-handbook-2025-26
+    tier: 2
+    title: "ESA 2025-2026 Parent Handbook"
+    publisher: "Arizona Department of Education"
+    url: "https://www.azed.gov/sites/default/files/2025/06/ESA%202025-2026%20Handbook.pdf"
+    document_date: 2025-06-23
+    retrieved_at: 2026-10-18

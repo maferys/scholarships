@@ -1,0 +1,241 @@
+# Shared category taxonomy. Every rule and catalog item points at one of these ids.
+# Ids are stable: never rename or reuse one. Synonyms drive the keyword matcher
+# (lowercase, accents optional). Spanish text needs native-speaker review.
+
+- id: tech.computer
+  group: products
+  name: { en: "Laptop or desktop computer", es: "Computadora portátil o de escritorio" }
+  synonyms:
+    en: [laptop, computer, desktop, pc, macbook, chromebook, notebook computer]
+    es: [computadora, laptop, portatil, ordenador, computador]
+
+- id: tech.tablet
+  group: products
+  name: { en: "Tablet", es: "Tableta" }
+  synonyms:
+    en: [tablet, ipad, kindle fire, galaxy tab, surface]
+    es: [tableta, ipad, tablet]
+
+- id: tech.printer
+  group: products
+  name: { en: "Printer or ink", es: "Impresora o tinta" }
+  synonyms:
+    en: [printer, ink, toner, printer ink]
+    es: [impresora, tinta, toner, cartucho]
+
+- id: tech.headphones
+  group: products
+  name: { en: "Headphones or earbuds", es: "Audífonos" }
+  synonyms:
+    en: [headphones, headset, earbuds, airpods, earphones]
+    es: [audifonos, auriculares, cascos, airpods]
+
+- id: tech.phone
+  group: products
+  name: { en: "Cell phone", es: "Teléfono celular" }
+  synonyms:
+    en: [phone, cell phone, smartphone, iphone, android phone, cellphone]
+    es: [telefono, celular, telefono celular, iphone, movil]
+
+- id: tech.smartwatch
+  group: products
+  name: { en: "Smartwatch", es: "Reloj inteligente" }
+  synonyms:
+    en: [smartwatch, smart watch, apple watch, fitbit]
+    es: [reloj inteligente, smartwatch, apple watch]
+
+- id: tech.tv
+  group: products
+  name: { en: "TV or smart board", es: "Televisor o pizarra inteligente" }
+  synonyms:
+    en: [tv, television, smart tv, smartboard, smart board]
+    es: [television, televisor, tele, pizarra inteligente]
+
+- id: tech.game_console
+  group: products
+  name: { en: "Video game console", es: "Consola de videojuegos" }
+  synonyms:
+    en: [video game, game console, xbox, playstation, ps5, nintendo, switch, gaming]
+    es: [videojuego, videojuegos, consola, xbox, playstation, nintendo]
+
+- id: software.educational
+  group: products
+  name: { en: "Educational software or app", es: "Software o aplicación educativa" }
+  synonyms:
+    en: [software, app, educational app, microsoft office, adobe, typing program, rosetta stone]
+    es: [software, aplicacion, app, programa educativo]
+
+- id: supplies.school
+  group: products
+  name: { en: "School supplies", es: "Útiles escolares" }
+  synonyms:
+    en: [school supplies, pencils, pens, notebooks, paper, binders, markers, crayons, folders]
+    es: [utiles escolares, utiles, lapices, cuadernos, papel, marcadores, crayones, carpetas, plumas]
+
+- id: supplies.art
+  group: products
+  name: { en: "Art supplies", es: "Materiales de arte" }
+  synonyms:
+    en: [art supplies, paint, paints, brushes, canvas, clay, sketchbook, watercolors]
+    es: [materiales de arte, pintura, pinceles, lienzo, arcilla, acuarelas]
+
+- id: books.textbooks
+  group: products
+  name: { en: "Books and textbooks", es: "Libros y libros de texto" }
+  synonyms:
+    en: [book, books, textbook, textbooks, workbook, workbooks, novel, audiobook, ebook]
+    es: [libro, libros, libro de texto, cuaderno de trabajo, novela, audiolibro]
+
+- id: curriculum.packaged
+  group: products
+  name: { en: "Curriculum (full course or program)", es: "Currículo (curso o programa completo)" }
+  synonyms:
+    en: [curriculum, saxon math, singapore math, abeka, bju, math curriculum, homeschool curriculum]
+    es: [curriculo, curriculum, plan de estudios, programa de matematicas]
+
+- id: toys.general
+  group: products
+  name: { en: "Toys and games", es: "Juguetes y juegos" }
+  synonyms:
+    en: [toy, toys, lego, board game, puzzle, game]
+    es: [juguete, juguetes, lego, juego de mesa, rompecabezas]
+
+- id: instruments.musical
+  group: products
+  name: { en: "Musical instrument", es: "Instrumento musical" }
+  synonyms:
+    en: [instrument, piano, keyboard piano, guitar, violin, ukulele, drum, flute]
+    es: [instrumento, piano, guitarra, violin, ukulele, tambor, flauta]
+
+- id: sports.equipment
+  group: products
+  name: { en: "Sports equipment", es: "Equipo deportivo" }
+  synonyms:
+    en: [sports equipment, ball, bat, glove, racket, racquet, soccer ball, helmet]
+    es: [equipo deportivo, pelota, balon, bate, guante, raqueta, casco]
+
+- id: furniture.desk
+  group: products
+  name: { en: "Desk or chair", es: "Escritorio o silla" }
+  synonyms:
+    en: [desk, chair, school desk, desk chair]
+    es: [escritorio, silla, pupitre]
+
+- id: clothing.general
+  group: products
+  name: { en: "Clothing or shoes", es: "Ropa o zapatos" }
+  synonyms:
+    en: [clothes, clothing, shoes, jacket, shirt, pants]
+    es: [ropa, zapatos, chaqueta, camisa, pantalones]
+
+- id: clothing.uniform
+  group: products
+  name: { en: "School uniform", es: "Uniforme escolar" }
+  synonyms:
+    en: [uniform, school uniform]
+    es: [uniforme, uniforme escolar]
+
+- id: bags.backpack
+  group: products
+  name: { en: "Backpack, lunch box or water bottle", es: "Mochila, lonchera o botella de agua" }
+  synonyms:
+    en: [backpack, lunch box, lunchbox, water bottle]
+    es: [mochila, lonchera, botella de agua, termo]
+
+- id: food.general
+  group: products
+  name: { en: "Food or meals", es: "Comida" }
+  synonyms:
+    en: [food, snacks, lunch, meals, school lunch]
+    es: [comida, alimentos, almuerzo, meriendas, botanas]
+
+- id: edu.private_school_tuition
+  group: education
+  name: { en: "Private school tuition and fees", es: "Colegiatura de escuela privada" }
+  synonyms:
+    en: [tuition, private school, school tuition, enrollment fee, registration fee]
+    es: [colegiatura, matricula, escuela privada, inscripcion]
+
+- id: edu.online_classes
+  group: education
+  name: { en: "Online classes", es: "Clases en línea" }
+  synonyms:
+    en: [online class, online classes, online course, virtual class, online school, outschool, khan academy]
+    es: [clases en linea, clase en linea, clases virtuales, curso en linea, escuela en linea]
+
+- id: edu.tutoring
+  group: education
+  name: { en: "Tutoring", es: "Tutoría" }
+  synonyms:
+    en: [tutor, tutoring, math tutor, reading tutor, homework help]
+    es: [tutor, tutora, tutoria, clases particulares, maestro particular]
+
+- id: edu.lessons.music
+  group: education
+  name: { en: "Music lessons", es: "Clases de música" }
+  synonyms:
+    en: [music lessons, piano lessons, guitar lessons, voice lessons, singing lessons, violin lessons]
+    es: [clases de musica, clases de piano, clases de guitarra, clases de canto]
+
+- id: edu.lessons.art
+  group: education
+  name: { en: "Art classes", es: "Clases de arte" }
+  synonyms:
+    en: [art class, art classes, art lessons, drawing class, painting class]
+    es: [clases de arte, clase de dibujo, clase de pintura]
+
+- id: edu.lessons.language
+  group: education
+  name: { en: "Foreign language classes", es: "Clases de idiomas" }
+  synonyms:
+    en: [spanish classes, spanish lessons, language classes, french lessons, foreign language, english classes]
+    es: [clases de idiomas, clases de espanol, clases de ingles, clases de frances, idiomas]
+
+- id: edu.lessons.sports
+  group: education
+  name: { en: "Sports lessons or swim classes", es: "Clases de deporte o natación" }
+  synonyms:
+    en: [swim lessons, swimming lessons, karate, martial arts, gymnastics, sports lessons, dance class]
+    es: [clases de natacion, natacion, karate, artes marciales, gimnasia, clases de baile]
+
+- id: edu.therapy
+  group: education
+  name: { en: "Educational therapy", es: "Terapia educativa" }
+  synonyms:
+    en: [therapy, speech therapy, occupational therapy, aba, physical therapy, behavioral therapy]
+    es: [terapia, terapia de lenguaje, terapia ocupacional, terapia fisica, terapia conductual]
+
+- id: edu.testing
+  group: education
+  name: { en: "Standardized test fees", es: "Cuotas de exámenes estandarizados" }
+  synonyms:
+    en: [test fee, sat, act, ap exam, standardized test, map test, iowa test]
+    es: [examen, examen estandarizado, sat, act, cuota de examen]
+
+- id: edu.field_trip
+  group: education
+  name: { en: "Museum, zoo or field-trip tickets", es: "Entradas a museos, zoológicos o excursiones" }
+  synonyms:
+    en: [museum, zoo, field trip, science center, aquarium]
+    es: [museo, zoologico, excursion, acuario, paseo escolar]
+
+- id: edu.camp
+  group: education
+  name: { en: "Educational camp", es: "Campamento educativo" }
+  synonyms:
+    en: [camp, summer camp, stem camp, day camp]
+    es: [campamento, campamento de verano]
+
+- id: transport.general
+  group: education
+  name: { en: "Transportation", es: "Transporte" }
+  synonyms:
+    en: [transportation, bus, gas, mileage, uber, ride]
+    es: [transporte, autobus, gasolina, millaje, uber]
+
+- id: membership.gym
+  group: education
+  name: { en: "Gym or club membership", es: "Membresía de gimnasio o club" }
+  synonyms:
+    en: [gym membership, membership, ymca, gym]
+    es: [membresia, gimnasio, ymca]

@@ -1,0 +1,160 @@
+# Texas TEFA rules. The statute (SB 2, Education Code §29.359) is tier 1;
+# the Comptroller's Families page is tier 2. The statute says purchases must be at a
+# "preapproved education service provider or vendor of educational products", so every
+# rule requires an approved vendor. 34 TAC Ch. 16 Subch. E has not been read yet.
+program: tx-tefa
+defaults:
+  segment: all
+  source: tx-sb2
+  effective_from: 2026-07-01
+  effective_to: null
+  last_verified: 2026-10-18
+  verified_by: claude
+  review_status: draft
+  conditions:
+    requires_approved_vendor: true
+submit_tip:
+  en: "Request payment in the Odyssey portal from an approved provider or vendor. Texas law does not allow paying you back directly, so don't pay out of pocket."
+  es: "Solicite el pago en el portal de Odyssey a un proveedor o vendedor aprobado. La ley de Texas no permite reembolsarle directamente, así que no pague de su bolsillo."
+
+rules:
+  - category: edu.private_school_tuition
+    segment: private_school
+    status: allowed
+    locator: "Education Code §29.359(a)(1)"
+    quote: null
+    conditions_text:
+      en: "Tuition and fees at an approved private school are allowed."
+      es: "Se permiten la colegiatura y las cuotas de una escuela privada aprobada."
+
+  - category: edu.online_classes
+    status: allowed
+    locator: "Education Code §29.359(a)(1)"
+    quote: null
+    conditions_text:
+      en: "Tuition and fees for an approved online course or program are allowed."
+      es: "Se permiten la colegiatura y las cuotas de un curso o programa en línea aprobado."
+
+  - category: books.textbooks
+    status: allowed
+    locator: "Education Code §29.359(a)(2)"
+    quote: "the purchase of textbooks or other instructional materials or uniforms required by a private school"
+    conditions_text:
+      en: "Textbooks and other instructional materials from an approved vendor are allowed."
+      es: "Se permiten los libros de texto y otros materiales de instrucción de un vendedor aprobado."
+
+  - category: curriculum.packaged
+    status: allowed
+    locator: "Education Code §29.359(a)(2)"
+    quote: "the purchase of textbooks or other instructional materials or uniforms required by a private school"
+    conditions_text:
+      en: "Curriculum counts as instructional materials when bought from an approved vendor."
+      es: "El currículo cuenta como material de instrucción si se compra con un vendedor aprobado."
+
+  - category: clothing.uniform
+    segment: private_school
+    status: conditional
+    locator: "Education Code §29.359(a)(2)"
+    quote: "the purchase of textbooks or other instructional materials or uniforms required by a private school"
+    conditions_text:
+      en: "Only uniforms required by the private school."
+      es: "Solo los uniformes que exige la escuela privada."
+
+  - category: edu.tutoring
+    status: allowed
+    source: tx-families-page
+    locator: "Approved expenses"
+    quote: null
+    conditions_text:
+      en: "Private tutoring from an approved provider is an approved expense."
+      es: "La tutoría privada con un proveedor aprobado es un gasto aprobado."
+
+  - category: edu.testing
+    status: allowed
+    source: tx-families-page
+    locator: "Approved expenses"
+    quote: null
+    conditions_text:
+      en: "Academic assessments are an approved expense."
+      es: "Las evaluaciones académicas son un gasto aprobado."
+
+  - category: edu.therapy
+    status: conditional
+    source: tx-families-page
+    locator: "Approved expenses"
+    quote: null
+    conditions_text:
+      en: "Educational therapies are allowed when they are not covered by government benefits such as Medicaid."
+      es: "Las terapias educativas se permiten cuando no las cubren beneficios del gobierno como Medicaid."
+
+  - category: transport.general
+    status: conditional
+    locator: "Education Code §29.359(a)(6)"
+    quote: "fees for transportation provided by a fee-for-service transportation provider"
+    conditions_text:
+      en: "Only a fee-for-service transportation provider, for trips to and from approved providers."
+      es: "Solo un proveedor de transporte que cobra por servicio, para ir y volver de proveedores aprobados."
+
+  - category: tech.computer
+    status: conditional
+    conditions:
+      requires_approved_vendor: true
+      pct_of_award_cap: 0.10
+    locator: "Education Code §29.359(a)(8)"
+    quote: "10 percent of the total amount transferred to the participating child's account that year"
+    conditions_text:
+      en: "Computer hardware and software together are capped at 10% of the money deposited for the child that year (about $200 for a $2,000 homeschool award)."
+      es: "El equipo de cómputo y el software juntos tienen un límite del 10% del dinero depositado para el niño ese año (unos $200 para una beca de $2,000 de educación en casa)."
+
+  - category: tech.tablet
+    status: conditional
+    conditions:
+      requires_approved_vendor: true
+      pct_of_award_cap: 0.10
+    locator: "Education Code §29.359(a)(8)"
+    quote: "10 percent of the total amount transferred to the participating child's account that year"
+    conditions_text:
+      en: "Tablets fall under the technology cap: 10% of the money deposited for the child that year."
+      es: "Las tabletas entran en el límite de tecnología: 10% del dinero depositado para el niño ese año."
+
+  - category: tech.printer
+    status: conditional
+    conditions:
+      requires_approved_vendor: true
+      pct_of_award_cap: 0.10
+    locator: "Education Code §29.359(a)(8)"
+    quote: "10 percent of the total amount transferred to the participating child's account that year"
+    conditions_text:
+      en: "Printers count as computer hardware, under the 10% technology cap."
+      es: "Las impresoras cuentan como equipo de cómputo, dentro del límite de tecnología del 10%."
+
+  - category: tech.headphones
+    status: conditional
+    conditions:
+      requires_approved_vendor: true
+      pct_of_award_cap: 0.10
+    locator: "Education Code §29.359(a)(8)"
+    quote: "10 percent of the total amount transferred to the participating child's account that year"
+    conditions_text:
+      en: "Headphones count as technology devices, under the 10% technology cap."
+      es: "Los audífonos cuentan como dispositivos de tecnología, dentro del límite de tecnología del 10%."
+
+  - category: software.educational
+    status: conditional
+    conditions:
+      requires_approved_vendor: true
+      pct_of_award_cap: 0.10
+    locator: "Education Code §29.359(a)(8)"
+    quote: "10 percent of the total amount transferred to the participating child's account that year"
+    conditions_text:
+      en: "Software shares the 10% technology cap with computer hardware."
+      es: "El software comparte el límite de tecnología del 10% con el equipo de cómputo."
+
+  - category: food.general
+    segment: private_school
+    status: conditional
+    locator: "Education Code §29.359(a)(9)"
+    quote: null
+    conditions_text:
+      en: "Only breakfast or lunch provided by the private school during the school day."
+      es: "Solo el desayuno o almuerzo que da la escuela privada durante el día escolar."

@@ -1,0 +1,42 @@
+id: al-choose
+state: AL
+name:
+  en: "CHOOSE Act Education Savings Account"
+  es: "Cuenta de Ahorros para la Educación de la Ley CHOOSE"
+funding_type: esa
+administrator:
+  name: "Alabama Department of Revenue"
+  url: "https://www.revenue.alabama.gov/tax-policy/the-choose-act/"
+  phone: null
+  email: null
+platform: classwallet
+reimbursement_available: false
+vendor_approval_required: true
+vendor_approval_source: "https://www.revenue.alabama.gov/tax-policy/the-choose-act/"
+student_segments: [private_school, home_education]
+award_amounts:
+  - { segment: private_school, amount: 7000, per: student_year }
+  - { segment: home_education, amount: 2000, per: student_year, family_cap: 4000 }
+school_year: "2026-27"
+program_status: active
+status_note:
+  en: "There is no reimbursement to families. All purchases go through ClassWallet."
+  es: "No hay reembolsos para las familias. Todas las compras se hacen por ClassWallet."
+status_verified_date: 2026-10-18
+who_gets_funds_note: null
+requires_funded_account_gate: false
+sources:
+  - id: al-rule-810-28-1-06
+    tier: 1
+    title: "Rule 810-28-1-.06 Qualifying Educational Expenses"
+    publisher: "Alabama Department of Revenue"
+    url: "https://www.revenue.alabama.gov/wp-content/uploads/2025/01/Rule-810-28-1-.06-Qualifying-Educational-Expenses.pdf"
+    document_date: 2025-01-11
+    retrieved_at: 2026-10-18
+  - id: al-parent-guide-2026-27
+    tier: 3
+    title: "CHOOSE Act Parent Guide 2026-2027"
+    publisher: "ClassWallet, for the Alabama Department of Revenue"
+    url: "https://classwallet.com/alchoose/assets/CHOOSE_ACT_parent_guide_2026-2027.pdf"
+    document_date: null
+    retrieved_at: 2026-10-18
