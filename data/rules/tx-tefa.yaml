@@ -2,7 +2,7 @@
 # the Comptroller's Families page is tier 2. The statute says purchases must be at a
 # "preapproved education service provider or vendor of educational products", so every
 # rule requires an approved vendor. Technology follows §29.359(a)(8) and 34 TAC §16.406(9):
-# it must be required by an approved provider or vendor, capped at 10% of the award.
+# it must be required by an approved provider or vendor or prescribed by a physician, capped at 10% of the award.
 program: tx-tefa
 defaults:
   segment: all
@@ -137,10 +137,10 @@ rules:
       pct_of_award_cap: 0.10
     locator: "Education Code §29.359(a)(8); 34 TAC §16.406(9); item list from Odyssey purchase restrictions (updated 2026-10-05)"
     quote: "required by an education service provider or vendor of educational products"
-    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. Education Code §29.359(a)(8) also allows technology 'prescribed by a physician'; decide whether to mention it."
+    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. The physician clause comes from Education Code §29.359(a)(8) ('or prescribed by a physician') and the owner's checklist."
     conditions_text:
-      en: "Laptops and desktops fall under the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
-      es: "Las laptops y computadoras de escritorio entran en el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
+      en: "Laptops and desktops fall under the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course, or a physician prescribes it. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
+      es: "Las laptops y computadoras de escritorio entran en el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea, o si la receta un médico. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
 
   - category: tech.tablet
     status: conditional
@@ -151,10 +151,10 @@ rules:
       pct_of_award_cap: 0.10
     locator: "Education Code §29.359(a)(8); 34 TAC §16.406(9); item list from Odyssey purchase restrictions (updated 2026-10-05)"
     quote: "required by an education service provider or vendor of educational products"
-    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. Education Code §29.359(a)(8) also allows technology 'prescribed by a physician'; decide whether to mention it."
+    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. The physician clause comes from Education Code §29.359(a)(8) ('or prescribed by a physician') and the owner's checklist."
     conditions_text:
-      en: "Tablets fall under the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
-      es: "Las tabletas entran en el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
+      en: "Tablets fall under the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course, or a physician prescribes it. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
+      es: "Las tabletas entran en el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea, o si la receta un médico. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
 
   - category: tech.printer
     status: conditional
@@ -165,10 +165,10 @@ rules:
       pct_of_award_cap: 0.10
     locator: "Education Code §29.359(a)(8); 34 TAC §16.406(9); item list from Odyssey purchase restrictions (updated 2026-10-05)"
     quote: "required by an education service provider or vendor of educational products"
-    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. Education Code §29.359(a)(8) also allows technology 'prescribed by a physician'; decide whether to mention it."
+    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. The physician clause comes from Education Code §29.359(a)(8) ('or prescribed by a physician') and the owner's checklist."
     conditions_text:
-      en: "Printers fall under the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
-      es: "Las impresoras entran en el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
+      en: "Printers fall under the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course, or a physician prescribes it. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
+      es: "Las impresoras entran en el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea, o si la receta un médico. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
 
   - category: tech.headphones
     status: conditional
@@ -179,10 +179,10 @@ rules:
       pct_of_award_cap: 0.10
     locator: "Education Code §29.359(a)(8); 34 TAC §16.406(9); item list from Odyssey purchase restrictions (updated 2026-10-05)"
     quote: "required by an education service provider or vendor of educational products"
-    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. Education Code §29.359(a)(8) also allows technology 'prescribed by a physician'; decide whether to mention it."
+    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. The physician clause comes from Education Code §29.359(a)(8) ('or prescribed by a physician') and the owner's checklist."
     conditions_text:
-      en: "Headphones fall under the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
-      es: "Los audífonos entran en el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
+      en: "Headphones fall under the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course, or a physician prescribes it. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
+      es: "Los audífonos entran en el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea, o si la receta un médico. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
 
   - category: tech.calculator
     status: conditional
@@ -193,10 +193,10 @@ rules:
       pct_of_award_cap: 0.10
     locator: "Education Code §29.359(a)(8); 34 TAC §16.406(9); item list from Odyssey purchase restrictions (updated 2026-10-05)"
     quote: "required by an education service provider or vendor of educational products"
-    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. Education Code §29.359(a)(8) also allows technology 'prescribed by a physician'; decide whether to mention it."
+    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. The physician clause comes from Education Code §29.359(a)(8) ('or prescribed by a physician') and the owner's checklist."
     conditions_text:
-      en: "Calculators fall under the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
-      es: "Las calculadoras entran en el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
+      en: "Calculators fall under the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course, or a physician prescribes it. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
+      es: "Las calculadoras entran en el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea, o si la receta un médico. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
 
   - category: tech.accessories
     status: conditional
@@ -207,10 +207,10 @@ rules:
       pct_of_award_cap: 0.10
     locator: "Education Code §29.359(a)(8); 34 TAC §16.406(9); item list from Odyssey purchase restrictions (updated 2026-10-05)"
     quote: "required by an education service provider or vendor of educational products"
-    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. Education Code §29.359(a)(8) also allows technology 'prescribed by a physician'; decide whether to mention it."
+    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. The physician clause comes from Education Code §29.359(a)(8) ('or prescribed by a physician') and the owner's checklist."
     conditions_text:
-      en: "Monitors, webcams, cameras, hot spots and computer accessories fall under the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
-      es: "Los monitores, cámaras web, cámaras, hotspots y accesorios de computadora entran en el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
+      en: "Monitors, webcams, cameras, hot spots and computer accessories fall under the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course, or a physician prescribes it. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
+      es: "Los monitores, cámaras web, cámaras, hotspots y accesorios de computadora entran en el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea, o si la receta un médico. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
 
   - category: tech.keyboard
     status: conditional
@@ -221,10 +221,10 @@ rules:
       pct_of_award_cap: 0.10
     locator: "Education Code §29.359(a)(8); 34 TAC §16.406(9); item list from Odyssey purchase restrictions (updated 2026-10-05)"
     quote: "required by an education service provider or vendor of educational products"
-    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. Education Code §29.359(a)(8) also allows technology 'prescribed by a physician'; decide whether to mention it."
+    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. The physician clause comes from Education Code §29.359(a)(8) ('or prescribed by a physician') and the owner's checklist."
     conditions_text:
-      en: "Computer keyboards fall under the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
-      es: "Los teclados de computadora entran en el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
+      en: "Computer keyboards fall under the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course, or a physician prescribes it. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
+      es: "Los teclados de computadora entran en el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea, o si la receta un médico. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
 
   - category: software.educational
     status: conditional
@@ -235,10 +235,10 @@ rules:
       pct_of_award_cap: 0.10
     locator: "Education Code §29.359(a)(8); 34 TAC §16.406(9); item list from Odyssey purchase restrictions (updated 2026-10-05)"
     quote: "required by an education service provider or vendor of educational products"
-    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. Education Code §29.359(a)(8) also allows technology 'prescribed by a physician'; decide whether to mention it."
+    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. The physician clause comes from Education Code §29.359(a)(8) ('or prescribed by a physician') and the owner's checklist."
     conditions_text:
-      en: "Software falls under the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
-      es: "El software entra en el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
+      en: "Software falls under the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course, or a physician prescribes it. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
+      es: "El software entra en el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea, o si la receta un médico. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
 
   - category: tech.printer_3d
     status: conditional
@@ -250,10 +250,10 @@ rules:
       frequency: { count: 1, per_years: 1 }
     locator: "Education Code §29.359(a)(8); 34 TAC §16.406(9); yearly limit from Odyssey purchase restrictions (updated 2026-10-05)"
     quote: "required by an education service provider or vendor of educational products"
-    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. Education Code §29.359(a)(8) also allows technology 'prescribed by a physician'; decide whether to mention it."
+    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. The physician clause comes from Education Code §29.359(a)(8) ('or prescribed by a physician') and the owner's checklist."
     conditions_text:
-      en: "One 3D printer per year, and it counts toward the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
-      es: "Una impresora 3D por año, y cuenta para el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
+      en: "One 3D printer per year, and it counts toward the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course, or a physician prescribes it. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
+      es: "Una impresora 3D por año, y cuenta para el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea, o si la receta un médico. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
 
   - category: instruments.musical
     status: conditional

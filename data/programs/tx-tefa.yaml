@@ -30,10 +30,10 @@ program_status: settling
 status_note:
   en: "New program. Rules and guidance are still being published."
   es: "Programa nuevo. Las reglas y guías todavía se están publicando."
-status_verified_date: 2026-10-18
+status_verified_date: 2026-10-19
 who_gets_funds_note:
-  en: "Funds are awarded by priority group and lottery. Being eligible does not mean your child has a funded account."
-  es: "Los fondos se otorgan por grupo de prioridad y lotería. Ser elegible no significa que su hijo tenga una cuenta con fondos."
+  en: "Funds are awarded by priority group, and by lottery when applications exceed funding. Being eligible does not mean your child has a funded account, so check the Parent Portal. Private school students get 25% of the award ($10,474 for 2026-27) on July 1 (by mid-August if enrollment was confirmed by July 31), 25% on October 1 and 50% on February 1. Homeschool students get the full $2,000 at once. Students with an IEP may receive up to $30,000. Students who come off the waitlist later are funded as soon as practicable, and their award may be prorated. Unspent funds roll over while the child stays in TEFA."
+  es: "Los fondos se otorgan por grupo de prioridad, y por lotería cuando las solicitudes superan los fondos. Ser elegible no significa que su hijo tenga una cuenta con fondos, así que revise el Portal para Padres. Los estudiantes de escuela privada reciben el 25% de la beca ($10,474 para 2026-27) el 1 de julio (a mediados de agosto si la inscripción se confirmó antes del 31 de julio), el 25% el 1 de octubre y el 50% el 1 de febrero. Los estudiantes de educación en casa reciben los $2,000 completos de una vez. Los estudiantes con un IEP pueden recibir hasta $30,000. Quienes salen de la lista de espera más tarde reciben los fondos lo antes posible, y su beca puede ser proporcional. Los fondos no gastados pasan al año siguiente mientras el niño siga en TEFA."
 requires_funded_account_gate: true
 sources:
   - id: tx-sb2
@@ -49,7 +49,8 @@ sources:
     publisher: "Texas Comptroller of Public Accounts"
     url: "https://educationfreedom.texas.gov/families/#approved-expenses"
     document_date: 2026-09-29
-    retrieved_at: 2026-10-18
+    retrieved_at: 2026-10-19
+    note: "2026-27 amounts: $10,474 per private school child; up to $30,000 with an IEP; up to $2,000 homeschool. Unspent funds roll over while the child remains in TEFA."
   - id: tx-tac-16
     tier: 1
     title: "34 TAC Chapter 16, Subchapter E (§16.403 participation attestations, §16.406 approved expenses)"
@@ -73,7 +74,8 @@ sources:
     publisher: "Texas Comptroller of Public Accounts"
     url: "https://educationfreedom.texas.gov/newsupdates/funding-timelines-and-installments/"
     document_date: 2026-06-04
-    retrieved_at: 2026-10-18
+    retrieved_at: 2026-10-19
+    note: "Page modified 2026-08-24. Waitlisted students are funded as soon as practicable; awards may be prorated after Sept. 15 (75%) and Jan. 15 (50%)."
   - id: odyssey-tefa-timeline
     tier: 3
     title: "TEFA Funding Timeline and Installments"

@@ -67,8 +67,8 @@ test('Texas technology rules: statute source, approved-vendor condition, 10% cap
     assert.equal(r.conditions.requires_approved_vendor, true);
     assert.equal(r.conflict_note, undefined, `${r.id} has no conflict note`);
     assert.match(r.review_flag, /codified text of 34 TAC §16\.406\(9\)/);
-    assert.match(r.conditions_text.en, /only if an approved education provider or vendor requires it, for example an online course\. Being a homeschool family does not qualify on its own\./);
-    assert.match(r.conditions_text.es, /solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea\. Ser una familia que educa en casa no basta por sí solo\./);
+    assert.match(r.conditions_text.en, /only if an approved education provider or vendor requires it, for example an online course, or a physician prescribes it\. Being a homeschool family does not qualify on its own\./);
+    assert.match(r.conditions_text.es, /solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea, o si la receta un médico\. Ser una familia que educa en casa no basta por sí solo\./);
     for (const segment of ['home_education', 'private_school']) {
       const a = evaluate(data, { programId: 'tx-tefa', segment, categoryId: r.category }, '2026-10-19');
       assert.equal(a.label, LABELS.DEPENDS, `${r.id} ${segment}`);
@@ -158,4 +158,15 @@ test('Texas checklist: tuition, instructional materials and uniforms likely elig
   const tutoring = data.rules.find((r) => r.id === 'tx-tefa.all.edu.tutoring');
   assert.match(tutoring.conditions_text.en, /within 30 days/);
   for (const r of data.rules.filter((x) => x.program !== 'nh-efa')) assert.equal(r.review_status, 'draft', r.id);
+});
+
+test('Texas funds explainer matches the Comptroller pages', () => {
+  const tx = loadData().programs.find((p) => p.id === 'tx-tefa');
+  const award = tx.award_amounts.find((a) => a.segment === 'private_school').amount;
+  assert.equal(award, 10474);
+  for (const lang of ['en', 'es']) {
+    const note = tx.who_gets_funds_note[lang];
+    assert.ok(note.includes('$10,474') && note.includes('$2,000') && note.includes('$30,000'), lang);
+    assert.ok(/25%.*25%.*50%/.test(note), `${lang} installments in order`);
+  }
 });
