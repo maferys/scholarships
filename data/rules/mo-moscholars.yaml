@@ -160,7 +160,7 @@ rules:
   - category: instruments.musical
     status: not_allowed
     source: mo-parent-handbook
-    locator: "p. 5, Ineligible expenses"
+    locator: "pp. 4-5, Ineligible expenses"
     quote: "Musical instruments"
     review_flag: "Only the handbook lists instruments as ineligible. Odyssey's articles don't mention them, and its approved-vendor list includes names that suggest instrument sellers. Confirm with the Treasurer."
     conditions_text:
@@ -170,7 +170,7 @@ rules:
   - category: sports.equipment
     status: not_allowed
     source: mo-parent-handbook
-    locator: "p. 5, Ineligible expenses"
+    locator: "pp. 4-5, Ineligible expenses"
     quote: "Sports equipment"
     review_flag: "Only the handbook lists sports equipment as ineligible; Odyssey doesn't mention it. Confirm with the Treasurer."
     conditions_text:
@@ -180,7 +180,7 @@ rules:
   - category: furniture.desk
     status: not_allowed
     source: mo-parent-handbook
-    locator: "p. 5, Ineligible expenses"
+    locator: "pp. 4-5, Ineligible expenses"
     quote: "Furnishings (e.g. a desk or chair)"
     conditions_text:
       en: "Furniture such as a desk or chair is listed as ineligible."
@@ -189,7 +189,7 @@ rules:
   - category: edu.field_trip
     status: not_allowed
     source: mo-parent-handbook
-    locator: "p. 5, Ineligible expenses"
+    locator: "pp. 4-5, Ineligible expenses"
     quote: "Field trips"
     conditions_text:
       en: "Field trips and tickets to events are listed as ineligible."
@@ -198,7 +198,7 @@ rules:
   - category: membership.gym
     status: not_allowed
     source: mo-parent-handbook
-    locator: "p. 5, Ineligible expenses"
+    locator: "pp. 4-5, Ineligible expenses"
     quote: "Membership to organizations"
     conditions_text:
       en: "Memberships to organizations are listed as ineligible."

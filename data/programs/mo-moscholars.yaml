@@ -48,7 +48,7 @@ sources:
     url: "https://treasurer.mo.gov/pdfnew/ParentHandbook.pdf"
     document_date: 2026-01-05
     retrieved_at: 2026-10-19
-    note: "Its ineligible list (p. 5) says it is not comprehensive."
+    note: "Its ineligible list (p. 4 or 5; two readings differ) says it is not comprehensive. Cover confirmed 2026-10-19: "SCHOOL YEAR 2026-2027", "Revised January 5, 2026"."
     review_flag: "The handbook still refers to FACTS Management and does not mention Odyssey."
   - id: odyssey-mo-eligible-expenses
     tier: 3

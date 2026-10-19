@@ -36,11 +36,11 @@ sources:
     retrieved_at: 2026-10-18
   - id: al-parent-guide
     tier: 3
-    title: "CHOOSE Act Parent Guide (June 2026 update)"
+    title: "CHOOSE Act Alabama Parent Guide, 2026-2027 School Year (updated June 8, 2026)"
     publisher: "ClassWallet, for the Alabama Department of Revenue"
     url: "https://classwallet.com/alchoose/assets/CHOOSE_ACT_parent_guide_2026-2027.pdf"
-    document_date: null
-    retrieved_at: 2026-10-18
-    note: "Readings disagree on the year. On 2026-10-18 the guide read as titled 2025-2026 (June 2026 update); on 2026-10-19 the cover read '2026-2027 School Year'. The file name says 2026-2027."
-    review_flag: "Confirm which school year this guide covers before relying on it for 2026-27. Effective dates of rules citing it assume 2026-27."
+    document_date: 2026-06-08
+    retrieved_at: 2026-10-19
+    note: "The program site also serves this guide as https://secure.smore.com/app/attachments/download/6a457b4ad1de7768d9a02271, stamped 'Updated June 08, 2026'. A 2026-10-18 reading took the title as 2025-2026; the 2026-10-19 reading and the owner's research (2026-10-19) both show '2026-2027 School Year'."
+    review_flag: "Year question settled by two 2026-10-19 readings (2026-2027, updated June 8, 2026). Confirm on the PDF cover when reviewing."
 

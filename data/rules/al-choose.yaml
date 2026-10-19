@@ -315,6 +315,18 @@ rules:
       en: "Field trip fees are on the list of disallowed school fees."
       es: "Las cuotas de excursiones están en la lista de cuotas escolares no permitidas."
 
+  - category: edu.camp
+    segment: private_school
+    status: conditional
+    source: al-parent-guide
+    locator: "p. 9, Tuition and fees at a participating school"
+    quote: "Fees for After-School or Summer Education Programs Provided by a Participating School"
+    last_verified: 2026-10-19
+    review_flag: "Check the quote against p. 9 of the parent guide. Camps from other providers are not mentioned."
+    conditions_text:
+      en: "After-school and summer education programs run by a participating school are allowed if they are education-based and are not child care. Camps from other providers are not mentioned."
+      es: "Se permiten los programas educativos después de clases y de verano de una escuela participante, si son educativos y no son cuidado infantil. Los campamentos de otros proveedores no se mencionan."
+
   - category: food.general
     segment: private_school
     status: not_allowed
