@@ -100,8 +100,8 @@ Do not send any email to subscribers until every item is done:
 
 `wrangler.toml` is the source of truth for bindings, so the dashboard shows them read-only.
 
-1. **D1 database.** In the Cloudflare dashboard, open Storage & Databases > D1 SQL Database > Create, and name it
-   `scholarships`. Put its Database ID in both `database_id` lines in `wrangler.toml` (the id is not a secret).
+1. **D1 database.** Done on 2026-10-19: `scholarships` (location hint ENAM), id in both `database_id` lines of
+   `wrangler.toml`, with `0001_init.sql` applied and recorded in `d1_migrations`.
 2. **GitHub secrets.** Create a Cloudflare API token (My Profile > API Tokens > Create Token > Custom token) with
    the permission Account > D1 > Edit. Add it to the repository secrets as `CLOUDFLARE_API_TOKEN`, together with
    `CLOUDFLARE_ACCOUNT_ID` (shown on the dashboard's account home). The `D1 migrations` and `Data retention`
