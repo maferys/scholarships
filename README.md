@@ -102,8 +102,8 @@ dashboard shows them read-only.
 
 1. **D1 database.** Done on 2026-10-19: `scholarships` (location hint ENAM), id in `wrangler.jsonc`, with
    `0001_init.sql` applied and recorded in `d1_migrations`.
-2. **Worker and Git.** The Worker `scholarships` exists. In Workers & Pages > scholarships > Settings > Build, connect
-   this repository and set:
+2. **Worker and Git.** Done on 2026-10-19: the Worker `scholarships` is connected to this repository. Its settings in
+   Workers & Pages > scholarships > Settings > Build are:
    - Build command: `npm run build`
    - Deploy command: `npx wrangler deploy`
    - Branch control: production branch `main`, with **Enable Preview Builds** turned on.
