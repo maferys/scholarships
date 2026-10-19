@@ -1,0 +1,33 @@
+---
+import Base from '../../layouts/Base.astro';
+import { LANGS, t } from '../../i18n/strings.js';
+
+export const getStaticPaths = () => LANGS.map((lang) => ({ params: { lang } }));
+const { lang } = Astro.params;
+const s = t(lang);
+const es = lang === 'es';
+---
+<Base lang={lang} title={s.aboutTitle} path="about/">
+  <h1>{s.aboutTitle}</h1>
+  {es ? (
+    <>
+      <h2>Independencia</h2>
+      <p>Este sitio es un proyecto independiente. No estamos afiliados a ningún estado, administrador de programa ni plataforma de pagos (como ClassWallet u Odyssey).</p>
+      <p>Los patrocinios y enlaces de afiliado, si los hay, siempre están marcados y nunca cambian si algo aparece como elegible. Si algún día mostramos un servicio que pertenece a la creadora de este sitio, lo marcaremos como "propiedad de la creadora del sitio" y seguirá las mismas reglas que los demás.</p>
+      <h2>Cómo decidimos las respuestas</h2>
+      <p>Cada respuesta viene de una regla que escribimos a partir de fuentes oficiales: leyes, reglamentos, páginas de la agencia estatal y documentos de la plataforma. Mostramos la cita, la página y la fecha de verificación. Si no tenemos una regla verificada, se lo decimos.</p>
+      <h2>Privacidad</h2>
+      <p>No necesita cuenta. No usamos cookies de rastreo. Guardamos lo que escribe en el buscador, sin su nombre ni su dirección IP, para mejorar las respuestas. Si nos da su correo, solo lo usamos para enviarle novedades y nunca lo vendemos.</p>
+    </>
+  ) : (
+    <>
+      <h2>Independence</h2>
+      <p>This site is an independent project. We are not affiliated with any state, program administrator or spending platform (such as ClassWallet or Odyssey).</p>
+      <p>Sponsored and affiliate links, if any, are always labeled and never change whether something is shown as eligible. If we ever list a service owned by the site's creator, it will be labeled "owned by the site creator" and follow the same rules as everyone else.</p>
+      <h2>How answers are decided</h2>
+      <p>Every answer comes from a rule we wrote from official sources: statutes, regulations, state agency pages and platform documents. We show the quote, the page and the date we verified it. If we don't have a verified rule, we say so.</p>
+      <h2>Privacy</h2>
+      <p>No account is needed. We use no tracking cookies. We store what you type into the finder, without your name or IP address, to improve answers. If you give us your email, we only use it to send updates, and we never sell it.</p>
+    </>
+  )}
+</Base>

@@ -1,0 +1,346 @@
+# Alabama CHOOSE Act rules. Rule 810-28-1-.06 is the regulation (tier 1); the
+# 2026-27 parent guide is platform documentation (tier 3).
+program: al-choose
+defaults:
+  segment: all
+  source: al-rule-810-28-1-06
+  effective_from: 2026-07-01
+  effective_to: 2027-06-30
+  last_verified: 2026-10-18
+  verified_by: claude
+  review_status: draft
+submit_tip:
+  en: "Pay through ClassWallet (Marketplace or Pay Vendor). Alabama does not reimburse families, so don't pay out of pocket expecting to be paid back."
+  es: "Pague por ClassWallet (Marketplace o Pay Vendor). Alabama no reembolsa a las familias, así que no pague de su bolsillo esperando que le devuelvan el dinero."
+
+rules:
+  - category: tech.computer
+    status: conditional
+    conditions:
+      max_amount: 500
+      frequency: { count: 1, per_years: 2 }
+    supporting_sources: [al-parent-guide]
+    locator: "Rule 810-28-1-.06, computers and technological aids; parent guide p. 10, Technology"
+    quote: "$500 per academic year for the participating student"
+    conflict_note:
+      en: "Ask ALDOR: Rule 810-28-1-.06 limits technological aids to $500 per academic year per student, and the parent guide limits technological devices to $500 total per academic year per student. It is unclear whether that $500 covers every device, including a computer, or only items other than computers, which have their own cap of one under $1,200 every two academic years. We show the stricter reading."
+      es: "Consultar con ALDOR: la regla 810-28-1-.06 limita las ayudas tecnológicas a $500 por año académico por estudiante, y la guía para padres limita los dispositivos tecnológicos a $500 en total por año académico por estudiante. No está claro si esos $500 incluyen todo dispositivo, también una computadora, o solo los artículos que no son computadoras, que tienen su propio límite de una de menos de $1,200 cada dos años académicos. Mostramos la lectura más estricta."
+    review_flag: "Ask ALDOR whether the $500 yearly technology cap includes computers or only technological aids other than computers. Confirm the parent guide's school year (see the source's review flag)."
+    conditions_text:
+      en: "One laptop, desktop or tablet under $1,200 every two school years, and no gaming computers. Under the stricter reading, the computer also counts toward a $500 total for technology per student per school year."
+      es: "Una laptop, computadora de escritorio o tableta de menos de $1,200 cada dos años escolares, y ninguna computadora para videojuegos. Según la lectura más estricta, la computadora también cuenta para un total de $500 en tecnología por estudiante por año escolar."
+
+  - category: tech.tablet
+    status: conditional
+    conditions:
+      max_amount: 500
+      frequency: { count: 1, per_years: 2 }
+    supporting_sources: [al-parent-guide]
+    locator: "Rule 810-28-1-.06, computers and technological aids; parent guide p. 10, Technology"
+    quote: "$500 per academic year for the participating student"
+    conflict_note:
+      en: "Ask ALDOR: Rule 810-28-1-.06 limits technological aids to $500 per academic year per student, and the parent guide limits technological devices to $500 total per academic year per student. It is unclear whether that $500 covers every device, including a computer, or only items other than computers, which have their own cap of one under $1,200 every two academic years. We show the stricter reading."
+      es: "Consultar con ALDOR: la regla 810-28-1-.06 limita las ayudas tecnológicas a $500 por año académico por estudiante, y la guía para padres limita los dispositivos tecnológicos a $500 en total por año académico por estudiante. No está claro si esos $500 incluyen todo dispositivo, también una computadora, o solo los artículos que no son computadoras, que tienen su propio límite de una de menos de $1,200 cada dos años académicos. Mostramos la lectura más estricta."
+    review_flag: "Ask ALDOR whether the $500 yearly technology cap includes computers or only technological aids other than computers. Confirm the parent guide's school year (see the source's review flag)."
+    conditions_text:
+      en: "Tablets count as computers: one under $1,200 every two school years. Under the stricter reading, the tablet also counts toward a $500 total for technology per student per school year."
+      es: "Las tabletas cuentan como computadoras: una de menos de $1,200 cada dos años escolares. Según la lectura más estricta, la tableta también cuenta para un total de $500 en tecnología por estudiante por año escolar."
+
+  - category: tech.printer
+    status: conditional
+    conditions:
+      max_amount: 500
+    supporting_sources: [al-parent-guide]
+    locator: "Rule 810-28-1-.06, technological aids"
+    quote: "$500 per academic year for the participating student"
+    conflict_note:
+      en: "Ask ALDOR: Rule 810-28-1-.06 limits technological aids to $500 per academic year per student, and the parent guide limits technological devices to $500 total per academic year per student. It is unclear whether that $500 covers every device, including a computer, or only items other than computers, which have their own cap of one under $1,200 every two academic years. We show the stricter reading."
+      es: "Consultar con ALDOR: la regla 810-28-1-.06 limita las ayudas tecnológicas a $500 por año académico por estudiante, y la guía para padres limita los dispositivos tecnológicos a $500 en total por año académico por estudiante. No está claro si esos $500 incluyen todo dispositivo, también una computadora, o solo los artículos que no son computadoras, que tienen su propio límite de una de menos de $1,200 cada dos años académicos. Mostramos la lectura más estricta."
+    review_flag: "Ask ALDOR whether the $500 yearly technology cap includes computers or only technological aids other than computers. Confirm the parent guide's school year (see the source's review flag)."
+    conditions_text:
+      en: "Printers and ink count as technological aids, limited to $500 per student per school year for all technology."
+      es: "Las impresoras y la tinta cuentan como ayudas tecnológicas, con un límite de $500 por estudiante por año escolar para toda la tecnología."
+
+  - category: tech.headphones
+    status: conditional
+    source: al-parent-guide
+    supporting_sources: [al-rule-810-28-1-06]
+    conditions:
+      max_amount: 100
+      frequency: { count: 2, per_years: 1 }
+    locator: "Parent guide p. 10, Technological Aids"
+    quote: "Headphones / Headsets (limited to $100 each, two per participating student annually)"
+    last_verified: 2026-10-19
+    conflict_note:
+      en: "Ask ALDOR: Rule 810-28-1-.06 limits technological aids to $500 per academic year per student, and the parent guide limits technological devices to $500 total per academic year per student. It is unclear whether that $500 covers every device, including a computer, or only items other than computers, which have their own cap of one under $1,200 every two academic years. We show the stricter reading."
+      es: "Consultar con ALDOR: la regla 810-28-1-.06 limita las ayudas tecnológicas a $500 por año académico por estudiante, y la guía para padres limita los dispositivos tecnológicos a $500 en total por año académico por estudiante. No está claro si esos $500 incluyen todo dispositivo, también una computadora, o solo los artículos que no son computadoras, que tienen su propio límite de una de menos de $1,200 cada dos años académicos. Mostramos la lectura más estricta."
+    review_flag: "Check the quote against p. 10 of the parent guide and confirm the guide's school year (see the source's review flag). Ask ALDOR whether the $500 yearly technology cap includes computers or only technological aids other than computers."
+    conditions_text:
+      en: "Headphones and headsets are limited to $100 each, two per student per school year. They also count as technological aids, limited to $500 per student per school year for all technology."
+      es: "Los audífonos tienen un límite de $100 cada uno, dos por estudiante por año escolar. También cuentan como ayudas tecnológicas, con un límite de $500 por estudiante por año escolar para toda la tecnología."
+
+  - category: tech.keyboard
+    status: conditional
+    source: al-parent-guide
+    supporting_sources: [al-rule-810-28-1-06]
+    conditions:
+      max_amount: 100
+      frequency: { count: 2, per_years: 1 }
+    locator: "Parent guide p. 10, Technological Aids"
+    quote: "Keyboards (limited to $100 each, two per participating student annually)"
+    last_verified: 2026-10-19
+    conflict_note:
+      en: "Ask ALDOR: Rule 810-28-1-.06 limits technological aids to $500 per academic year per student, and the parent guide limits technological devices to $500 total per academic year per student. It is unclear whether that $500 covers every device, including a computer, or only items other than computers, which have their own cap of one under $1,200 every two academic years. We show the stricter reading."
+      es: "Consultar con ALDOR: la regla 810-28-1-.06 limita las ayudas tecnológicas a $500 por año académico por estudiante, y la guía para padres limita los dispositivos tecnológicos a $500 en total por año académico por estudiante. No está claro si esos $500 incluyen todo dispositivo, también una computadora, o solo los artículos que no son computadoras, que tienen su propio límite de una de menos de $1,200 cada dos años académicos. Mostramos la lectura más estricta."
+    review_flag: "Check the quote against p. 10 of the parent guide and confirm the guide's school year (see the source's review flag). Ask ALDOR whether the $500 yearly technology cap includes computers or only technological aids other than computers."
+    conditions_text:
+      en: "Keyboards are limited to $100 each, two per student per school year. They also count as technological aids, limited to $500 per student per school year for all technology."
+      es: "Los teclados tienen un límite de $100 cada uno, dos por estudiante por año escolar. También cuentan como ayudas tecnológicas, con un límite de $500 por estudiante por año escolar para toda la tecnología."
+
+  - category: tech.calculator
+    status: conditional
+    source: al-parent-guide
+    supporting_sources: [al-rule-810-28-1-06]
+    locator: "Parent guide p. 10, Technological Aids"
+    quote: "Calculators (including graphing)"
+    last_verified: 2026-10-19
+    review_flag: "Check the quote against p. 10 of the parent guide, and confirm that calculators are listed under Technological Aids (so the $500 yearly technology limit applies)."
+    conditions_text:
+      en: "Calculators, including graphing calculators, are on the approved list. They count as technological aids, limited to $500 per student per school year for all technology."
+      es: "Las calculadoras, incluidas las gráficas, están en la lista de artículos aprobados. Cuentan como ayudas tecnológicas, con un límite de $500 por estudiante por año escolar para toda la tecnología."
+
+  - category: tech.accessories
+    status: conditional
+    source: al-parent-guide
+    supporting_sources: [al-rule-810-28-1-06]
+    locator: "Parent guide p. 10, Technological Aids"
+    quote: "Mouse (limited to $40 each, two per participating student annually)"
+    last_verified: 2026-10-19
+    review_flag: "Check the quotes against p. 10 of the parent guide (mouse $40, mouse pad/USB $25, charging cords; external speakers and hard drives not approved). Monitors, webcams, cameras and hot spots are not named in the guide."
+    conditions_text:
+      en: "A mouse is limited to $40 each and a mouse pad or USB drive to $25 each, two of each per student per school year. Charging cords and cables are listed. External speakers and external hard drives will not be approved. The guide doesn't name monitors, webcams, cameras or hot spots, so ask before buying them. All of these count toward the $500 yearly technology limit."
+      es: "Un ratón tiene un límite de $40 cada uno y un mouse pad o memoria USB de $25 cada uno, dos de cada uno por estudiante por año escolar. Los cables de carga están en la lista. Las bocinas externas y los discos duros externos no se aprobarán. La guía no menciona monitores, cámaras web, cámaras ni hotspots, así que pregunte antes de comprarlos. Todo esto cuenta para el límite anual de $500 en tecnología."
+
+  - category: tech.printer_3d
+    status: not_allowed
+    source: al-parent-guide
+    locator: "Parent guide p. 10, Technological Aids"
+    quote: "(3D printers are not approved)"
+    last_verified: 2026-10-19
+    review_flag: "Check the quote against p. 10 of the parent guide."
+    conditions_text:
+      en: "3D printers are not approved."
+      es: "Las impresoras 3D no se aprueban."
+
+  - category: tech.tv
+    status: not_allowed
+    source: al-parent-guide
+    locator: "p. 10, Technology"
+    quote: "External speakers, external hard drives, SMARTboards and TVs will not be approved."
+    conditions_text:
+      en: "TVs and SMARTboards will not be approved."
+      es: "Los televisores y las pizarras inteligentes no se aprobarán."
+
+  - category: tech.game_console
+    status: not_allowed
+    source: al-parent-guide
+    locator: "p. 10, Technology"
+    quote: "Computer and technological items identified as \"gaming\" will not be approved."
+    conditions_text:
+      en: "Gaming items will not be approved."
+      es: "Los artículos para videojuegos no se aprobarán."
+
+  - category: toys.general
+    status: not_allowed
+    source: al-parent-guide
+    locator: "Parent guide p. 10, Instructional materials"
+    quote: "NOT building blocks, puzzles, LEGOs, or other toy-like items"
+    last_verified: 2026-10-19
+    review_flag: "Check the quote against p. 10 of the parent guide. The same page also excludes standard games designed or advertised primarily for entertainment."
+    conditions_text:
+      en: "Building blocks, puzzles, LEGOs and other toy-like items are not approved, and neither are games made mainly for entertainment."
+      es: "No se aprueban bloques de construcción, rompecabezas, LEGO ni otros artículos parecidos a juguetes, ni los juegos hechos principalmente para entretener."
+
+  - category: software.educational
+    status: allowed
+    locator: "Rule 810-28-1-.06(1)(g)"
+    quote: null
+    conditions_text:
+      en: "Educational software and applications are a qualifying expense, including assistive software for students with special needs."
+      es: "El software y las aplicaciones educativas son un gasto calificado, incluido el software de apoyo para estudiantes con necesidades especiales."
+
+  - category: supplies.school
+    status: conditional
+    source: al-parent-guide
+    locator: "p. 10, Instructional materials"
+    quote: "Instructional Materials (no bulk orders, individual student use only)"
+    conditions_text:
+      en: "Supplies for the student's own use are allowed. Bulk orders are not."
+      es: "Se permiten útiles para el uso propio del estudiante. Los pedidos al por mayor no."
+
+  - category: supplies.art
+    status: conditional
+    source: al-parent-guide
+    locator: "p. 10, Instructional materials"
+    quote: "Instructional Materials (no bulk orders, individual student use only)"
+    conditions_text:
+      en: "Art supplies count as instructional materials for the student's own use. Bulk orders are not allowed."
+      es: "Los materiales de arte cuentan como materiales de instrucción para el uso propio del estudiante. No se permiten pedidos al por mayor."
+
+  - category: books.textbooks
+    status: conditional
+    locator: "Rule 810-28-1-.06(1)(b)"
+    quote: null
+    conditions_text:
+      en: "Textbooks are allowed in the approved subjects (such as English, math, science, social studies, foreign languages, art and music)."
+      es: "Se permiten libros de texto de las materias aprobadas (como inglés, matemáticas, ciencias, estudios sociales, idiomas, arte y música)."
+
+  - category: curriculum.packaged
+    status: allowed
+    locator: "Rule 810-28-1-.06(1)(e)"
+    quote: null
+    conditions_text:
+      en: "Curricula and instructional materials for the student's own use are a qualifying expense."
+      es: "El currículo y los materiales de instrucción para el uso propio del estudiante son un gasto calificado."
+
+  - category: edu.tutoring
+    status: conditional
+    conditions:
+      requires_approved_vendor: true
+    source: al-parent-guide
+    locator: "p. 8, Education Service Providers"
+    quote: "A private tutor must either be accredited or have a bachelor's degree or state certification, to be approved as an ESP."
+    conditions_text:
+      en: "The tutor must be an ALDOR-approved Education Service Provider and teach an approved subject."
+      es: "El tutor debe ser un Proveedor de Servicios Educativos aprobado por ALDOR y enseñar una materia aprobada."
+
+  - category: edu.lessons.music
+    status: conditional
+    conditions:
+      requires_approved_vendor: true
+    source: al-parent-guide
+    locator: "p. 11, Private tutoring"
+    quote: "Music (including voice or musical instrument lessons)"
+    conditions_text:
+      en: "Voice and instrument lessons count as private tutoring, from an approved Education Service Provider."
+      es: "Las clases de canto e instrumento cuentan como tutoría privada, con un Proveedor de Servicios Educativos aprobado."
+
+  - category: edu.lessons.language
+    status: conditional
+    conditions:
+      requires_approved_vendor: true
+    source: al-parent-guide
+    locator: "p. 11, Private tutoring"
+    quote: "Foreign Languages"
+    last_verified: 2026-10-19
+    review_flag: "Check against p. 11 of the parent guide that Foreign Languages is listed as an approved private tutoring subject."
+    conditions_text:
+      en: "Foreign language classes count as private tutoring, from an approved Education Service Provider, in person or online."
+      es: "Las clases de idiomas cuentan como tutoría privada, con un Proveedor de Servicios Educativos aprobado, en persona o en línea."
+
+  - category: edu.lessons.art
+    status: conditional
+    conditions:
+      requires_approved_vendor: true
+    source: al-parent-guide
+    locator: "p. 11, Private tutoring"
+    quote: "Art"
+    last_verified: 2026-10-19
+    review_flag: "Check against p. 11 of the parent guide that Art is listed as an approved private tutoring subject."
+    conditions_text:
+      en: "Art classes count as private tutoring, from an approved Education Service Provider, in person or online."
+      es: "Las clases de arte cuentan como tutoría privada, con un Proveedor de Servicios Educativos aprobado, en persona o en línea."
+
+  - category: edu.online_classes
+    status: conditional
+    conditions:
+      requires_approved_vendor: true
+    source: al-parent-guide
+    locator: "p. 11, Online learning"
+    quote: "Tuition and Fees for an Approved Nonpublic K5-12 Online Learning Program"
+    conditions_text:
+      en: "Allowed only for an approved nonpublic online learning program."
+      es: "Se permite solo para un programa en línea no público aprobado."
+
+  - category: edu.private_school_tuition
+    segment: private_school
+    status: conditional
+    conditions:
+      requires_approved_vendor: true
+    locator: "Rule 810-28-1-.06(1)(a)"
+    quote: null
+    conditions_text:
+      en: "Tuition and most fees at a participating school are allowed. Athletic, uniform, transportation, field trip, food and child-care fees are not."
+      es: "Se permiten la colegiatura y la mayoría de las cuotas de una escuela participante. No se permiten las cuotas de deportes, uniformes, transporte, excursiones, comida ni guardería."
+
+  - category: edu.therapy
+    status: conditional
+    conditions:
+      student_requirement: disability
+      requires_approved_vendor: true
+    locator: "Rule 810-28-1-.06(1)(i)"
+    quote: null
+    conditions_text:
+      en: "For students with disabilities, from a licensed or accredited provider (for example speech, occupational or physical therapy)."
+      es: "Para estudiantes con discapacidades, con un proveedor con licencia o acreditado (por ejemplo, terapia de lenguaje, ocupacional o física)."
+
+  - category: edu.testing
+    status: allowed
+    source: al-parent-guide
+    locator: "p. 11, Assessments"
+    quote: "Fees for Standardized and Nationally Recognized Assessments, including college admissions tests"
+    conditions_text:
+      en: "Standardized test fees, including AP and college admissions tests, are allowed."
+      es: "Se permiten las cuotas de exámenes estandarizados, incluidos los exámenes AP y de admisión a la universidad."
+
+  - category: clothing.uniform
+    segment: private_school
+    status: not_allowed
+    source: al-parent-guide
+    locator: "p. 9, Disallowed school fees"
+    quote: "Disallowed School Fees Include:"
+    conditions_text:
+      en: "Uniform fees are on the list of disallowed school fees."
+      es: "Las cuotas de uniforme están en la lista de cuotas escolares no permitidas."
+
+  - category: edu.field_trip
+    segment: private_school
+    status: not_allowed
+    source: al-parent-guide
+    locator: "p. 9, Disallowed school fees"
+    quote: "Disallowed School Fees Include:"
+    last_verified: 2026-10-19
+    review_flag: "Check that \"Field trip\" is on the p. 9 list of disallowed school fees. The guide doesn't address museum or zoo tickets bought outside a school."
+    conditions_text:
+      en: "Field trip fees are on the list of disallowed school fees."
+      es: "Las cuotas de excursiones están en la lista de cuotas escolares no permitidas."
+
+  - category: edu.camp
+    segment: private_school
+    status: conditional
+    source: al-parent-guide
+    locator: "p. 9, Tuition and fees at a participating school"
+    quote: "Fees for After-School or Summer Education Programs Provided by a Participating School"
+    last_verified: 2026-10-19
+    review_flag: "Check the quote against p. 9 of the parent guide. Camps from other providers are not mentioned."
+    conditions_text:
+      en: "After-school and summer education programs run by a participating school are allowed if they are education-based and are not child care. Camps from other providers are not mentioned."
+      es: "Se permiten los programas educativos después de clases y de verano de una escuela participante, si son educativos y no son cuidado infantil. Los campamentos de otros proveedores no se mencionan."
+
+  - category: food.general
+    segment: private_school
+    status: not_allowed
+    source: al-parent-guide
+    locator: "p. 9, Disallowed school fees"
+    quote: "Disallowed School Fees Include:"
+    conditions_text:
+      en: "Food fees are on the list of disallowed school fees."
+      es: "Las cuotas de comida están en la lista de cuotas escolares no permitidas."
+
+  - category: transport.general
+    status: not_allowed
+    locator: "Rule 810-28-1-.06(1)(a), exclusions"
+    quote: null
+    conditions_text:
+      en: "Transportation fees are excluded, including a tutor's travel."
+      es: "Las cuotas de transporte están excluidas, incluido el traslado del tutor."

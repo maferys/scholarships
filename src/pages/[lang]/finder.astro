@@ -1,0 +1,123 @@
+---
+import Base from '../../layouts/Base.astro';
+import { LANGS, t } from '../../i18n/strings.js';
+import data from '../../generated/data.json';
+
+export const getStaticPaths = () => LANGS.map((lang) => ({ params: { lang } }));
+const { lang } = Astro.params;
+const s = t(lang);
+const states = [...new Set(data.programs.map((p) => p.state))].sort();
+---
+<Base lang={lang} title={s.finderTitle} path="finder/">
+  <h1>{s.finderTitle}</h1>
+  <p>{s.finderIntro}</p>
+
+  <form id="finder" class="stack card" data-lang={lang} novalidate>
+    <div class="row">
+      <label>{s.stateLabel}
+        <select name="state" required>
+          <option value="">{s.choose}</option>
+          {states.map((st) => <option value={st}>{st}</option>)}
+        </select>
+      </label>
+      <label>{s.programLabel}
+        <select name="program" required disabled>
+          <option value="">{s.choose}</option>
+        </select>
+      </label>
+      <label class="segment-field" hidden>{s.segmentLabel}
+        <select name="segment"></select>
+      </label>
+    </div>
+    <label>{s.queryLabel}
+      <input type="search" name="q" placeholder={s.queryPlaceholder} autocomplete="off" maxlength="120" aria-describedby="q-privacy" />
+      <small id="q-privacy" class="field-note">{s.noPersonalDetails}</small>
+    </label>
+    <button type="submit">{s.checkButton}</button>
+  </form>
+
+  <div id="results" aria-live="polite"></div>
+
+  <script>
+    import data from '../../generated/data.json';
+    import { strings } from '../../i18n/strings.js';
+    import { evaluate } from '../../lib/eligibility.js';
+    import { match } from '../../lib/match.js';
+    import { renderAnswer, renderNotSure, renderSuggestions } from '../../scripts/finder-render.js';
+
+    const form = document.getElementById('finder');
+    const results = document.getElementById('results');
+    const lang = form.dataset.lang;
+    const s = strings[lang];
+    const today = new Date().toISOString().slice(0, 10);
+    const els = {
+      state: form.elements.namedItem('state'),
+      program: form.elements.namedItem('program'),
+      segment: form.elements.namedItem('segment'),
+      segmentField: form.querySelector('.segment-field'),
+      q: form.elements.namedItem('q'),
+    };
+
+    const option = (value, label) => Object.assign(document.createElement('option'), { value, textContent: label });
+    const currentProgram = () => data.programs.find((p) => p.id === els.program.value);
+
+    function fillPrograms() {
+      const programs = data.programs.filter((p) => p.state === els.state.value);
+      els.program.replaceChildren(option('', s.choose), ...programs.map((p) => option(p.id, p.name[lang])));
+      els.program.disabled = programs.length === 0;
+      if (programs.length === 1) els.program.value = programs[0].id;
+      fillSegments();
+    }
+
+    function fillSegments() {
+      const program = currentProgram();
+      const segments = program?.student_segments ?? ['all'];
+      els.segment.replaceChildren(...segments.map((seg) => option(seg, s.segments[seg])));
+      els.segmentField.hidden = segments.length < 2;
+    }
+
+    function logEvent(payload) {
+      // Fire-and-forget usage log: program, search text and label only (the server strips emails and phone numbers).
+      try {
+        navigator.sendBeacon?.('/api/event', JSON.stringify(payload));
+      } catch {}
+    }
+
+    function show(categoryId, query) {
+      const program = currentProgram();
+      const segment = els.segment.value || 'all';
+      const answer = evaluate(data, { programId: program.id, segment, categoryId }, today);
+      const category = data.categories.find((c) => c.id === categoryId);
+      results.replaceChildren(renderAnswer({ answer, category, lang, s, tip: data.tips[program.id], query }));
+      logEvent({ program: program.id, query, label: answer.label });
+    }
+
+    function run() {
+      const program = currentProgram();
+      if (!program) {
+        results.replaceChildren(renderNotSure({ s, lang, program: null, categories: [], onPick: () => {} }));
+        els.state.focus();
+        return;
+      }
+      const query = els.q.value.trim();
+      const candidates = match(data.categories, query);
+      if (candidates.length === 0) {
+        results.replaceChildren(renderNotSure({ s, lang, program, categories: data.categories, onPick: (id) => show(id, query) }));
+        logEvent({ program: program.id, query, label: 'no_match' });
+        return;
+      }
+      show(candidates[0].categoryId, query);
+      const others = candidates.slice(1, 4).filter((c) => c.score >= candidates[0].score - 2);
+      if (others.length) {
+        results.prepend(renderSuggestions({ s, lang, categories: data.categories, ids: others.map((c) => c.categoryId), onPick: (id) => show(id, query) }));
+      }
+    }
+
+    els.state.addEventListener('change', fillPrograms);
+    els.program.addEventListener('change', fillSegments);
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      run();
+    });
+  </script>
+</Base>

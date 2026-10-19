@@ -1,0 +1,187 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Rules file (one per program)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "program",
+    "defaults",
+    "submit_tip",
+    "rules"
+  ],
+  "properties": {
+    "program": {
+      "type": "string"
+    },
+    "defaults": {
+      "$ref": "#/definitions/ruleFields"
+    },
+    "submit_tip": {
+      "$ref": "#/definitions/i18n"
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ruleFields"
+      }
+    },
+    "submit_tip_review_flag": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "definitions": {
+    "i18n": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "en",
+        "es"
+      ],
+      "properties": {
+        "en": {
+          "type": "string",
+          "minLength": 1
+        },
+        "es": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "ruleFields": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "type": "string"
+        },
+        "segment": {
+          "enum": [
+            "all",
+            "private_school",
+            "home_education"
+          ]
+        },
+        "status": {
+          "enum": [
+            "allowed",
+            "not_allowed",
+            "conditional"
+          ]
+        },
+        "conditions": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "max_amount": {
+              "type": "number"
+            },
+            "frequency": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "count",
+                "per_years"
+              ],
+              "properties": {
+                "count": {
+                  "type": "integer"
+                },
+                "per_years": {
+                  "type": "integer"
+                }
+              }
+            },
+            "pct_of_award_cap": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 1
+            },
+            "requires_approved_vendor": {
+              "type": "boolean"
+            },
+            "requires_preapproval": {
+              "type": "boolean"
+            },
+            "requires_documentation": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "student_requirement": {
+              "enum": [
+                "disability"
+              ]
+            }
+          }
+        },
+        "conditions_text": {
+          "$ref": "#/definitions/i18n"
+        },
+        "submit_tip": {
+          "$ref": "#/definitions/i18n"
+        },
+        "source": {
+          "type": "string"
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "quote": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 200
+        },
+        "conflict_note": {
+          "$ref": "#/definitions/i18n",
+          "description": "Where official sources disagree or leave scope open. Caps the label at depends and is shown on the answer card."
+        },
+        "effective_from": {
+          "type": "string",
+          "format": "date"
+        },
+        "effective_to": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "last_verified": {
+          "type": "string",
+          "format": "date"
+        },
+        "verified_by": {
+          "type": "string"
+        },
+        "review_status": {
+          "enum": [
+            "draft",
+            "reviewed"
+          ]
+        },
+        "es_reviewed": {
+          "type": "boolean",
+          "description": "True only after a person has reviewed the Spanish text. Rules are not published until it is true."
+        },
+        "review_flag": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Note for the human reviewer: something to confirm before this rule can be reviewed."
+        },
+        "supporting_sources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Extra sources (for example a platform's item list). The label tier comes from `source` only."
+        }
+      }
+    }
+  }
+}

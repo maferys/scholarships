@@ -1,0 +1,42 @@
+id: az-esa
+state: AZ
+name:
+  en: "Empowerment Scholarship Account (ESA)"
+  es: "Cuenta de Becas de Empoderamiento (ESA)"
+funding_type: esa
+administrator:
+  name: "Arizona Department of Education"
+  url: "https://www.azed.gov/esa"
+  phone: "602-364-1969"
+  email: "ESACallCenter@azed.gov"
+platform: classwallet
+reimbursement_available: true
+vendor_approval_required: false
+vendor_approval_source: null
+student_segments: [all]
+school_year: "2025-26"
+program_status: active
+status_note:
+  en: "azed.gov still lists the 2025-26 Parent Handbook as the current handbook."
+  es: "azed.gov todavía muestra el Manual para Padres 2025-26 como el manual vigente."
+status_verified_date: 2026-10-18
+who_gets_funds_note: null
+requires_funded_account_gate: false
+sources:
+  - id: az-handbook-2025-26
+    tier: 2
+    title: "ESA 2025-2026 Parent Handbook"
+    publisher: "Arizona Department of Education"
+    url: "https://www.azed.gov/sites/default/files/2025/06/ESA%202025-2026%20Handbook.pdf"
+    document_date: 2025-06-23
+    retrieved_at: 2026-10-18
+    note: "ADE labels the 2025-26 handbook as current; no 2026-27 handbook has been published. Checked on https://www.azed.gov/esa/parent-handbook on 2026-10-18 and again on 2026-10-19 (no 2026-27 handbook or draft listed)."
+  - id: az-settlement-2026
+    tier: 2
+    title: "Settlement Agreement, Aguirre v. State of Arizona (effective 2026-07-01)"
+    publisher: "Arizona Department of Education, State of Arizona and plaintiff (copy hosted by the Goldwater Institute)"
+    url: "https://goldwaterinstitute.org/wp-content/uploads/2026/07/Parties-Settlement-Agreement.pdf"
+    document_date: 2026-07-01
+    retrieved_at: 2026-10-19
+    note: "§1.2: no specific curriculum document for items the 2025-26 handbook lists as general educational supplemental materials. §2.1: holders attest the items are intended to support a curriculum and pick the curriculum or course of study for each request; curriculum documentation is still required for other supplemental materials. Reported by AZ Mirror and KAWC on 2026-07-07."
+    review_flag: "Tier 2 because ADE is a party, but the copy is hosted by plaintiffs' counsel. Check for an ADE or AG copy, and confirm ClassWallet has implemented the attestation."

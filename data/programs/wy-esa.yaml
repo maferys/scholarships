@@ -1,0 +1,77 @@
+id: wy-esa
+state: WY
+name:
+  en: "Wyoming Education Savings Accounts (ESA)"
+  es: "Cuentas de Ahorro para la Educación de Wyoming (ESA)"
+funding_type: esa
+administrator:
+  name: "Wyoming Department of Education (with Odyssey)"
+  url: "https://edu.wyoming.gov/parents/education-savings-accounts/"
+  phone: null
+  email: "wde-esa@wyo.gov"
+platform: odyssey
+reimbursement_available: true
+reimbursement_source_ids: [wde-esa-page, wde-reimbursement-guidelines]
+vendor_approval_required: true
+vendor_approval_source: "https://edu.wyoming.gov/parents/education-savings-accounts/"
+student_segments: [all]
+award_amounts:
+  - { segment: all, amount: 7000, per: student_year }
+school_year: "2026-27"
+program_status: settling
+status_note:
+  en: "The Wyoming Supreme Court lifted the injunction in May 2026 and the program is running, while the lawsuit over the program continues in district court. The expense guidance dates from 2025 and is still the one the 2026-27 handbook cites."
+  es: "La Corte Suprema de Wyoming levantó la orden judicial en mayo de 2026 y el programa está funcionando, mientras la demanda contra el programa sigue en el tribunal de distrito. La guía de gastos es de 2025 y sigue siendo la que cita el manual 2026-27."
+status_verified_date: 2026-10-19
+who_gets_funds_note:
+  en: "Eligible students receive $7,000 for 2026-27, deposited in four equal parts starting around September 1, then early November, early February and early May. The 2026-27 application closed on August 6, 2026. Check your Odyssey account to see whether your child is funded."
+  es: "Los estudiantes elegibles reciben $7,000 para 2026-27, depositados en cuatro partes iguales a partir del 1 de septiembre aproximadamente, y luego a principios de noviembre, febrero y mayo. La solicitud para 2026-27 cerró el 6 de agosto de 2026. Revise su cuenta de Odyssey para ver si su hijo tiene fondos."
+requires_funded_account_gate: true
+sources:
+  - id: wy-hb0199-2025
+    tier: 1
+    title: "HB0199 (2025), Enrolled Act No. 52, Steamboat Legacy Scholarship Act (amends W.S. 21-2-901 to 21-2-909)"
+    publisher: "Wyoming Legislature"
+    url: "https://www.wyoleg.gov/2025/Enroll/HB0199.pdf"
+    document_date: 2025-03-01
+    retrieved_at: 2026-10-19
+    note: "Sets the $7,000 award, amends 21-2-904(b)(i)(J) and adds (Q), online learning. The base list (A)-(P) is in HB0166 (2024)."
+    review_flag: "document_date is approximate (2025 session). Confirm the subsection letters against the current official compilation: the rules cite 21-2-904(b)(i), as read from the bill text, but WDE's 2025 expense guidance heads its list 'W.S. 21-2-904(c)(i)(A)-(O)'. Checked 2026-10-19: the 2025 enrolled act (HB0199) amends '(b) ... (i) Requires use of the ESA funds for the following qualifying expenses' and does not renumber, so (b)(i) looks right and the guidance's (c) looks like a typo."
+  - id: wy-hb0166-2024
+    tier: 1
+    title: "HB0166 (2024), Wyoming Education Savings Account Act (enacted as HEA 53)"
+    publisher: "Wyoming Legislature"
+    url: "https://www.wyoleg.gov/2024/Engross/HB0166.pdf"
+    document_date: null
+    retrieved_at: 2026-10-19
+  - id: wde-expense-guidance
+    tier: 2
+    title: "ESA Allowable and Disallowable Expense Guidance"
+    publisher: "Wyoming Department of Education"
+    url: "https://edu.wyoming.gov/wp-content/uploads/2025/05/Allowable-and-Disallowable-Expense-Guidance-1.pdf"
+    document_date: 2025-05-01
+    retrieved_at: 2026-10-19
+    note: "Undated, uploaded May 2025, before the injunction. The 2026-27 handbook and Odyssey (updated 2026-09-04) still cite it. Use the '-1' file: the other copy lacks the Disallowable list."
+  - id: wde-esa-page
+    tier: 2
+    title: "Education Savings Account"
+    publisher: "Wyoming Department of Education"
+    url: "https://edu.wyoming.gov/parents/education-savings-accounts/"
+    document_date: 2026-10-06
+    retrieved_at: 2026-10-19
+  - id: wde-family-handbook
+    tier: 2
+    title: "ESA 2026-27 Family Handbook"
+    publisher: "Wyoming Department of Education"
+    url: "https://edu.wyoming.gov/wp-content/uploads/2025/04/ESA-Family-Handbook.pdf"
+    document_date: 2026-09-01
+    retrieved_at: 2026-10-19
+    review_flag: "The WDE copy says 'Updated September 2026'; the copy on Odyssey says August 2026."
+  - id: wde-reimbursement-guidelines
+    tier: 2
+    title: "ESA Reimbursement Guidelines"
+    publisher: "Wyoming Department of Education"
+    url: "https://edu.wyoming.gov/wp-content/uploads/2025/04/Reimbursement-Guidelines.pdf"
+    document_date: null
+    retrieved_at: 2026-10-19
+    note: "Only four categories can be reimbursed: core-subject curriculum, student admission to museums and zoos, fee-for-service transportation and internet fees."

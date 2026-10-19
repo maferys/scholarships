@@ -1,0 +1,314 @@
+# Wyoming ESA rules. The statute (W.S. 21-2-904 as amended by HB0199, 2025) is tier 1;
+# WDE's 2025 expense guidance and 2026-27 handbook are tier 2. The program is marked
+# settling, so only tier 1 rules can show "likely eligible" or "likely not eligible".
+# Quotes come from text extractions read on 2026-10-19 and need checking against the PDFs.
+program: wy-esa
+defaults:
+  segment: all
+  source: wde-expense-guidance
+  effective_from: 2026-07-01
+  effective_to: 2027-06-30
+  last_verified: 2026-10-19
+  verified_by: claude
+  review_status: draft
+  conditions:
+    requires_approved_vendor: true
+submit_tip:
+  en: "Buy through the Odyssey Marketplace. Only four kinds of expenses can be reimbursed (core-subject curriculum, student museum or zoo admission, fee-for-service transportation and internet fees), and the request is due within 30 days with an itemized receipt."
+  es: "Compre en el Odyssey Marketplace. Solo se reembolsan cuatro tipos de gastos (currículo de materias básicas, entrada del estudiante a museos o zoológicos, transporte pagado por servicio y cuotas de internet), y la solicitud se hace dentro de 30 días con un recibo detallado."
+
+rules:
+  - category: tech.computer
+    status: allowed
+    conditions:
+      requires_approved_vendor: false
+    source: wy-hb0199-2025
+    supporting_sources: [wy-hb0166-2024, wde-expense-guidance]
+    locator: "W.S. 21-2-904(b)(i)(E); guidance p. 2, §E"
+    quote: "Computer hardware or other technological devices that are primarily used to help meet an ESA student's educational needs"
+    conditions_text:
+      en: "Laptop and desktop computers are allowed when they are mainly for the student's education. Products in the Odyssey Marketplace are pre-approved."
+      es: "Se permiten las laptops y computadoras de escritorio si son principalmente para la educación del estudiante. Los productos del Odyssey Marketplace ya están aprobados."
+
+  - category: tech.tablet
+    status: allowed
+    locator: "p. 2, §E"
+    quote: "Tablet computers or ipads."
+    conditions_text:
+      en: "Tablets and iPads are listed as allowed technology."
+      es: "Las tabletas y los iPads aparecen como tecnología permitida."
+
+  - category: tech.printer
+    status: allowed
+    locator: "p. 2, §E"
+    quote: "Home office printer."
+    conditions_text:
+      en: "A home office printer is listed as allowed. Commercial-grade items are not."
+      es: "Una impresora para la oficina en casa aparece como permitida. Los artículos de grado comercial no."
+
+  - category: tech.calculator
+    status: allowed
+    locator: "p. 2, §E"
+    quote: "Scientific calculators."
+    conditions_text:
+      en: "Scientific calculators are listed as allowed."
+      es: "Las calculadoras científicas aparecen como permitidas."
+
+  - category: tech.accessories
+    status: conditional
+    locator: "p. 2, §E"
+    quote: "Monitor."
+    conditions_text:
+      en: "Monitors and assistive technology for a student's disability are listed. Other accessories, such as a mouse or webcam, are not mentioned."
+      es: "Los monitores y la tecnología de asistencia para la discapacidad del estudiante aparecen en la lista. Otros accesorios, como un ratón o una cámara web, no se mencionan."
+
+  - category: software.educational
+    status: allowed
+    conditions:
+      requires_approved_vendor: false
+    source: wy-hb0199-2025
+    supporting_sources: [wy-hb0166-2024, wde-expense-guidance]
+    locator: "W.S. 21-2-904(b)(i)(F); guidance p. 3, §F"
+    quote: "Educational software and applications"
+    conditions_text:
+      en: "Educational software and apps are allowed, including Microsoft Office. Music streaming and social media services are not."
+      es: "Se permiten el software y las aplicaciones educativas, incluido Microsoft Office. Los servicios de música en streaming y las redes sociales no."
+
+  - category: tech.phone
+    status: not_allowed
+    locator: "p. 5, Disallowable expenses"
+    quote: "Telephones, smartwatches, and fees (cell or landline)."
+    conditions_text:
+      en: "Phones and phone service fees are not allowed."
+      es: "No se permiten los teléfonos ni las cuotas de servicio telefónico."
+
+  - category: tech.smartwatch
+    status: not_allowed
+    locator: "p. 5, Disallowable expenses"
+    quote: "Telephones, smartwatches, and fees (cell or landline)."
+    conditions_text:
+      en: "Smartwatches are not allowed."
+      es: "No se permiten los relojes inteligentes."
+
+  - category: tech.tv
+    status: not_allowed
+    locator: "p. 5, Disallowable expenses"
+    quote: "Televisions"
+    review_flag: "Televisions and home theater equipment are disallowed (p. 5), but 'Display screen.' is allowed (p. 3, §E). Confirm the line."
+    conditions_text:
+      en: "Televisions and home theater equipment are not allowed."
+      es: "No se permiten los televisores ni los equipos de cine en casa."
+
+  - category: tech.game_console
+    status: not_allowed
+    locator: "p. 5, Disallowable expenses"
+    quote: "Video game consoles and accessories."
+    conditions_text:
+      en: "Video game consoles and their accessories are not allowed."
+      es: "No se permiten las consolas de videojuegos ni sus accesorios."
+
+  - category: supplies.school
+    status: allowed
+    locator: "p. 2, §D"
+    quote: "School supplies."
+    conditions_text:
+      en: "School supplies are listed as allowed."
+      es: "Los útiles escolares aparecen como permitidos."
+
+  - category: supplies.art
+    status: allowed
+    locator: "p. 2, §D"
+    quote: "Crayons, colored pencils, and markers."
+    conditions_text:
+      en: "Art supplies such as crayons, colored pencils and markers are listed as allowed."
+      es: "Los materiales de arte como crayones, lápices de colores y marcadores aparecen como permitidos."
+
+  - category: books.textbooks
+    status: allowed
+    conditions:
+      requires_approved_vendor: false
+    source: wy-hb0199-2025
+    supporting_sources: [wy-hb0166-2024, wde-expense-guidance]
+    locator: "W.S. 21-2-904(b)(i)(D); guidance p. 2, §D"
+    quote: "Textbooks, curriculum, and other instructional materials"
+    conditions_text:
+      en: "Textbooks and other instructional materials are allowed."
+      es: "Se permiten los libros de texto y otros materiales de instrucción."
+
+  - category: curriculum.packaged
+    status: allowed
+    conditions:
+      requires_approved_vendor: false
+    source: wy-hb0199-2025
+    supporting_sources: [wy-hb0166-2024, wde-reimbursement-guidelines]
+    locator: "W.S. 21-2-904(b)(i)(D); Reimbursement Guidelines"
+    quote: "Textbooks, curriculum, and other instructional materials"
+    conditions_text:
+      en: "Curriculum is allowed. Core-subject curriculum (such as reading, writing or math) is one of the few expenses that can be reimbursed if bought outside the Marketplace."
+      es: "Se permite el currículo. El currículo de materias básicas (como lectura, escritura o matemáticas) es uno de los pocos gastos que se pueden reembolsar si se compran fuera del Marketplace."
+
+  - category: toys.general
+    status: conditional
+    locator: "p. 2, §D"
+    quote: "Learning manipulatives/creative play."
+    conditions_text:
+      en: "Learning manipulatives and creative play items, such as puzzles, card games, dolls and play kitchens, are listed. Playground and lawn equipment is not allowed."
+      es: "Los materiales manipulativos y de juego creativo, como rompecabezas, juegos de cartas, muñecas y cocinitas, aparecen en la lista. No se permite el equipo de patio de juegos ni de jardín."
+
+  - category: instruments.musical
+    status: conditional
+    locator: "p. 2, §D; p. 5, Disallowable expenses"
+    quote: "Musical instrument, keyboard, and sheet music."
+    conditions_text:
+      en: "Musical instruments and sheet music are allowed, but pianos are on the disallowed list."
+      es: "Se permiten los instrumentos musicales y las partituras, pero los pianos están en la lista de no permitidos."
+
+  - category: furniture.desk
+    status: not_allowed
+    locator: "p. 5, Disallowable expenses"
+    quote: "Home furnishings and fixtures."
+    conditions_text:
+      en: "Home furnishings, such as desks and chairs, are not allowed."
+      es: "No se permiten los muebles del hogar, como escritorios y sillas."
+
+  - category: clothing.uniform
+    segment: all
+    status: conditional
+    source: wy-hb0199-2025
+    supporting_sources: [wy-hb0166-2024, wde-expense-guidance]
+    locator: "W.S. 21-2-904(b)(i); guidance p. 3, §G"
+    quote: "School uniforms"
+    conditions_text:
+      en: "Basic uniform pieces a private school requires are allowed. Shoes and accessories are not."
+      es: "Se permiten las prendas básicas del uniforme que exige una escuela privada. Los zapatos y accesorios no."
+
+  - category: clothing.general
+    status: not_allowed
+    locator: "p. 5, Disallowable expenses"
+    quote: "Clothing that is not part of an extracurricular activity, uniform, gear, or competition."
+    conditions_text:
+      en: "Clothing is not allowed unless it is part of a required uniform, gear for an activity, or a competition."
+      es: "No se permite la ropa, salvo que sea parte de un uniforme requerido, del equipo para una actividad o de una competencia."
+
+  - category: edu.private_school_tuition
+    status: allowed
+    source: wy-hb0199-2025
+    supporting_sources: [wy-hb0166-2024, wde-family-handbook]
+    locator: "W.S. 21-2-904(b)(i)(A)"
+    quote: "Tuition and fees at a qualified school"
+    conditions_text:
+      en: "Tuition and fees at a qualified private school, including pre-kindergarten, are allowed."
+      es: "Se permiten la colegiatura y las cuotas de una escuela privada calificada, incluido el preescolar."
+
+  - category: edu.tutoring
+    status: conditional
+    source: wy-hb0199-2025
+    supporting_sources: [wy-hb0166-2024]
+    locator: "W.S. 21-2-904(b)(i)(B)"
+    quote: "The tutoring services shall not be provided by an ESA student's immediate family"
+    conditions_text:
+      en: "Tutoring from an approved provider is allowed, but not from the student's immediate family."
+      es: "Se permite la tutoría con un proveedor aprobado, pero no con la familia inmediata del estudiante."
+
+  - category: edu.lessons.music
+    status: allowed
+    locator: "p. 3, §J"
+    quote: "Music lessons."
+    conditions_text:
+      en: "Music lessons are listed as allowed, from an approved provider."
+      es: "Las clases de música aparecen como permitidas, con un proveedor aprobado."
+
+  - category: edu.lessons.art
+    status: allowed
+    locator: "p. 3, §J"
+    quote: "Art lessons."
+    conditions_text:
+      en: "Art lessons are listed as allowed, from an approved provider."
+      es: "Las clases de arte aparecen como permitidas, con un proveedor aprobado."
+
+  - category: edu.lessons.language
+    status: allowed
+    locator: "p. 3, §J"
+    quote: "Foreign language lessons."
+    conditions_text:
+      en: "Foreign language lessons are listed as allowed, from an approved provider."
+      es: "Las clases de idiomas aparecen como permitidas, con un proveedor aprobado."
+
+  - category: edu.lessons.sports
+    status: allowed
+    locator: "p. 3, §J"
+    quote: "Individual or group lessons (swimming, karate, etc.)."
+    conditions_text:
+      en: "Individual or group lessons such as swimming or karate are listed as allowed, from an approved provider."
+      es: "Las clases individuales o en grupo, como natación o karate, aparecen como permitidas, con un proveedor aprobado."
+
+  - category: edu.online_classes
+    status: allowed
+    source: wy-hb0199-2025
+    supporting_sources: [wde-expense-guidance]
+    locator: "W.S. 21-2-904(b)(i)(Q), added 2025"
+    quote: "Tuition and fees for nongovernmental online learning programs"
+    conditions_text:
+      en: "Tuition and fees for nongovernmental online learning programs and online courses are allowed."
+      es: "Se permiten la colegiatura y las cuotas de programas de aprendizaje en línea no gubernamentales y de cursos en línea."
+
+  - category: edu.therapy
+    status: allowed
+    source: wy-hb0199-2025
+    supporting_sources: [wy-hb0166-2024, wde-expense-guidance]
+    locator: "W.S. 21-2-904(b)(i)(M)"
+    quote: "Educational services and therapies including, but not limited to, occupational, behavioral, physical"
+    conditions_text:
+      en: "Educational therapies such as occupational, behavioral, physical or speech therapy are allowed. Medical services and supplies are not."
+      es: "Se permiten las terapias educativas como la ocupacional, conductual, física o de lenguaje. Los servicios y suministros médicos no."
+
+  - category: edu.testing
+    status: allowed
+    locator: "p. 3, §H"
+    quote: "PSAT, ACT, SAT, and Work Keys testing fees."
+    conditions_text:
+      en: "PSAT, ACT, SAT, WorkKeys and AP exam fees are allowed."
+      es: "Se permiten las cuotas de los exámenes PSAT, ACT, SAT, WorkKeys y AP."
+
+  - category: edu.field_trip
+    status: conditional
+    supporting_sources: [wde-esa-page]
+    locator: "p. 3, §J"
+    quote: "Field trips (single admission cost for student only)."
+    conditions_text:
+      en: "Field trips and museum or zoo admission are allowed for the student only, not for the family. Movie tickets and amusement parks are not."
+      es: "Se permiten las excursiones y la entrada a museos o zoológicos solo para el estudiante, no para la familia. Las entradas al cine y a parques de diversiones no."
+
+  - category: edu.camp
+    status: conditional
+    locator: "p. 3, §J"
+    quote: "STEM/STEAM day camp fees."
+    conditions_text:
+      en: "STEM, STEAM and athletic or activity day camps are allowed. Overnight camps are not mentioned, and lodging and after-school child care are not allowed."
+      es: "Se permiten los campamentos de día de STEM, STEAM y de deportes o actividades. Los campamentos con pernocta no se mencionan, y no se permiten el hospedaje ni el cuidado infantil después de clases."
+
+  - category: membership.gym
+    status: conditional
+    locator: "p. 3, §J"
+    quote: "Gym/fitness membership fee (student only)."
+    conditions_text:
+      en: "A gym or fitness membership is allowed for the student only, not a family membership."
+      es: "Se permite una membresía de gimnasio solo para el estudiante, no una membresía familiar."
+
+  - category: transport.general
+    status: conditional
+    source: wy-hb0199-2025
+    supporting_sources: [wy-hb0166-2024, wde-reimbursement-guidelines]
+    locator: "W.S. 21-2-904(b)(i)(O)"
+    quote: "Fees for transportation paid to a fee-for-service transportation provider"
+    conditions_text:
+      en: "Only fees paid to a fee-for-service transportation provider are allowed. Buying a vehicle is not."
+      es: "Solo se permiten las cuotas pagadas a un proveedor de transporte por servicio. La compra de un vehículo no."
+
+  - category: food.general
+    status: not_allowed
+    locator: "p. 5, Disallowable expenses"
+    quote: "Restaurants."
+    conditions_text:
+      en: "Restaurants, groceries and household items are not allowed."
+      es: "No se permiten restaurantes, comestibles ni artículos del hogar."

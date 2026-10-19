@@ -1,0 +1,38 @@
+---
+import { t, otherLang } from '../i18n/strings.js';
+const { lang, title, description, path = '' } = Astro.props;
+const s = t(lang);
+const analyticsToken = import.meta.env.PUBLIC_CF_ANALYTICS_TOKEN;
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title ? `${title} · ${s.siteName}` : s.siteName}</title>
+    <meta name="description" content={description ?? s.tagline} />
+    <link rel="alternate" hreflang="en" href={`/en/${path}`} />
+    <link rel="alternate" hreflang="es" href={`/es/${path}`} />
+    <link rel="stylesheet" href="/styles.css" />
+    {analyticsToken && (
+      <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: analyticsToken })}></script>
+    )}
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href={`/${lang}/`}>{s.siteName}</a>
+      <nav aria-label="Main">
+        <a href={`/${lang}/finder/`}>{s.navFinder}</a>
+        <a href={`/${lang}/about/`}>{s.navAbout}</a>
+        <a href={`/${otherLang(lang)}/${path}`} hreflang={otherLang(lang)} lang={otherLang(lang)}>{s.switchLang}</a>
+      </nav>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p>{s.disclaimer}</p>
+    </footer>
+  </body>
+</html>

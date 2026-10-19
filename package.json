@@ -1,0 +1,24 @@
+{
+  "name": "scholarships",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "data": "node scripts/build-data.mjs",
+    "dev": "INCLUDE_DRAFT_RULES=true npm run data && astro dev",
+    "build": "npm run data && astro build",
+    "build:preview": "INCLUDE_DRAFT_RULES=true npm run build",
+    "test": "node --test test/*.test.js",
+    "check": "npm run data && npm test && astro build"
+  },
+  "dependencies": {
+    "astro": "5.18.2"
+  },
+  "devDependencies": {
+    "ajv": "8.17.1",
+    "ajv-formats": "3.0.1",
+    "linkedom": "^0.18.12",
+    "wrangler": "4.151.1",
+    "yaml": "2.8.1"
+  }
+}

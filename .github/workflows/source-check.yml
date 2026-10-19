@@ -1,0 +1,29 @@
+# Weekly: re-download every official source and open an issue when one changed or broke.
+name: Source check
+on:
+  schedule:
+    - cron: '0 14 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node scripts/check-sources.mjs > report.md
+      - name: Open an issue if anything changed
+        if: hashFiles('report.md') != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if grep -q '^- ' report.md; then
+            gh issue create --title "Source check $(date +%F): official sources changed" --body-file report.md --label source-check || \
+            gh issue create --title "Source check $(date +%F): official sources changed" --body-file report.md
+          fi

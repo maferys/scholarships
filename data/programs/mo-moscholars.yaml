@@ -1,0 +1,74 @@
+id: mo-moscholars
+state: MO
+name:
+  en: "MOScholars (Missouri Empowerment Scholarship Accounts)"
+  es: "MOScholars (Cuentas de Becas de Empoderamiento de Missouri)"
+funding_type: tax_credit
+administrator:
+  name: "Missouri State Treasurer (with Odyssey)"
+  url: "https://treasurer.mo.gov/MOScholars"
+  phone: null
+  email: null
+platform: odyssey
+reimbursement_available: unknown
+vendor_approval_required: true
+vendor_approval_source: "https://support.withodyssey.com/hc/en-us/articles/53449702202395"
+student_segments: [all]
+school_year: "2026-27"
+program_status: settling
+status_note:
+  en: "A court challenge to the program's $50 million state appropriation was dismissed in Cole County in April 2026, and the teachers' union said it would appeal. Purchases now go through Odyssey, while the Treasurer's handbook still describes the previous platform."
+  es: "En abril de 2026, un tribunal del condado de Cole desestimó una demanda contra la asignación estatal de $50 millones del programa, y el sindicato de maestros dijo que apelaría. Las compras ahora se hacen en Odyssey, aunque el manual del Tesorero todavía describe la plataforma anterior."
+status_verified_date: 2026-10-19
+who_gets_funds_note:
+  en: "Scholarships are awarded and funded by an Educational Assistance Organization (EAO), so being eligible does not mean your child has a funded account. Check your Odyssey account. Awards are a share of the State Adequacy Target: up to 175% with an IEP, 160% for English learners, 125% with free or reduced-price lunch, and 100% otherwise. Some EAOs fund only up to the school's tuition."
+  es: "Las becas las otorga y financia una Organización de Asistencia Educativa (EAO), así que ser elegible no significa que su hijo tenga una cuenta con fondos. Revise su cuenta de Odyssey. Las becas son un porcentaje del State Adequacy Target: hasta 175% con un IEP, 160% para estudiantes de inglés, 125% con almuerzo gratis o a precio reducido y 100% en los demás casos. Algunas EAO solo financian hasta el costo de la colegiatura de la escuela."
+requires_funded_account_gate: true
+sources:
+  - id: rsmo-166-705
+    tier: 1
+    title: "RSMo 166.705, Missouri empowerment scholarship accounts (qualifying and prohibited uses)"
+    publisher: "Missouri Revisor of Statutes"
+    url: "https://revisor.mo.gov/main/OneSection.aspx?section=166.705"
+    document_date: null
+    retrieved_at: 2026-10-19
+    note: "166.705.1(4) lists qualifying expenses; 166.705.1(5) lists prohibited ones. Definitions are in 166.700."
+  - id: csr-15-50-5
+    tier: 1
+    title: "15 CSR 50-5, Missouri Empowerment Scholarship Accounts Program rules"
+    publisher: "Missouri Secretary of State"
+    url: "https://www.sos.mo.gov/CMSImages/AdRules/csr/current/15csr/15c50-5.pdf"
+    document_date: 2025-05-30
+    retrieved_at: 2026-10-19
+    note: "Rule 5.050 (eligible uses) last amended effective 2025-05-30. The code is current to 2025-12-31."
+  - id: mo-parent-handbook
+    tier: 2
+    title: "MOScholars Parent Handbook, school year 2026-2027 (revised January 5, 2026)"
+    publisher: "Missouri State Treasurer"
+    url: "https://treasurer.mo.gov/pdfnew/ParentHandbook.pdf"
+    document_date: 2026-01-05
+    retrieved_at: 2026-10-19
+    note: "Its ineligible list (p. 4 or 5; two readings differ) says it is not comprehensive. Cover confirmed 2026-10-19: 'SCHOOL YEAR 2026-2027', 'Revised January 5, 2026'."
+    review_flag: "The handbook still refers to FACTS Management and does not mention Odyssey."
+  - id: odyssey-mo-eligible-expenses
+    tier: 3
+    title: "What Are Eligible Educational Expenses for the MOScholars Program? (Vendors)"
+    publisher: "Odyssey"
+    url: "https://support.withodyssey.com/hc/en-us/articles/51242281487003"
+    document_date: 2026-09-21
+    retrieved_at: 2026-10-19
+  - id: odyssey-mo-purchase-restrictions
+    tier: 3
+    title: "Purchase Restrictions of Eligible Expenses (MOScholars)"
+    publisher: "Odyssey"
+    url: "https://support.withodyssey.com/hc/en-us/articles/51281924557339"
+    document_date: 2026-10-01
+    retrieved_at: 2026-10-19
+  - id: odyssey-mo-marketplace-categories
+    tier: 3
+    title: "Missouri Marketplace: Categories for Offerings (detailed subcategories)"
+    publisher: "Odyssey"
+    url: "https://support.withodyssey.com/hc/en-us/articles/51891552203035"
+    document_date: 2026-09-21
+    retrieved_at: 2026-10-19
+    note: "A newer article with the same title (2026-10-07, /51282311836571) lists only the statutory categories and says technology offerings may need extra review."

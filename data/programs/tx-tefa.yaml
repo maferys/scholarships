@@ -1,0 +1,92 @@
+id: tx-tefa
+state: TX
+name:
+  en: "Texas Education Freedom Accounts (TEFA)"
+  es: "Cuentas de Libertad Educativa de Texas (TEFA)"
+funding_type: esa
+administrator:
+  name: "Texas Comptroller of Public Accounts (with Odyssey)"
+  url: "https://educationfreedom.texas.gov/"
+  phone: null
+  email: null
+platform: odyssey
+reimbursement_available: false
+reimbursement_source_ids: [tx-sb2, tx-tac-16, tx-bulletin-2026-06-30]
+vendor_approval_required: true
+vendor_approval_source: "https://finder.educationfreedom.texas.gov/"
+student_segments: [private_school, home_education]
+award_amounts:
+  - { segment: private_school, amount: 10474, per: student_year }
+  - { segment: home_education, amount: 2000, per: student_year }
+funding_schedule:
+  - { segment: private_school, date: 2026-07-01, share: 0.25, source: tx-funding-timelines, supporting_sources: [odyssey-tefa-timeline],
+      note: "Students whose school confirms enrollment by July 31 (not June 15) get this first installment by mid-August instead." }
+  - { segment: private_school, date: 2026-10-01, share: 0.25, source: tx-funding-timelines, supporting_sources: [odyssey-tefa-timeline] }
+  - { segment: private_school, date: 2027-02-01, share: 0.50, source: tx-funding-timelines, supporting_sources: [odyssey-tefa-timeline] }
+  - { segment: home_education, date: 2026-07-01, amount: 2000, source: tx-funding-timelines, supporting_sources: [odyssey-tefa-timeline],
+      note: "Single installment. Students who opt in by July 31 (not June 15) get it by mid-August instead." }
+school_year: "2026-27"
+program_status: settling
+status_note:
+  en: "New program. Rules and guidance are still being published."
+  es: "Programa nuevo. Las reglas y guías todavía se están publicando."
+status_verified_date: 2026-10-19
+who_gets_funds_note:
+  en: "Funds are awarded by priority group, and by lottery when applications exceed funding. Being eligible does not mean your child has a funded account, so check the Parent Portal. Private school students get 25% of the award ($10,474 for 2026-27) on July 1 (by mid-August if enrollment was confirmed by July 31), 25% on October 1 and 50% on February 1. Homeschool students get the full $2,000 at once. Students with an IEP may receive up to $30,000. Students who come off the waitlist later are funded as soon as practicable, and their award may be prorated. Unspent funds roll over while the child stays in TEFA."
+  es: "Los fondos se otorgan por grupo de prioridad, y por lotería cuando las solicitudes superan los fondos. Ser elegible no significa que su hijo tenga una cuenta con fondos, así que revise el Portal para Padres. Los estudiantes de escuela privada reciben el 25% de la beca ($10,474 para 2026-27) el 1 de julio (a mediados de agosto si la inscripción se confirmó antes del 31 de julio), el 25% el 1 de octubre y el 50% el 1 de febrero. Los estudiantes de educación en casa reciben los $2,000 completos de una vez. Los estudiantes con un IEP pueden recibir hasta $30,000. Quienes salen de la lista de espera más tarde reciben los fondos lo antes posible, y su beca puede ser proporcional. Los fondos no gastados pasan al año siguiente mientras el niño siga en TEFA."
+requires_funded_account_gate: true
+sources:
+  - id: tx-sb2
+    tier: 1
+    title: "Senate Bill 2, 89th Legislature (Texas Education Code §29.359-29.360)"
+    publisher: "Texas Legislature"
+    url: "https://capitol.texas.gov/tlodocs/89R/billtext/pdf/SB00002F.pdf"
+    document_date: null
+    retrieved_at: 2026-10-18
+  - id: tx-families-page
+    tier: 2
+    title: "TEFA Families page: Approved expenses"
+    publisher: "Texas Comptroller of Public Accounts"
+    url: "https://educationfreedom.texas.gov/families/#approved-expenses"
+    document_date: 2026-09-29
+    retrieved_at: 2026-10-19
+    note: "2026-27 amounts: $10,474 per private school child; up to $30,000 with an IEP; up to $2,000 homeschool. Unspent funds roll over while the child remains in TEFA."
+  - id: tx-tac-16
+    tier: 1
+    title: "34 TAC Chapter 16, Subchapter E (§16.403 participation attestations, §16.406 approved expenses)"
+    publisher: "Texas Comptroller of Public Accounts"
+    url: "https://texas-sos.appianportalsgov.com/rules-and-meetings?chapter=16&interface=VIEW_TAC&part=1&subchapter=E&title=34"
+    document_date: 2025-12-12
+    retrieved_at: 2026-10-18
+    note: "Adopted rules published in the Texas Register on 2025-12-12. Reimbursement: §16.403(b)(4)(B) (attestation not to seek reimbursement). Technology: §16.406."
+    review_flag: "Read §16.406 in full. The Texas Register adoption preamble (2025-12-12) says the comptroller changed §16.406(9) from items 'required by a private school' to match Education Code §29.359(a)(8), 'required by any approved provider or vendor'. Confirm against the final rule text."
+  - id: tx-bulletin-2026-06-30
+    tier: 2
+    title: "Nearly 73,000 Texas Education Freedom Accounts to Receive Initial Funding July 1"
+    publisher: "Texas Comptroller of Public Accounts"
+    url: "https://comptroller.texas.gov/about/media-center/news/20260630-nearly-73000-texas-education-freedom-accounts-to-receive-initial-funding-july-1-1782833580152"
+    document_date: 2026-06-30
+    retrieved_at: 2026-10-18
+    note: "States: Families will not be reimbursed for purchases made outside the TEFA Marketplace."
+  - id: tx-funding-timelines
+    tier: 2
+    title: "Funding Timelines and Installments"
+    publisher: "Texas Comptroller of Public Accounts"
+    url: "https://educationfreedom.texas.gov/newsupdates/funding-timelines-and-installments/"
+    document_date: 2026-06-04
+    retrieved_at: 2026-10-19
+    note: "Page modified 2026-08-24. Waitlisted students are funded as soon as practicable; awards may be prorated after Sept. 15 (75%) and Jan. 15 (50%)."
+  - id: odyssey-tefa-timeline
+    tier: 3
+    title: "TEFA Funding Timeline and Installments"
+    publisher: "Odyssey"
+    url: "https://support.withodyssey.com/hc/en-us/articles/51295974654107-TEFA-Funding-Timeline-and-Installments"
+    document_date: 2026-06-17
+    retrieved_at: 2026-10-18
+  - id: odyssey-purchase-restrictions
+    tier: 3
+    title: "What Are the Price Caps and Purchase Restrictions for TEFA"
+    publisher: "Odyssey"
+    url: "https://support.withodyssey.com/hc/en-us/articles/52391411800987-What-Are-the-Price-Caps-and-Purchase-Restrictions-for-TEFA"
+    document_date: 2026-10-05
+    retrieved_at: 2026-10-18

@@ -1,0 +1,506 @@
+# Texas TEFA rules. The statute (SB 2, Education Code §29.359) is tier 1;
+# the Comptroller's Families page is tier 2. The statute says purchases must be at a
+# "preapproved education service provider or vendor of educational products", so every
+# rule requires an approved vendor. Technology follows §29.359(a)(8) and 34 TAC §16.406(9):
+# it must be required by an approved provider or vendor or prescribed by a physician, capped at 10% of the award.
+program: tx-tefa
+defaults:
+  segment: all
+  source: tx-sb2
+  effective_from: 2026-07-01
+  effective_to: null
+  last_verified: 2026-10-18
+  verified_by: claude
+  review_status: draft
+  conditions:
+    requires_approved_vendor: true
+submit_tip:
+  en: "Request payment in the Odyssey portal from an approved provider or vendor. Texas law does not allow paying you back directly, so don't pay out of pocket."
+  es: "Solicite el pago en el portal de Odyssey a un proveedor o vendedor aprobado. La ley de Texas no permite reembolsarle directamente, así que no pague de su bolsillo."
+
+rules:
+  - category: edu.private_school_tuition
+    segment: private_school
+    status: allowed
+    locator: "Education Code §29.359(a)(1)"
+    quote: null
+    conditions:
+      requires_approved_vendor: false
+    review_flag: "Quote and label from the owner's review checklist (2026-10-18), citing 34 TAC Ch. 16 Subch. E. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Tuition and fees at an approved private school are allowed. Families buy through the TEFA Marketplace, which only lists approved providers and vendors."
+      es: "Se permiten la colegiatura y las cuotas de una escuela privada aprobada. Las familias compran en el TEFA Marketplace, que solo incluye proveedores y vendedores aprobados."
+
+  - category: edu.online_classes
+    status: allowed
+    locator: "Education Code §29.359(a)(1)"
+    quote: null
+    review_flag: "Quote and label from the owner's review checklist (2026-10-18), citing 34 TAC Ch. 16 Subch. E. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Tuition and fees for an approved online course or program are allowed. The course does not need to earn credit, and it does not count toward the 10% technology cap."
+      es: "Se permiten la colegiatura y las cuotas de un curso o programa en línea aprobado. El curso no tiene que dar créditos y no cuenta para el límite de tecnología del 10%."
+
+  - category: books.textbooks
+    status: allowed
+    source: tx-tac-16
+    supporting_sources: [tx-sb2]
+    locator: "34 TAC §16.406(3); definition in §16.401"
+    quote: "Printed or digital materials, supplies, or equipment that convey educational information to a student"
+    conditions:
+      requires_approved_vendor: false
+    review_flag: "Quote and label from the owner's review checklist (2026-10-18), citing 34 TAC Ch. 16 Subch. E. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Textbooks and instructional materials, printed or digital, are allowed for private school and homeschool students. Families buy through the TEFA Marketplace, which only lists approved providers and vendors."
+      es: "Se permiten los libros de texto y los materiales de instrucción, impresos o digitales, para estudiantes de escuela privada y de educación en casa. Las familias compran en el TEFA Marketplace, que solo incluye proveedores y vendedores aprobados."
+
+  - category: curriculum.packaged
+    status: allowed
+    source: tx-tac-16
+    supporting_sources: [tx-sb2]
+    locator: "34 TAC §16.406(3); definition in §16.401"
+    quote: "Printed or digital materials, supplies, or equipment that convey educational information to a student"
+    conditions:
+      requires_approved_vendor: false
+    review_flag: "Quote and label from the owner's review checklist (2026-10-18), citing 34 TAC Ch. 16 Subch. E. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Curriculum counts as instructional materials, printed or digital, for private school and homeschool students. Families buy through the TEFA Marketplace, which only lists approved providers and vendors."
+      es: "El currículo cuenta como material de instrucción, impreso o digital, para estudiantes de escuela privada y de educación en casa. Las familias compran en el TEFA Marketplace, que solo incluye proveedores y vendedores aprobados."
+
+  - category: clothing.uniform
+    segment: private_school
+    status: allowed
+    source: tx-tac-16
+    supporting_sources: [tx-sb2]
+    locator: "34 TAC §16.406(2)"
+    quote: "uniforms required by a private school, higher education provider, or industry-based training program in which the child is enrolled"
+    conditions:
+      requires_approved_vendor: false
+    review_flag: "Quote and label from the owner's review checklist (2026-10-18), citing 34 TAC Ch. 16 Subch. E. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Uniforms are allowed when the private school requires them. Families buy through the TEFA Marketplace, which only lists approved providers and vendors."
+      es: "Los uniformes se permiten cuando la escuela privada los exige. Las familias compran en el TEFA Marketplace, que solo incluye proveedores y vendedores aprobados."
+
+  - category: edu.tutoring
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [tx-families-page]
+    locator: "34 TAC §16.406(6); §16.404; Education Code §29.358(b)(4)(B)"
+    quote: "fees for educational services provided by a private tutor or teaching service"
+    review_flag: "Quote and label from the owner's review checklist (2026-10-18), citing 34 TAC Ch. 16 Subch. E. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Private tutoring from an approved provider is allowed. The tutor must show qualifications and a national criminal history record review dated within 30 days of the application."
+      es: "Se permite la tutoría privada con un proveedor aprobado. El tutor debe mostrar sus calificaciones y una revisión nacional de antecedentes penales con fecha de hasta 30 días antes de la solicitud."
+
+  - category: edu.testing
+    status: allowed
+    source: tx-families-page
+    locator: "Approved expenses"
+    quote: null
+    conditions_text:
+      en: "Academic assessments are an approved expense."
+      es: "Las evaluaciones académicas son un gasto aprobado."
+
+  - category: edu.therapy
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [tx-families-page]
+    locator: "34 TAC §16.406(7)"
+    quote: "to the extent not covered by government benefits or by private insurance or provided by a public school"
+    review_flag: "Quote and label from the owner's review checklist (2026-10-18), citing 34 TAC Ch. 16 Subch. E. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Educational therapies are allowed only when they are not covered by government benefits such as Medicaid or by private insurance, and not provided by a public school."
+      es: "Las terapias educativas se permiten solo cuando no las cubren beneficios del gobierno como Medicaid ni un seguro privado, y no las da una escuela pública."
+
+  - category: transport.general
+    status: conditional
+    locator: "Education Code §29.359(a)(6)"
+    quote: "fees for transportation provided by a fee-for-service transportation provider"
+    conditions_text:
+      en: "Only a fee-for-service transportation provider, for trips to and from approved providers."
+      es: "Solo un proveedor de transporte que cobra por servicio, para ir y volver de proveedores aprobados."
+
+  - category: food.general
+    segment: private_school
+    status: conditional
+    locator: "Education Code §29.359(a)(9)"
+    quote: null
+    conditions_text:
+      en: "Only breakfast or lunch provided by the private school during the school day."
+      es: "Solo el desayuno o almuerzo que da la escuela privada durante el día escolar."
+
+  - category: tech.computer
+    status: conditional
+    source: tx-sb2
+    supporting_sources: [tx-tac-16, odyssey-purchase-restrictions]
+    conditions:
+      requires_approved_vendor: true
+      pct_of_award_cap: 0.10
+    locator: "Education Code §29.359(a)(8); 34 TAC §16.406(9); item list from Odyssey purchase restrictions (updated 2026-10-05)"
+    quote: "required by an education service provider or vendor of educational products"
+    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. The physician clause comes from Education Code §29.359(a)(8) ('or prescribed by a physician') and the owner's checklist."
+    conditions_text:
+      en: "Laptops and desktops fall under the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course, or a physician prescribes it. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
+      es: "Las laptops y computadoras de escritorio entran en el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea, o si la receta un médico. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
+
+  - category: tech.tablet
+    status: conditional
+    source: tx-sb2
+    supporting_sources: [tx-tac-16, odyssey-purchase-restrictions]
+    conditions:
+      requires_approved_vendor: true
+      pct_of_award_cap: 0.10
+    locator: "Education Code §29.359(a)(8); 34 TAC §16.406(9); item list from Odyssey purchase restrictions (updated 2026-10-05)"
+    quote: "required by an education service provider or vendor of educational products"
+    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. The physician clause comes from Education Code §29.359(a)(8) ('or prescribed by a physician') and the owner's checklist."
+    conditions_text:
+      en: "Tablets fall under the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course, or a physician prescribes it. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
+      es: "Las tabletas entran en el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea, o si la receta un médico. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
+
+  - category: tech.printer
+    status: conditional
+    source: tx-sb2
+    supporting_sources: [tx-tac-16, odyssey-purchase-restrictions]
+    conditions:
+      requires_approved_vendor: true
+      pct_of_award_cap: 0.10
+    locator: "Education Code §29.359(a)(8); 34 TAC §16.406(9); item list from Odyssey purchase restrictions (updated 2026-10-05)"
+    quote: "required by an education service provider or vendor of educational products"
+    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. The physician clause comes from Education Code §29.359(a)(8) ('or prescribed by a physician') and the owner's checklist."
+    conditions_text:
+      en: "Printers fall under the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course, or a physician prescribes it. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
+      es: "Las impresoras entran en el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea, o si la receta un médico. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
+
+  - category: tech.headphones
+    status: conditional
+    source: tx-sb2
+    supporting_sources: [tx-tac-16, odyssey-purchase-restrictions]
+    conditions:
+      requires_approved_vendor: true
+      pct_of_award_cap: 0.10
+    locator: "Education Code §29.359(a)(8); 34 TAC §16.406(9); item list from Odyssey purchase restrictions (updated 2026-10-05)"
+    quote: "required by an education service provider or vendor of educational products"
+    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. The physician clause comes from Education Code §29.359(a)(8) ('or prescribed by a physician') and the owner's checklist."
+    conditions_text:
+      en: "Headphones fall under the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course, or a physician prescribes it. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
+      es: "Los audífonos entran en el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea, o si la receta un médico. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
+
+  - category: tech.calculator
+    status: conditional
+    source: tx-sb2
+    supporting_sources: [tx-tac-16, odyssey-purchase-restrictions]
+    conditions:
+      requires_approved_vendor: true
+      pct_of_award_cap: 0.10
+    locator: "Education Code §29.359(a)(8); 34 TAC §16.406(9); item list from Odyssey purchase restrictions (updated 2026-10-05)"
+    quote: "required by an education service provider or vendor of educational products"
+    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. The physician clause comes from Education Code §29.359(a)(8) ('or prescribed by a physician') and the owner's checklist."
+    conditions_text:
+      en: "Calculators fall under the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course, or a physician prescribes it. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
+      es: "Las calculadoras entran en el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea, o si la receta un médico. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
+
+  - category: tech.accessories
+    status: conditional
+    source: tx-sb2
+    supporting_sources: [tx-tac-16, odyssey-purchase-restrictions]
+    conditions:
+      requires_approved_vendor: true
+      pct_of_award_cap: 0.10
+    locator: "Education Code §29.359(a)(8); 34 TAC §16.406(9); item list from Odyssey purchase restrictions (updated 2026-10-05)"
+    quote: "required by an education service provider or vendor of educational products"
+    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. The physician clause comes from Education Code §29.359(a)(8) ('or prescribed by a physician') and the owner's checklist."
+    conditions_text:
+      en: "Monitors, webcams, cameras, hot spots and computer accessories fall under the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course, or a physician prescribes it. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
+      es: "Los monitores, cámaras web, cámaras, hotspots y accesorios de computadora entran en el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea, o si la receta un médico. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
+
+  - category: tech.keyboard
+    status: conditional
+    source: tx-sb2
+    supporting_sources: [tx-tac-16, odyssey-purchase-restrictions]
+    conditions:
+      requires_approved_vendor: true
+      pct_of_award_cap: 0.10
+    locator: "Education Code §29.359(a)(8); 34 TAC §16.406(9); item list from Odyssey purchase restrictions (updated 2026-10-05)"
+    quote: "required by an education service provider or vendor of educational products"
+    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. The physician clause comes from Education Code §29.359(a)(8) ('or prescribed by a physician') and the owner's checklist."
+    conditions_text:
+      en: "Computer keyboards fall under the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course, or a physician prescribes it. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
+      es: "Los teclados de computadora entran en el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea, o si la receta un médico. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
+
+  - category: software.educational
+    status: conditional
+    source: tx-sb2
+    supporting_sources: [tx-tac-16, odyssey-purchase-restrictions]
+    conditions:
+      requires_approved_vendor: true
+      pct_of_award_cap: 0.10
+    locator: "Education Code §29.359(a)(8); 34 TAC §16.406(9); item list from Odyssey purchase restrictions (updated 2026-10-05)"
+    quote: "required by an education service provider or vendor of educational products"
+    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. The physician clause comes from Education Code §29.359(a)(8) ('or prescribed by a physician') and the owner's checklist."
+    conditions_text:
+      en: "Software falls under the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course, or a physician prescribes it. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
+      es: "El software entra en el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea, o si la receta un médico. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
+
+  - category: tech.printer_3d
+    status: conditional
+    source: tx-sb2
+    supporting_sources: [tx-tac-16, odyssey-purchase-restrictions]
+    conditions:
+      requires_approved_vendor: true
+      pct_of_award_cap: 0.10
+      frequency: { count: 1, per_years: 1 }
+    locator: "Education Code §29.359(a)(8); 34 TAC §16.406(9); yearly limit from Odyssey purchase restrictions (updated 2026-10-05)"
+    quote: "required by an education service provider or vendor of educational products"
+    review_flag: "Confirm the codified text of 34 TAC §16.406(9) reads 'required by any approved provider or vendor', as the Texas Register adoption preamble (2025-12-12) says. The physician clause comes from Education Code §29.359(a)(8) ('or prescribed by a physician') and the owner's checklist."
+    conditions_text:
+      en: "One 3D printer per year, and it counts toward the technology cap. The purchase is allowed only if an approved education provider or vendor requires it, for example an online course, or a physician prescribes it. Being a homeschool family does not qualify on its own. Technology purchases together are capped at 10% of the student's annual award amount: about $200 for the $2,000 homeschool award, or about $1,047 for the $10,474 private school award."
+      es: "Una impresora 3D por año, y cuenta para el límite de tecnología. La compra solo se permite si la exige un proveedor o vendedor educativo aprobado, por ejemplo un curso en línea, o si la receta un médico. Ser una familia que educa en casa no basta por sí solo. Las compras de tecnología en conjunto tienen un límite del 10% de la beca anual del estudiante: unos $200 para la beca de $2,000 de educación en casa, o unos $1,047 para la beca de $10,474 de escuela privada."
+
+  - category: instruments.musical
+    status: conditional
+    source: odyssey-purchase-restrictions
+    conditions:
+      requires_approved_vendor: true
+      max_amount: 1200
+    locator: "Price caps table"
+    quote: "Price cap of $1200"
+    conditions_text:
+      en: "Musical instruments have a price cap of $1,200. They are not part of the 10% technology cap."
+      es: "Los instrumentos musicales tienen un precio máximo de $1,200. No forman parte del límite de tecnología del 10%."
+
+  - category: tech.game_console
+    status: not_allowed
+    source: tx-tac-16
+    locator: "34 TAC §16.406 (closed list of approved expenses)"
+    quote: "Program money may be used only at an approved provider for the following"
+    review_flag: "Quote and label from the owner's review checklist (2026-10-18), citing 34 TAC Ch. 16 Subch. E. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Game consoles are not in the list of approved expenses, and the list is closed. The only exception would be a device an approved provider requires or a physician prescribes, which is rare."
+      es: "Las consolas de videojuegos no están en la lista de gastos aprobados, y la lista es cerrada. La única excepción sería un aparato que exija un proveedor aprobado o recete un médico, lo cual es raro."
+
+  - category: tech.phone
+    status: not_allowed
+    source: tx-tac-16
+    supporting_sources: [tx-families-page, tx-sb2]
+    locator: "34 TAC §16.406 (closed list of approved expenses)"
+    quote: "Program money may be used only at an approved provider for the following"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Education Code §29.359(a) also makes the list closed: money may be spent 'only for the following education-related expenses' (read via FindLaw 2026-10-19; check the official text). Owner kept 'likely not' on 2026-10-19. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Phones are not in the list of approved expenses, and the list is closed. The only exception would be a device an approved provider requires or a physician prescribes, which is rare."
+      es: "Los teléfonos no están en la lista de gastos aprobados, y la lista es cerrada. La única excepción sería un aparato que exija un proveedor aprobado o recete un médico, lo cual es raro."
+
+  - category: tech.smartwatch
+    status: not_allowed
+    source: tx-tac-16
+    supporting_sources: [tx-families-page, tx-sb2]
+    locator: "34 TAC §16.406 (closed list of approved expenses)"
+    quote: "Program money may be used only at an approved provider for the following"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Education Code §29.359(a) also makes the list closed: money may be spent 'only for the following education-related expenses' (read via FindLaw 2026-10-19; check the official text). Owner kept 'likely not' on 2026-10-19. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Smartwatches are not in the list of approved expenses, and the list is closed. The only exception would be a device an approved provider requires or a physician prescribes, which is rare."
+      es: "Los relojes inteligentes no están en la lista de gastos aprobados, y la lista es cerrada. La única excepción sería un aparato que exija un proveedor aprobado o recete un médico, lo cual es raro."
+
+  - category: tech.tv
+    status: not_allowed
+    source: tx-tac-16
+    supporting_sources: [tx-families-page, tx-sb2]
+    locator: "34 TAC §16.406 (closed list of approved expenses)"
+    quote: "Program money may be used only at an approved provider for the following"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Education Code §29.359(a) also makes the list closed: money may be spent 'only for the following education-related expenses' (read via FindLaw 2026-10-19; check the official text). Owner kept 'likely not' on 2026-10-19. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "TVs are not in the list of approved expenses, and the list is closed. The only exception would be a device an approved provider requires or a physician prescribes, which is rare."
+      es: "Los televisores no están en la lista de gastos aprobados, y la lista es cerrada. La única excepción sería un aparato que exija un proveedor aprobado o recete un médico, lo cual es raro."
+
+  - category: watch.general
+    status: not_allowed
+    source: tx-tac-16
+    supporting_sources: [tx-families-page, tx-sb2]
+    locator: "34 TAC §16.406 (closed list of approved expenses)"
+    quote: "Program money may be used only at an approved provider for the following"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Education Code §29.359(a) also makes the list closed: money may be spent 'only for the following education-related expenses' (read via FindLaw 2026-10-19; check the official text). Owner kept 'likely not' on 2026-10-19. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Watches are not in the list of approved expenses, and the list is closed."
+      es: "Los relojes no están en la lista de gastos aprobados, y la lista es cerrada."
+
+  - category: clothing.general
+    status: not_allowed
+    source: tx-tac-16
+    supporting_sources: [tx-families-page, tx-sb2]
+    locator: "34 TAC §16.406 (closed list of approved expenses)"
+    quote: "Program money may be used only at an approved provider for the following"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Education Code §29.359(a) also makes the list closed: money may be spent 'only for the following education-related expenses' (read via FindLaw 2026-10-19; check the official text). Owner kept 'likely not' on 2026-10-19. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Clothing is not in the list of approved expenses, and the list is closed. Only uniforms a private school requires are allowed."
+      es: "La ropa no está en la lista de gastos aprobados, y la lista es cerrada. Solo se permiten los uniformes que exige una escuela privada."
+
+  - category: bags.backpack
+    status: not_allowed
+    source: tx-tac-16
+    supporting_sources: [tx-families-page, tx-sb2]
+    locator: "34 TAC §16.406 (closed list of approved expenses)"
+    quote: "Program money may be used only at an approved provider for the following"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Education Code §29.359(a) also makes the list closed: money may be spent 'only for the following education-related expenses' (read via FindLaw 2026-10-19; check the official text). Owner kept 'likely not' on 2026-10-19. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Backpacks are not in the list of approved expenses, and the list is closed."
+      es: "Las mochilas no están en la lista de gastos aprobados, y la lista es cerrada."
+
+  - category: furniture.desk
+    status: not_allowed
+    source: tx-tac-16
+    supporting_sources: [tx-families-page, tx-sb2]
+    locator: "34 TAC §16.406 (closed list of approved expenses)"
+    quote: "Program money may be used only at an approved provider for the following"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Education Code §29.359(a) also makes the list closed: money may be spent 'only for the following education-related expenses' (read via FindLaw 2026-10-19; check the official text). Owner kept 'likely not' on 2026-10-19. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Desks and furniture are not in the list of approved expenses, and the list is closed."
+      es: "Los escritorios y muebles no están en la lista de gastos aprobados, y la lista es cerrada."
+
+  - category: sports.equipment
+    status: not_allowed
+    source: tx-tac-16
+    supporting_sources: [tx-families-page, tx-sb2]
+    locator: "34 TAC §16.406 (closed list of approved expenses)"
+    quote: "Program money may be used only at an approved provider for the following"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Education Code §29.359(a) also makes the list closed: money may be spent 'only for the following education-related expenses' (read via FindLaw 2026-10-19; check the official text). Owner kept 'likely not' on 2026-10-19. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Sports equipment is not in the list of approved expenses, and the list is closed."
+      es: "El equipo deportivo no está en la lista de gastos aprobados, y la lista es cerrada."
+
+  - category: membership.gym
+    status: not_allowed
+    source: tx-tac-16
+    supporting_sources: [tx-families-page, tx-sb2]
+    locator: "34 TAC §16.406 (closed list of approved expenses)"
+    quote: "Program money may be used only at an approved provider for the following"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Education Code §29.359(a) also makes the list closed: money may be spent 'only for the following education-related expenses' (read via FindLaw 2026-10-19; check the official text). Owner kept 'likely not' on 2026-10-19. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Gym and family memberships are not in the list of approved expenses, and the list is closed."
+      es: "Las membresías de gimnasio o familiares no están en la lista de gastos aprobados, y la lista es cerrada."
+
+  - category: edu.field_trip
+    status: not_allowed
+    source: tx-tac-16
+    supporting_sources: [tx-families-page, tx-sb2]
+    locator: "34 TAC §16.406 (closed list of approved expenses)"
+    quote: "Program money may be used only at an approved provider for the following"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Education Code §29.359(a) also makes the list closed: money may be spent 'only for the following education-related expenses' (read via FindLaw 2026-10-19; check the official text). Owner kept 'likely not' on 2026-10-19. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Museum, zoo and field-trip tickets are not in the list of approved expenses, and the list is closed."
+      es: "Las entradas a museos, zoológicos y excursiones no están en la lista de gastos aprobados, y la lista es cerrada."
+
+  - category: supplies.school
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [tx-sb2]
+    locator: "34 TAC §16.406(3); definition in §16.401"
+    quote: "Printed or digital materials, supplies, or equipment that convey educational information to a student"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred: the instructional-materials definition may or may not cover this item. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "School supplies may count as instructional materials if they convey educational information, bought from an approved vendor in the TEFA Marketplace. General supplies are not named."
+      es: "Los útiles escolares pueden contar como materiales de instrucción si transmiten información educativa, comprados con un vendedor aprobado en el TEFA Marketplace. Los útiles en general no se mencionan."
+
+  - category: supplies.art
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [tx-sb2]
+    locator: "34 TAC §16.406(3); definition in §16.401"
+    quote: "Printed or digital materials, supplies, or equipment that convey educational information to a student"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred: the instructional-materials definition may or may not cover this item. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Art supplies may count as instructional materials, bought from an approved vendor in the TEFA Marketplace. They are not named."
+      es: "Los materiales de arte pueden contar como materiales de instrucción, comprados con un vendedor aprobado en el TEFA Marketplace. No se mencionan."
+
+  - category: toys.general
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [tx-sb2]
+    locator: "34 TAC §16.406(3); definition in §16.401"
+    quote: "Printed or digital materials, supplies, or equipment that convey educational information to a student"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred: the instructional-materials definition may or may not cover this item. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Toys and games are not named. Only items that convey educational information may count as instructional materials, from an approved vendor."
+      es: "Los juguetes y juegos no se mencionan. Solo los artículos que transmiten información educativa pueden contar como materiales de instrucción, con un vendedor aprobado."
+
+  - category: instruments.accessories
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [tx-sb2]
+    locator: "34 TAC §16.406(3); definition in §16.401"
+    quote: "Printed or digital materials, supplies, or equipment that convey educational information to a student"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred: the instructional-materials definition may or may not cover this item. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Instrument accessories are not named. They may count as instructional materials, from an approved vendor."
+      es: "Los accesorios para instrumentos no se mencionan. Pueden contar como materiales de instrucción, con un vendedor aprobado."
+
+  - category: edu.lessons.music
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [tx-families-page]
+    locator: "34 TAC §16.406(6); §16.404"
+    quote: "fees for educational services provided by a private tutor or teaching service"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred: lessons are not named; this treats them as private tutoring or a teaching service. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Music lessons may count as private tutoring or a teaching service from an approved provider."
+      es: "Las clases de música pueden contar como tutoría privada o servicio de enseñanza con un proveedor aprobado."
+
+  - category: edu.lessons.art
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [tx-families-page]
+    locator: "34 TAC §16.406(6); §16.404"
+    quote: "fees for educational services provided by a private tutor or teaching service"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred: lessons are not named; this treats them as private tutoring or a teaching service. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Art classes may count as private tutoring or a teaching service from an approved provider."
+      es: "Las clases de arte pueden contar como tutoría privada o servicio de enseñanza con un proveedor aprobado."
+
+  - category: edu.lessons.language
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [tx-families-page]
+    locator: "34 TAC §16.406(6); §16.404"
+    quote: "fees for educational services provided by a private tutor or teaching service"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred: lessons are not named; this treats them as private tutoring or a teaching service. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Language classes may count as private tutoring or a teaching service from an approved provider."
+      es: "Las clases de idiomas pueden contar como tutoría privada o servicio de enseñanza con un proveedor aprobado."
+
+  - category: edu.lessons.sports
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [tx-families-page]
+    locator: "34 TAC §16.406(6); §16.404"
+    quote: "fees for educational services provided by a private tutor or teaching service"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred: lessons are not named; this treats them as private tutoring or a teaching service. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Sports or swim lessons are not named. They count only if the state treats them as an educational teaching service from an approved provider."
+      es: "Las clases de deporte o natación no se mencionan. Cuentan solo si el estado las considera un servicio de enseñanza educativo con un proveedor aprobado."
+
+  - category: edu.camp
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [tx-families-page]
+    locator: "34 TAC §16.406(6); §16.404"
+    quote: "fees for educational services provided by a private tutor or teaching service"
+    last_verified: 2026-10-19
+    review_flag: "Label inferred: lessons are not named; this treats them as private tutoring or a teaching service. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Camps are not named. A camp counts only if it is an educational service from an approved provider."
+      es: "Los campamentos no se mencionan. Un campamento cuenta solo si es un servicio educativo con un proveedor aprobado."

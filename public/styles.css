@@ -1,0 +1,62 @@
+:root {
+  --bg: #fbfaf7; --surface: #ffffff; --text: #1d2321; --muted: #5b6460; --border: #dcdfdb;
+  --accent: #1f5f8b; --accent-text: #ffffff;
+  --ok-bg: #e3f3e8; --ok: #1d6b3a; --no-bg: #fbe5e3; --no: #9b2c22;
+  --warn-bg: #fdf1d8; --warn: #7a5200; --info-bg: #e6eff7; --info: #1f4e79; --unk-bg: #eceeed; --unk: #3f4744;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141716; --surface: #1d2120; --text: #e9ecea; --muted: #a3aca8; --border: #343a38;
+    --accent: #7db8e0; --accent-text: #0e1a22;
+    --ok-bg: #173323; --ok: #8fd6a8; --no-bg: #3a1c19; --no: #f1a197;
+    --warn-bg: #3a2e12; --warn: #f0c974; --info-bg: #182a3a; --info: #9cc6ea; --unk-bg: #262b29; --unk: #c7cdca;
+  }
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 42rem; margin: 0 auto; padding: 1rem 16px 3rem; }
+h1 { font-size: 1.75rem; line-height: 1.2; margin: 1rem 0 .5rem; }
+h2 { font-size: 1.25rem; margin: 1.5rem 0 .5rem; }
+h3 { font-size: 1rem; margin: 1rem 0 .25rem; }
+a { color: var(--accent); }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 8px; top: 8px; background: var(--surface); padding: .5rem; }
+.site-header { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; justify-content: space-between;
+  padding: .75rem 16px; border-bottom: 1px solid var(--border); background: var(--surface); }
+.site-header nav { display: flex; flex-wrap: wrap; gap: .25rem 1rem; }
+.brand { font-weight: 700; text-decoration: none; color: var(--text); }
+.site-footer { max-width: 42rem; margin: 0 auto; padding: 1rem 16px 2rem; color: var(--muted); font-size: .875rem; border-top: 1px solid var(--border); }
+.hero { padding: 1rem 0; }
+.button, button { display: inline-block; background: var(--accent); color: var(--accent-text); border: 0; border-radius: 8px;
+  padding: .7rem 1.2rem; font: inherit; font-weight: 600; text-decoration: none; cursor: pointer; min-height: 44px; }
+.link-button { background: none; color: var(--accent); padding: .25rem 0; text-decoration: underline; font-weight: 400; min-height: 0; }
+.card, .answer { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1rem; margin: 1rem 0; }
+.stack { display: grid; gap: .9rem; }
+.row { display: grid; gap: .9rem; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); }
+label { display: grid; gap: .3rem; font-weight: 600; }
+input, select, textarea { font: inherit; padding: .6rem .7rem; border: 1px solid var(--border); border-radius: 8px;
+  background: var(--bg); color: var(--text); min-height: 44px; width: 100%; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.muted { color: var(--muted); }
+.steps { padding-left: 1.25rem; }
+.program-list { list-style: none; padding: 0; }
+.badge { display: inline-block; font-weight: 700; padding: .35rem .7rem; border-radius: 999px; margin: 0; }
+.badge-likely_eligible { background: var(--ok-bg); color: var(--ok); }
+.badge-likely_not_eligible { background: var(--no-bg); color: var(--no); }
+.badge-depends { background: var(--warn-bg); color: var(--warn); }
+.badge-not_verified { background: var(--unk-bg); color: var(--unk); }
+.banner { border-radius: 8px; padding: .6rem .8rem; margin: 0 0 .75rem; }
+.banner-warn { background: var(--warn-bg); color: var(--warn); }
+.banner-info { background: var(--info-bg); color: var(--info); }
+.banner-draft { background: var(--unk-bg); color: var(--unk); font-size: .875rem; }
+blockquote { margin: .25rem 0; padding-left: .75rem; border-left: 3px solid var(--border); font-style: italic; }
+.disclaimer { font-size: .875rem; color: var(--muted); }
+.suggestions { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }
+.chip { background: var(--unk-bg); color: var(--text); font-weight: 500; padding: .35rem .8rem; border-radius: 999px; min-height: 36px; }
+.form-status:empty { display: none; }
+.banner p { margin: 0; }
+.banner p + p { margin-top: .4rem; }
+
+.field-note { display: block; font-size: 0.875em; color: var(--muted); margin-top: 0.25rem; font-weight: normal; }

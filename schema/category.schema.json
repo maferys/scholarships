@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Category list",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["id", "group", "name", "synonyms"],
+    "properties": {
+      "id": { "type": "string", "pattern": "^[a-z]+(\\.[a-z0-9_]+)+$" },
+      "group": { "enum": ["products", "education"] },
+      "name": { "$ref": "#/definitions/i18n" },
+      "synonyms": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["en", "es"],
+        "properties": {
+          "en": { "type": "array", "items": { "type": "string", "minLength": 2 } },
+          "es": { "type": "array", "items": { "type": "string", "minLength": 2 } }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "i18n": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["en", "es"],
+      "properties": { "en": { "type": "string", "minLength": 1 }, "es": { "type": "string", "minLength": 1 } }
+    }
+  }
+}
