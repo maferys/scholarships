@@ -1,0 +1,189 @@
+# New Hampshire EFA rules. RSA 194-F:2, II (tier 1) lists the qualifying expenses; the
+# scholarship organization's handbook and policies (CSF NH, tier 4) set caps and examples.
+# Items that rest only on CSF documents are held in docs/notes/nh-efa.md (no tier 1-3 source).
+program: nh-efa
+defaults:
+  segment: all
+  source: nh-rsa-194-f
+  effective_from: 2026-07-01
+  effective_to: null
+  last_verified: 2026-10-19
+  verified_by: claude
+  review_status: draft
+submit_tip:
+  en: "Buy through the ClassWallet marketplace when you can; it is the fastest way. Reimbursement is slower and needs an itemized receipt per student (no handwritten receipts), and any service provider must be EFA-approved."
+  es: "Compre en el marketplace de ClassWallet cuando pueda; es la forma más rápida. El reembolso tarda más y necesita un recibo detallado por estudiante (no se aceptan recibos escritos a mano), y todo proveedor de servicios debe estar aprobado por EFA."
+submit_tip_review_flag: "From the CSF Parent Handbook (August 2026), pp. 18-19 and 29-31. Check the wording against the PDF."
+
+rules:
+  - category: tech.computer
+    status: conditional
+    source: nh-ed-800
+    supporting_sources: [csf-stu-05, csf-parent-handbook]
+    conditions:
+      max_amount: 3600
+      frequency: { count: 1, per_years: 3 }
+    locator: "Ed 804.02(c); STU-05; Parent Handbook pp. 21-22"
+    quote: "limited to a single computer device per student every 3 years"
+    review_flag: "The $3,600 cap comes from STU-05 and the handbook (tier 4). Check the STU-05 revision date (see the source's flag)."
+    conditions_text:
+      en: "One laptop or desktop every three years, up to $3,600. A computer you build is also capped at $3,600 total and $1,600 per part, and needs the Computer Device Build Form. It must be used mainly (51% or more) for the student's education."
+      es: "Una laptop o computadora de escritorio cada tres años, hasta $3,600. Una computadora armada por usted también tiene un límite de $3,600 en total y $1,600 por pieza, y necesita el formulario de armado de computadora. Debe usarse principalmente (51% o más) para la educación del estudiante."
+
+  - category: tech.tablet
+    status: conditional
+    supporting_sources: [csf-parent-handbook]
+    conditions:
+      max_amount: 1600
+    locator: "RSA 194-F:2, II(f); Parent Handbook p. 22"
+    quote: "Computer hardware, Internet connectivity, or other technological services and devices,"
+    conditions_text:
+      en: "Tablets such as iPads, Android tablets and Chromebooks are capped at $1,600 each. They are not counted as the one computer every three years. They must be used mainly for the student's education."
+      es: "Las tabletas como iPad, tabletas Android y Chromebooks tienen un límite de $1,600 cada una. No cuentan como la computadora de cada tres años. Deben usarse principalmente para la educación del estudiante."
+
+  - category: tech.printer
+    status: conditional
+    supporting_sources: [csf-parent-handbook]
+    conditions:
+      max_amount: 800
+    locator: "RSA 194-F:2, II(f); Parent Handbook p. 22, digital devices"
+    quote: "Computer hardware, Internet connectivity, or other technological services and devices,"
+    conditions_text:
+      en: "Printers and scanners count as digital devices, capped at $800 each, and must be used mainly for the student's education."
+      es: "Las impresoras y los escáneres cuentan como dispositivos digitales, con un límite de $800 cada uno, y deben usarse principalmente para la educación del estudiante."
+
+  - category: tech.headphones
+    status: conditional
+    supporting_sources: [csf-parent-handbook]
+    conditions:
+      max_amount: 800
+    locator: "RSA 194-F:2, II(f); Parent Handbook p. 22, digital devices"
+    quote: "Computer hardware, Internet connectivity, or other technological services and devices,"
+    conditions_text:
+      en: "Earbuds, headsets and noise-canceling headphones count as digital devices, capped at $800 each."
+      es: "Los audífonos, auriculares y audífonos con cancelación de ruido cuentan como dispositivos digitales, con un límite de $800 cada uno."
+
+  - category: software.educational
+    status: allowed
+    supporting_sources: [csf-parent-handbook]
+    locator: "RSA 194-F:2, II(g)"
+    quote: "Educational software and applications."
+    conditions_text:
+      en: "Educational software and apps are a qualifying expense."
+      es: "El software y las aplicaciones educativas son un gasto permitido."
+
+  - category: books.textbooks
+    status: allowed
+    supporting_sources: [csf-parent-handbook]
+    locator: "RSA 194-F:2, II(e)"
+    quote: "Textbooks, curriculum, or other instructional materials, including, but not limited to, any supplemental materials"
+    conditions_text:
+      en: "Textbooks and other instructional materials are a qualifying expense."
+      es: "Los libros de texto y otros materiales de instrucción son un gasto permitido."
+
+  - category: curriculum.packaged
+    status: allowed
+    supporting_sources: [csf-parent-handbook]
+    locator: "RSA 194-F:2, II(e)"
+    quote: "Textbooks, curriculum, or other instructional materials, including, but not limited to, any supplemental materials"
+    conditions_text:
+      en: "Curriculum is a qualifying expense."
+      es: "El currículo es un gasto permitido."
+
+  - category: supplies.school
+    status: allowed
+    supporting_sources: [csf-parent-handbook]
+    locator: "RSA 194-F:2, II(e); Parent Handbook p. 21, school supplies"
+    quote: "Textbooks, curriculum, or other instructional materials, including, but not limited to, any supplemental materials"
+    conditions_text:
+      en: "School supplies such as notebooks, writing tools and calculators are listed as allowed."
+      es: "Los útiles escolares como cuadernos, lápices o plumas y calculadoras aparecen como permitidos."
+
+  - category: tech.calculator
+    status: allowed
+    supporting_sources: [csf-parent-handbook]
+    locator: "RSA 194-F:2, II(e); Parent Handbook p. 21, school supplies"
+    quote: "Textbooks, curriculum, or other instructional materials, including, but not limited to, any supplemental materials"
+    conditions_text:
+      en: "Calculators are listed as school supplies, with no cap stated."
+      es: "Las calculadoras aparecen como útiles escolares, sin un límite indicado."
+
+  - category: instruments.musical
+    status: conditional
+    supporting_sources: [csf-parent-handbook]
+    locator: "RSA 194-F:2, II(e); Parent Handbook p. 21"
+    quote: "Textbooks, curriculum, or other instructional materials, including, but not limited to, any supplemental materials"
+    conditions_text:
+      en: "Musical instruments are allowed as instructional materials for the student's music education."
+      es: "Los instrumentos musicales se permiten como materiales de instrucción para la educación musical del estudiante."
+
+  - category: clothing.uniform
+    status: conditional
+    supporting_sources: [csf-parent-handbook]
+    locator: "RSA 194-F:2, II(h); Parent Handbook p. 23"
+    quote: "School uniforms."
+    conditions_text:
+      en: "Only uniforms that the student's school requires."
+      es: "Solo los uniformes que exige la escuela del estudiante."
+
+  - category: edu.private_school_tuition
+    status: allowed
+    locator: "RSA 194-F:2, II(a)"
+    quote: "Tuition and fees at a private school."
+    conditions_text:
+      en: "Private school tuition and fees are a qualifying expense."
+      es: "La colegiatura y las cuotas de una escuela privada son un gasto permitido."
+
+  - category: edu.online_classes
+    status: allowed
+    supporting_sources: [csf-parent-handbook]
+    locator: "RSA 194-F:2, II(b)"
+    quote: "Tuition and fees for non-public online learning programs."
+    conditions_text:
+      en: "Non-public online learning programs, such as Outschool or Time4Learning, are a qualifying expense."
+      es: "Los programas de aprendizaje en línea no públicos, como Outschool o Time4Learning, son un gasto permitido."
+
+  - category: edu.tutoring
+    status: conditional
+    supporting_sources: [csf-parent-handbook]
+    conditions:
+      requires_documentation: [provider_credential]
+    locator: "RSA 194-F:2, II(c); Parent Handbook pp. 20 and 31"
+    quote: "Tutoring services provided by an individual or a tutoring facility."
+    conditions_text:
+      en: "The tutor must be certified or accredited, or work at a tutoring facility, teach core subjects, and be on the EFA Approved Provider List before payment."
+      es: "El tutor debe estar certificado o acreditado, o trabajar en un centro de tutoría, enseñar materias básicas y estar en la lista de proveedores aprobados de EFA antes del pago."
+
+  - category: edu.therapy
+    status: allowed
+    locator: "RSA 194-F:2, II(l)"
+    quote: "Educational services and therapies, including, but not limited to, occupational, behavioral,"
+    conditions_text:
+      en: "Educational services and therapies, such as occupational, behavioral, physical, speech-language and audiology therapy, are a qualifying expense."
+      es: "Los servicios y terapias educativas, como la terapia ocupacional, conductual, física, de lenguaje y de audiología, son un gasto permitido."
+
+  - category: edu.testing
+    status: allowed
+    locator: "RSA 194-F:2, II(i)"
+    quote: "Fees for nationally standardized assessments, advanced placement examinations, examinations related to college"
+    conditions_text:
+      en: "Fees for standardized tests, AP exams and college admission exams, and prep courses for them, are allowed."
+      es: "Se permiten las cuotas de exámenes estandarizados, exámenes AP y exámenes de admisión a la universidad, y los cursos de preparación para ellos."
+
+  - category: edu.camp
+    status: conditional
+    supporting_sources: [csf-parent-handbook]
+    locator: "RSA 194-F:2, II(j); Parent Handbook p. 23"
+    quote: "Tuition and fees for summer education programs and specialized education programs."
+    conditions_text:
+      en: "Only qualifying academic camps and education programs."
+      es: "Solo campamentos académicos y programas educativos que califiquen."
+
+  - category: transport.general
+    status: conditional
+    supporting_sources: [csf-parent-handbook]
+    locator: "RSA 194-F:2, II(n); Parent Handbook p. 25"
+    quote: "Fees for transportation paid to a fee-for-service transportation provider for the student"
+    conditions_text:
+      en: "Only a fee-for-service transportation provider, to and from an education provider. Ride services such as Uber or Lyft are not eligible."
+      es: "Solo un proveedor de transporte que cobra por servicio, para ir y volver de un proveedor educativo. Los servicios como Uber o Lyft no se permiten."

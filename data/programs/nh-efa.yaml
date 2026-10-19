@@ -1,0 +1,60 @@
+id: nh-efa
+state: NH
+name:
+  en: "Education Freedom Accounts (EFA)"
+  es: "Cuentas de Libertad Educativa (EFA)"
+funding_type: esa
+administrator:
+  name: "Children's Scholarship Fund New Hampshire"
+  url: "https://nh.scholarshipfund.org/"
+  phone: "(603) 755-6751"
+  email: "csfnh@scholarshipfund.org"
+platform: classwallet
+reimbursement_available: true
+reimbursement_source_ids: [nh-rsa-194-f, csf-parent-handbook]
+vendor_approval_required: true
+vendor_approval_source: "https://nh.scholarshipfund.org/efa-polices-and-procedures-2/"
+student_segments: [all]
+school_year: "2026-27"
+program_status: active
+status_note:
+  en: "The 2026-27 Parent Handbook was updated in August 2026. The program reached its 12,500-student enrollment cap for 2026-27."
+  es: "El Manual para Padres 2026-27 se actualizó en agosto de 2026. El programa llegó a su límite de 12,500 estudiantes para 2026-27."
+status_verified_date: 2026-10-19
+who_gets_funds_note:
+  en: "The program reached its 12,500-student cap for 2026-27, so not every eligible child has an account. Your estimated award is on your ScholaVia dashboard. Funds arrive in four parts: 20% in September, 20% in November, 30% in January and 30% in April."
+  es: "El programa llegó a su límite de 12,500 estudiantes para 2026-27, así que no todos los niños elegibles tienen una cuenta. Su beca estimada aparece en su panel de ScholaVia. Los fondos llegan en cuatro partes: 20% en septiembre, 20% en noviembre, 30% en enero y 30% en abril."
+requires_funded_account_gate: true
+sources:
+  - id: nh-rsa-194-f
+    tier: 1
+    title: "RSA 194-F, Education Freedom Accounts (§194-F:2, II qualifying expenses)"
+    publisher: "New Hampshire General Court"
+    url: "https://gc.nh.gov/rsa/html/XV/194-F/194-F-mrg.htm"
+    document_date: null
+    retrieved_at: 2026-10-19
+    note: "§194-F:2 amended 2025 (ch. 141) and 2026 (ch. 297, effective 2026-07-01). §194-F:4, VI(a): the scholarship organization may pre-approve reimbursements but may not pay parents without a receipt."
+  - id: nh-ed-800
+    tier: 1
+    title: "Ed 800, Education Freedom Account Program rules"
+    publisher: "New Hampshire Department of Education"
+    url: "https://gc.nh.gov/rules/state_agencies/ed800.html"
+    document_date: 2022-02-22
+    retrieved_at: 2026-10-19
+    note: "Readopted with amendments by Document #13345, effective 2-22-22."
+  - id: csf-parent-handbook
+    tier: 4
+    title: "Education Freedom Account Parent Handbook (updated August 2026)"
+    publisher: "Children's Scholarship Fund New Hampshire"
+    url: "https://nh.scholarshipfund.org/wp-content/uploads/2026/09/Parent-Handbook-CSF-8-2026.pdf"
+    document_date: 2026-08-01
+    retrieved_at: 2026-10-19
+    note: "The handbook's non-allowable list says it is not exhaustive (p. 26). It replaces the November 2025 handbook, which is not cited."
+  - id: csf-stu-05
+    tier: 4
+    title: "STU-05 Computer Device Purchase Policy"
+    publisher: "Children's Scholarship Fund New Hampshire"
+    url: "https://nh.scholarshipfund.org/wp-content/uploads/2026/08/STU-05-Computer-Device-Purchase-Policy_8-28-26.pdf"
+    document_date: 2026-08-28
+    retrieved_at: 2026-10-19
+    review_flag: "The file name says 8-28-26 but the text extraction read 'Updated: August, 2025'. Confirm the revision date in the PDF."

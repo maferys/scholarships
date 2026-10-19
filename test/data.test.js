@@ -170,3 +170,24 @@ test('Texas funds explainer matches the Comptroller pages', () => {
     assert.ok(/25%.*25%.*50%/.test(note), `${lang} installments in order`);
   }
 });
+
+test('New Hampshire: tier 1 sources, CSF caps, drafts only', async () => {
+  const { evaluate, LABELS } = await import('../src/lib/eligibility.js');
+  const data = loadData();
+  const nh = data.programs.find((p) => p.id === 'nh-efa');
+  assert.equal(nh.sources.find((s) => s.id === 'csf-parent-handbook').tier, 4);
+  const rules = data.rules.filter((r) => r.program === 'nh-efa');
+  for (const r of rules) {
+    assert.ok(nh.sources.find((s) => s.id === r.source).tier <= 3, r.id);
+    assert.equal(r.review_status, 'draft');
+    assert.equal(r.es_reviewed, false);
+  }
+  const get = (c) => rules.find((r) => r.category === c);
+  assert.deepEqual(get('tech.computer').conditions, { max_amount: 3600, frequency: { count: 1, per_years: 3 } });
+  assert.equal(get('tech.tablet').conditions.max_amount, 1600);
+  const label = (c) => evaluate(data, { programId: 'nh-efa', categoryId: c }, '2026-10-19').label;
+  assert.equal(label('tech.computer'), LABELS.DEPENDS);
+  assert.equal(label('edu.private_school_tuition'), LABELS.LIKELY_ELIGIBLE);
+  assert.equal(label('tech.game_console'), LABELS.NOT_VERIFIED, 'CSF-only items are held');
+  assert.ok(evaluate(data, { programId: 'nh-efa', categoryId: 'books.textbooks' }, '2026-10-19').notices.includes('funded_account_gate'));
+});
