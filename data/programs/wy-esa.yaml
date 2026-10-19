@@ -36,7 +36,7 @@ sources:
     document_date: 2025-03-01
     retrieved_at: 2026-10-19
     note: "Sets the $7,000 award, amends 21-2-904(b)(i)(J) and adds (Q), online learning. The base list (A)-(P) is in HB0166 (2024)."
-    review_flag: "document_date is approximate (2025 session). Confirm against the current official compilation of W.S. 21-2-904."
+    review_flag: "document_date is approximate (2025 session). Confirm the subsection letters against the current official compilation: the rules cite 21-2-904(b)(i), as read from the bill text, but WDE's 2025 expense guidance heads its list 'W.S. 21-2-904(c)(i)(A)-(O)'."
   - id: wy-hb0166-2024
     tier: 1
     title: "HB0166 (2024), Wyoming Education Savings Account Act (enacted as HEA 53)"
