@@ -31,3 +31,12 @@ sources:
     document_date: 2025-06-23
     retrieved_at: 2026-10-18
     note: "ADE labels the 2025-26 handbook as current; no 2026-27 handbook has been published. Checked on https://www.azed.gov/esa/parent-handbook on 2026-10-18."
+  - id: az-settlement-2026
+    tier: 2
+    title: "Settlement Agreement, Aguirre v. State of Arizona (effective 2026-07-01)"
+    publisher: "Arizona Department of Education, State of Arizona and plaintiff (copy hosted by the Goldwater Institute)"
+    url: "https://goldwaterinstitute.org/wp-content/uploads/2026/07/Parties-Settlement-Agreement.pdf"
+    document_date: 2026-07-01
+    retrieved_at: 2026-10-19
+    note: "§1.2: no specific curriculum document for items the 2025-26 handbook lists as general educational supplemental materials. §2.1: holders attest the items are intended to support a curriculum and pick the curriculum or course of study for each request; curriculum documentation is still required for other supplemental materials. Reported by AZ Mirror and KAWC on 2026-07-07."
+    review_flag: "Tier 2 because ADE is a party, but the copy is hosted by plaintiffs' counsel. Check for an ADE or AG copy, and confirm ClassWallet has implemented the attestation."

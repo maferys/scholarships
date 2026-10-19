@@ -24,51 +24,72 @@ rules:
     status: allowed
     locator: "Education Code §29.359(a)(1)"
     quote: null
+    conditions:
+      requires_approved_vendor: false
+    review_flag: "Quote and label from the owner's review checklist (2026-10-18), citing 34 TAC Ch. 16 Subch. E. Not yet checked against the codified TAC text."
     conditions_text:
-      en: "Tuition and fees at an approved private school are allowed."
-      es: "Se permiten la colegiatura y las cuotas de una escuela privada aprobada."
+      en: "Tuition and fees at an approved private school are allowed. Families buy through the TEFA Marketplace, which only lists approved providers and vendors."
+      es: "Se permiten la colegiatura y las cuotas de una escuela privada aprobada. Las familias compran en el TEFA Marketplace, que solo incluye proveedores y vendedores aprobados."
 
   - category: edu.online_classes
     status: allowed
     locator: "Education Code §29.359(a)(1)"
     quote: null
+    review_flag: "Quote and label from the owner's review checklist (2026-10-18), citing 34 TAC Ch. 16 Subch. E. Not yet checked against the codified TAC text."
     conditions_text:
-      en: "Tuition and fees for an approved online course or program are allowed."
-      es: "Se permiten la colegiatura y las cuotas de un curso o programa en línea aprobado."
+      en: "Tuition and fees for an approved online course or program are allowed. The course does not need to earn credit, and it does not count toward the 10% technology cap."
+      es: "Se permiten la colegiatura y las cuotas de un curso o programa en línea aprobado. El curso no tiene que dar créditos y no cuenta para el límite de tecnología del 10%."
 
   - category: books.textbooks
     status: allowed
-    locator: "Education Code §29.359(a)(2)"
-    quote: "the purchase of textbooks or other instructional materials or uniforms required by a private school"
+    source: tx-tac-16
+    supporting_sources: [tx-sb2]
+    locator: "34 TAC §16.406(3); definition in §16.401"
+    quote: "Printed or digital materials, supplies, or equipment that convey educational information to a student"
+    conditions:
+      requires_approved_vendor: false
+    review_flag: "Quote and label from the owner's review checklist (2026-10-18), citing 34 TAC Ch. 16 Subch. E. Not yet checked against the codified TAC text."
     conditions_text:
-      en: "Textbooks and other instructional materials from an approved vendor are allowed."
-      es: "Se permiten los libros de texto y otros materiales de instrucción de un vendedor aprobado."
+      en: "Textbooks and instructional materials, printed or digital, are allowed for private school and homeschool students. Families buy through the TEFA Marketplace, which only lists approved providers and vendors."
+      es: "Se permiten los libros de texto y los materiales de instrucción, impresos o digitales, para estudiantes de escuela privada y de educación en casa. Las familias compran en el TEFA Marketplace, que solo incluye proveedores y vendedores aprobados."
 
   - category: curriculum.packaged
     status: allowed
-    locator: "Education Code §29.359(a)(2)"
-    quote: "the purchase of textbooks or other instructional materials or uniforms required by a private school"
+    source: tx-tac-16
+    supporting_sources: [tx-sb2]
+    locator: "34 TAC §16.406(3); definition in §16.401"
+    quote: "Printed or digital materials, supplies, or equipment that convey educational information to a student"
+    conditions:
+      requires_approved_vendor: false
+    review_flag: "Quote and label from the owner's review checklist (2026-10-18), citing 34 TAC Ch. 16 Subch. E. Not yet checked against the codified TAC text."
     conditions_text:
-      en: "Curriculum counts as instructional materials when bought from an approved vendor."
-      es: "El currículo cuenta como material de instrucción si se compra con un vendedor aprobado."
+      en: "Curriculum counts as instructional materials, printed or digital, for private school and homeschool students. Families buy through the TEFA Marketplace, which only lists approved providers and vendors."
+      es: "El currículo cuenta como material de instrucción, impreso o digital, para estudiantes de escuela privada y de educación en casa. Las familias compran en el TEFA Marketplace, que solo incluye proveedores y vendedores aprobados."
 
   - category: clothing.uniform
     segment: private_school
-    status: conditional
-    locator: "Education Code §29.359(a)(2)"
-    quote: "the purchase of textbooks or other instructional materials or uniforms required by a private school"
+    status: allowed
+    source: tx-tac-16
+    supporting_sources: [tx-sb2]
+    locator: "34 TAC §16.406(2)"
+    quote: "uniforms required by a private school, higher education provider, or industry-based training program in which the child is enrolled"
+    conditions:
+      requires_approved_vendor: false
+    review_flag: "Quote and label from the owner's review checklist (2026-10-18), citing 34 TAC Ch. 16 Subch. E. Not yet checked against the codified TAC text."
     conditions_text:
-      en: "Only uniforms required by the private school."
-      es: "Solo los uniformes que exige la escuela privada."
+      en: "Uniforms are allowed when the private school requires them. Families buy through the TEFA Marketplace, which only lists approved providers and vendors."
+      es: "Los uniformes se permiten cuando la escuela privada los exige. Las familias compran en el TEFA Marketplace, que solo incluye proveedores y vendedores aprobados."
 
   - category: edu.tutoring
-    status: allowed
-    source: tx-families-page
-    locator: "Approved expenses"
-    quote: null
+    status: conditional
+    source: tx-tac-16
+    supporting_sources: [tx-families-page]
+    locator: "34 TAC §16.406(6); §16.404; Education Code §29.358(b)(4)(B)"
+    quote: "fees for educational services provided by a private tutor or teaching service"
+    review_flag: "Quote and label from the owner's review checklist (2026-10-18), citing 34 TAC Ch. 16 Subch. E. Not yet checked against the codified TAC text."
     conditions_text:
-      en: "Private tutoring from an approved provider is an approved expense."
-      es: "La tutoría privada con un proveedor aprobado es un gasto aprobado."
+      en: "Private tutoring from an approved provider is allowed. The tutor must show qualifications and a national criminal history record review dated within 30 days of the application."
+      es: "Se permite la tutoría privada con un proveedor aprobado. El tutor debe mostrar sus calificaciones y una revisión nacional de antecedentes penales con fecha de hasta 30 días antes de la solicitud."
 
   - category: edu.testing
     status: allowed
@@ -81,12 +102,14 @@ rules:
 
   - category: edu.therapy
     status: conditional
-    source: tx-families-page
-    locator: "Approved expenses"
-    quote: null
+    source: tx-tac-16
+    supporting_sources: [tx-families-page]
+    locator: "34 TAC §16.406(7)"
+    quote: "to the extent not covered by government benefits or by private insurance or provided by a public school"
+    review_flag: "Quote and label from the owner's review checklist (2026-10-18), citing 34 TAC Ch. 16 Subch. E. Not yet checked against the codified TAC text."
     conditions_text:
-      en: "Educational therapies are allowed when they are not covered by government benefits such as Medicaid."
-      es: "Las terapias educativas se permiten cuando no las cubren beneficios del gobierno como Medicaid."
+      en: "Educational therapies are allowed only when they are not covered by government benefits such as Medicaid or by private insurance, and not provided by a public school."
+      es: "Las terapias educativas se permiten solo cuando no las cubren beneficios del gobierno como Medicaid ni un seguro privado, y no las da una escuela pública."
 
   - category: transport.general
     status: conditional
@@ -243,3 +266,13 @@ rules:
     conditions_text:
       en: "Musical instruments have a price cap of $1,200. They are not part of the 10% technology cap."
       es: "Los instrumentos musicales tienen un precio máximo de $1,200. No forman parte del límite de tecnología del 10%."
+
+  - category: tech.game_console
+    status: not_allowed
+    source: tx-tac-16
+    locator: "34 TAC §16.406 (closed list of approved expenses)"
+    quote: "Program money may be used only at an approved provider for the following"
+    review_flag: "Quote and label from the owner's review checklist (2026-10-18), citing 34 TAC Ch. 16 Subch. E. Not yet checked against the codified TAC text."
+    conditions_text:
+      en: "Game consoles are not in the list of approved expenses, and the list is closed. The only exception would be a device an approved provider requires or a physician prescribes, which is rare."
+      es: "Las consolas de videojuegos no están en la lista de gastos aprobados, y la lista es cerrada. La única excepción sería un aparato que exija un proveedor aprobado o recete un médico, lo cual es raro."

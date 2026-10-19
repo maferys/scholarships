@@ -11,6 +11,10 @@ const top = (q) => match(categories, q)[0]?.categoryId;
 const CASES = [
   ['are laptops ESA eligible in Arizona?', 'tech.computer'],
   ['wireless keyboard', 'tech.keyboard'],
+  ['guitar strings', 'instruments.accessories'],
+  ['reloj digital para mi hijo', 'watch.general'],
+  ['apple watch', 'tech.smartwatch'],
+  ['reloj inteligente', 'tech.smartwatch'],
   ['teclado para la computadora', 'tech.keyboard'],
   ['keyboard piano', 'instruments.musical'],
   ['iPad', 'tech.tablet'],

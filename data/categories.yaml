@@ -135,6 +135,20 @@
     en: [instrument, piano, keyboard piano, musical keyboard, electric piano, guitar, violin, ukulele, drum, flute]
     es: [instrumento, piano, guitarra, violin, ukulele, tambor, flauta]
 
+- id: instruments.accessories
+  group: products
+  name: { en: "Instrument accessories or repair", es: "Accesorios o reparación de instrumentos" }
+  synonyms:
+    en: [guitar strings, violin strings, reeds, rosin, instrument case, music stand, metronome, instrument repair, piano tuning, tuner]
+    es: [cuerdas de guitarra, cuerdas de violin, cañas, resina, estuche de instrumento, atril, metronomo, reparacion de instrumento, afinacion de piano, afinador]
+
+- id: watch.general
+  group: products
+  name: { en: "Watch (analog or digital, no cellular)", es: "Reloj (analógico o digital, sin celular)" }
+  synonyms:
+    en: [watch, wristwatch, analog watch, digital watch]
+    es: [reloj, reloj de pulsera, reloj analogico, reloj digital]
+
 - id: sports.equipment
   group: products
   name: { en: "Sports equipment", es: "Equipo deportivo" }

@@ -52,7 +52,7 @@ test('Texas technology rules: statute source, approved-vendor condition, 10% cap
   const data = loadData();
   const tx = data.programs.find((p) => p.id === 'tx-tefa');
   const tier = (id) => tx.sources.find((s) => s.id === id).tier;
-  const tech = data.rules.filter((r) => r.program === 'tx-tefa' && (r.category.startsWith('tech.') || r.category === 'software.educational'));
+  const tech = data.rules.filter((r) => r.program === 'tx-tefa' && r.category !== 'tech.game_console' && (r.category.startsWith('tech.') || r.category === 'software.educational'));
   assert.ok(tech.length >= 9);
   assert.ok(tech.find((r) => r.category === 'tech.keyboard'));
   for (const r of tech) {
@@ -115,11 +115,47 @@ test('Alabama: tablets share the computer limit; headphones and keyboards quote 
   }
 });
 
-test('Arizona: only supplemental-material and curriculum rules carry a review flag', () => {
+test('Arizona: review flags only on supplemental materials, curriculum and printer ink', () => {
   const { rules, programs } = loadData();
   const flagged = rules.filter((r) => r.program === 'az-esa' && r.review_flag);
-  for (const r of flagged) assert.ok(r.category === 'curriculum.packaged' || /Supplementary materials/.test(r.locator), r.id);
+  for (const r of flagged) {
+    assert.ok(r.category === 'curriculum.packaged' || r.category === 'tech.printer' || r.supporting_sources?.includes('az-settlement-2026'), r.id);
+  }
   assert.ok(!rules.find((r) => r.id === 'az-esa.all.tech.computer').review_flag);
   const handbook = programs.find((p) => p.id === 'az-esa').sources[0];
   assert.match(handbook.note, /ADE labels the 2025-26 handbook as current; no 2026-27 handbook has been published/);
+});
+test('Arizona settlement: general supplemental list stays eligible with an attestation; curriculum-required items depend', async () => {
+  const { evaluate, LABELS } = await import('../src/lib/eligibility.js');
+  const data = loadData();
+  const az = data.programs.find((p) => p.id === 'az-esa');
+  assert.equal(az.sources.find((s) => s.id === 'az-settlement-2026').tier, 2);
+  const label = (c) => evaluate(data, { programId: 'az-esa', categoryId: c }, '2026-10-19').label;
+  for (const c of ['books.textbooks', 'supplies.school', 'supplies.art', 'software.educational', 'sports.equipment', 'instruments.accessories']) {
+    assert.equal(label(c), LABELS.LIKELY_ELIGIBLE, c);
+    assert.match(data.rules.find((r) => r.id === `az-esa.all.${c}`).conditions_text.en, /attest that it supports a curriculum/);
+  }
+  for (const c of ['instruments.musical', 'edu.field_trip', 'edu.camp', 'watch.general']) {
+    const r = data.rules.find((x) => x.id === `az-esa.all.${c}`);
+    assert.deepEqual(r.conditions.requires_documentation, ['curriculum_documentation'], c);
+    assert.equal(label(c), LABELS.DEPENDS, c);
+  }
+  assert.equal(label('edu.online_classes'), LABELS.DEPENDS);
+  assert.equal(label('tech.smartwatch'), LABELS.LIKELY_NOT_ELIGIBLE);
+  assert.equal(data.rules.find((r) => r.id === 'az-esa.all.tech.computer').conditions.max_amount, undefined, 'adopted handbook has no laptop cap');
+});
+
+test('Texas checklist: tuition, instructional materials and uniforms likely eligible; consoles not eligible', async () => {
+  const { evaluate, LABELS } = await import('../src/lib/eligibility.js');
+  const data = loadData();
+  const label = (c, segment = 'private_school') => evaluate(data, { programId: 'tx-tefa', segment, categoryId: c }, '2026-10-19').label;
+  for (const c of ['edu.private_school_tuition', 'books.textbooks', 'curriculum.packaged', 'clothing.uniform']) assert.equal(label(c), LABELS.LIKELY_ELIGIBLE, c);
+  for (const c of ['books.textbooks', 'curriculum.packaged']) assert.equal(label(c, 'home_education'), LABELS.LIKELY_ELIGIBLE, c);
+  for (const c of ['edu.tutoring', 'edu.online_classes', 'edu.therapy']) assert.equal(label(c, 'home_education'), LABELS.DEPENDS, c);
+  assert.equal(label('tech.game_console', 'home_education'), LABELS.LIKELY_NOT_ELIGIBLE);
+  const therapy = data.rules.find((r) => r.id === 'tx-tefa.all.edu.therapy');
+  assert.match(therapy.conditions_text.en, /private insurance/);
+  const tutoring = data.rules.find((r) => r.id === 'tx-tefa.all.edu.tutoring');
+  assert.match(tutoring.conditions_text.en, /within 30 days/);
+  for (const r of data.rules.filter((x) => x.program !== 'nh-efa')) assert.equal(r.review_status, 'draft', r.id);
 });

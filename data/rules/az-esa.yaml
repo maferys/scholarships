@@ -12,7 +12,7 @@ defaults:
 submit_tip:
   en: "Choose the matching expense category in ClassWallet and keep an itemized receipt with the vendor's name, date and transaction number."
   es: "Elija la categoría de gasto correspondiente en ClassWallet y guarde un recibo detallado con el nombre del vendedor, la fecha y el número de transacción."
-submit_tip_review_flag: "Receipt requirements: confirm against ADE before review. Read \"A message from Supt Horne about supplemental curriculum\" (https://www.azed.gov/node/3742); do not rely on third-party guides for any July 2026 documentation change."
+submit_tip_review_flag: "Receipt requirements: confirm against ADE before review. Since 2026-07-01 (settlement §2.1), general supplemental-material requests also need an attestation and a course of study."
 
 rules:
   - category: tech.computer
@@ -35,9 +35,10 @@ rules:
     status: allowed
     locator: "p. 16, Computer hardware and technological devices"
     quote: "Includes calculators, personal computers, laptops, tablet devices, microscopes, telescopes, and printers."
+    review_flag: "Ink and cartridges match this category but the handbook only lists printers (pp. 16, 27). Confirm with ADE whether ink counts."
     conditions_text:
-      en: "Printers are listed as allowed technology."
-      es: "Las impresoras aparecen como tecnología permitida."
+      en: "Printers are listed as allowed technology. The handbook does not mention ink, toner or cartridges."
+      es: "Las impresoras aparecen como tecnología permitida. El manual no menciona la tinta, el tóner ni los cartuchos."
 
   - category: tech.headphones
     status: allowed
@@ -81,45 +82,49 @@ rules:
 
   - category: software.educational
     status: allowed
-    review_flag: "Supplemental curriculum materials: before reviewing, read ADE's \"A message from Supt Horne about supplemental curriculum\" (https://www.azed.gov/node/3742). The only source found for a July 2026 documentation change is a third-party guide, which is not acceptable."
+    review_flag: "General education supplemental material (handbook p. 23). Since 2026-07-01 the settlement removes the curriculum-document requirement and adds an attestation; check the settlement source's review flag."
+    supporting_sources: [az-settlement-2026]
     locator: "p. 23, Supplementary materials"
     quote: "Educational software & apps"
     conditions_text:
-      en: "Educational software and apps are listed as supplementary materials."
-      es: "El software y las aplicaciones educativas aparecen como materiales complementarios."
+      en: "Educational software and apps are listed as supplementary materials. Since July 1, 2026, you do not need a curriculum document for this item, but you must attest that it supports a curriculum and choose the course of study when you request it."
+      es: "El software y las aplicaciones educativas aparecen como materiales complementarios. Desde el 1 de julio de 2026 no necesita un documento de currículo para este artículo, pero debe declarar que apoya un currículo y elegir el curso de estudio al solicitarlo."
 
   - category: supplies.school
     status: allowed
-    review_flag: "Supplemental curriculum materials: before reviewing, read ADE's \"A message from Supt Horne about supplemental curriculum\" (https://www.azed.gov/node/3742). The only source found for a July 2026 documentation change is a third-party guide, which is not acceptable."
+    review_flag: "General education supplemental material (handbook p. 23). Since 2026-07-01 the settlement removes the curriculum-document requirement and adds an attestation; check the settlement source's review flag."
+    supporting_sources: [az-settlement-2026]
     locator: "p. 24, Supplementary materials"
     quote: "Writing utensils (pens, markers, pencils, highlighters, crayons, chalk)"
     conditions_text:
-      en: "School supplies such as paper, notebooks, binders and writing utensils are allowed."
-      es: "Se permiten útiles escolares como papel, cuadernos, carpetas y lápices o plumas."
+      en: "School supplies such as paper, notebooks, binders and writing utensils are allowed. Since July 1, 2026, you do not need a curriculum document for this item, but you must attest that it supports a curriculum and choose the course of study when you request it."
+      es: "Se permiten útiles escolares como papel, cuadernos, carpetas y lápices o plumas. Desde el 1 de julio de 2026 no necesita un documento de currículo para este artículo, pero debe declarar que apoya un currículo y elegir el curso de estudio al solicitarlo."
 
   - category: supplies.art
     status: allowed
-    review_flag: "Supplemental curriculum materials: before reviewing, read ADE's \"A message from Supt Horne about supplemental curriculum\" (https://www.azed.gov/node/3742). The only source found for a July 2026 documentation change is a third-party guide, which is not acceptable."
+    review_flag: "General education supplemental material (handbook p. 23). Since 2026-07-01 the settlement removes the curriculum-document requirement and adds an attestation; check the settlement source's review flag."
+    supporting_sources: [az-settlement-2026]
     locator: "p. 23, Supplementary materials"
     quote: "Art supplies (paint, watercolors, paint brushes, canvas, drawing paper, clay,"
     conditions_text:
-      en: "Art supplies are listed as supplementary materials."
-      es: "Los materiales de arte aparecen como materiales complementarios."
+      en: "Art supplies are listed as supplementary materials. Since July 1, 2026, you do not need a curriculum document for this item, but you must attest that it supports a curriculum and choose the course of study when you request it."
+      es: "Los materiales de arte aparecen como materiales complementarios. Desde el 1 de julio de 2026 no necesita un documento de currículo para este artículo, pero debe declarar que apoya un currículo y elegir el curso de estudio al solicitarlo."
 
   - category: books.textbooks
     status: allowed
-    review_flag: "Supplemental curriculum materials: before reviewing, read ADE's \"A message from Supt Horne about supplemental curriculum\" (https://www.azed.gov/node/3742). The only source found for a July 2026 documentation change is a third-party guide, which is not acceptable."
+    review_flag: "General education supplemental material (handbook p. 23). Since 2026-07-01 the settlement removes the curriculum-document requirement and adds an attestation; check the settlement source's review flag."
+    supporting_sources: [az-settlement-2026]
     locator: "p. 23, Supplementary materials"
     quote: "Books (including audio, digital, players)/coloring books/magazines"
     conditions_text:
-      en: "Books, including audio and digital books, are listed as supplementary materials."
-      es: "Los libros, incluidos los audiolibros y libros digitales, aparecen como materiales complementarios."
+      en: "Books, including audio and digital books, are listed as supplementary materials. Since July 1, 2026, you do not need a curriculum document for this item, but you must attest that it supports a curriculum and choose the course of study when you request it."
+      es: "Los libros, incluidos los audiolibros y libros digitales, aparecen como materiales complementarios. Desde el 1 de julio de 2026 no necesita un documento de currículo para este artículo, pero debe declarar que apoya un currículo y elegir el curso de estudio al solicitarlo."
 
   - category: curriculum.packaged
     status: conditional
     conditions:
       requires_documentation: [curriculum_documentation]
-    review_flag: "Supplemental curriculum materials: before reviewing, read ADE's \"A message from Supt Horne about supplemental curriculum\" (https://www.azed.gov/node/3742). The only source found for a July 2026 documentation change is a third-party guide, which is not acceptable."
+    review_flag: "The owner's checklist (2026-10-18) proposes likely eligible because a packaged curriculum carries its own documentation. Handbook p. 20 says curriculum documentation must include the course of study, objectives and lessons; confirm before changing the label."
     locator: "p. 20, Curricula"
     quote: "curriculum documentation must include:"
     conditions_text:
@@ -128,39 +133,45 @@ rules:
 
   - category: toys.general
     status: conditional
-    review_flag: "Supplemental curriculum materials: before reviewing, read ADE's \"A message from Supt Horne about supplemental curriculum\" (https://www.azed.gov/node/3742). The only source found for a July 2026 documentation change is a third-party guide, which is not acceptable."
+    review_flag: "General education supplemental material (handbook p. 23). Since 2026-07-01 the settlement removes the curriculum-document requirement and adds an attestation; check the settlement source's review flag."
+    supporting_sources: [az-settlement-2026]
     locator: "p. 23, Supplementary materials"
     quote: "Educational toys"
     conditions_text:
-      en: "Only educational toys are listed. Toys bought for entertainment are not."
-      es: "Solo aparecen los juguetes educativos. Los juguetes de entretenimiento no."
+      en: "Only educational toys are listed. Toys bought for entertainment are not. Since July 1, 2026, you do not need a curriculum document for this item, but you must attest that it supports a curriculum and choose the course of study when you request it."
+      es: "Solo aparecen los juguetes educativos. Los juguetes de entretenimiento no. Desde el 1 de julio de 2026 no necesita un documento de currículo para este artículo, pero debe declarar que apoya un currículo y elegir el curso de estudio al solicitarlo."
 
   - category: instruments.musical
     status: conditional
-    review_flag: "Supplemental curriculum materials: before reviewing, read ADE's \"A message from Supt Horne about supplemental curriculum\" (https://www.azed.gov/node/3742). The only source found for a July 2026 documentation change is a third-party guide, which is not acceptable."
+    conditions:
+      requires_documentation: [curriculum_documentation]
+    review_flag: "On the handbook's p. 22 list of supplemental material that requires curricula. Settlement §2.1 keeps curriculum documentation for these items."
+    supporting_sources: [az-settlement-2026]
     locator: "p. 22, Supplementary materials"
     quote: "Instruments"
     conditions_text:
-      en: "Musical instruments are listed as supplementary material. Keep documentation showing how the instrument is used for instruction."
-      es: "Los instrumentos musicales aparecen como material complementario. Guarde documentación que muestre cómo se usa el instrumento para la enseñanza."
+      en: "Musical instruments are listed as supplementary material. This item is on the handbook's list of supplemental material that requires curriculum documentation: submit a curriculum that recommends or requires it. The July 2026 settlement keeps that requirement."
+      es: "Los instrumentos musicales aparecen como material complementario. Este artículo está en la lista del manual de material complementario que requiere documentación de currículo: presente un currículo que lo recomiende o lo exija. El acuerdo de julio de 2026 mantiene ese requisito."
 
   - category: sports.equipment
     status: allowed
-    review_flag: "Supplemental curriculum materials: before reviewing, read ADE's \"A message from Supt Horne about supplemental curriculum\" (https://www.azed.gov/node/3742). The only source found for a July 2026 documentation change is a third-party guide, which is not acceptable."
+    review_flag: "General education supplemental material (handbook p. 23). Since 2026-07-01 the settlement removes the curriculum-document requirement and adds an attestation; check the settlement source's review flag."
+    supporting_sources: [az-settlement-2026]
     locator: "p. 23, Supplementary materials"
     quote: "Basic sport items such as bats, balls, gloves, racquets, and protective equipment"
     conditions_text:
-      en: "Basic sports items are allowed. Pools, large trampolines and bounce houses are not."
-      es: "Se permiten artículos deportivos básicos. Las piscinas, los trampolines grandes y los inflables no."
+      en: "Basic sports items are allowed. Pools, large trampolines and bounce houses are not. Since July 1, 2026, you do not need a curriculum document for this item, but you must attest that it supports a curriculum and choose the course of study when you request it."
+      es: "Se permiten artículos deportivos básicos. Las piscinas, los trampolines grandes y los inflables no. Desde el 1 de julio de 2026 no necesita un documento de currículo para este artículo, pero debe declarar que apoya un currículo y elegir el curso de estudio al solicitarlo."
 
   - category: furniture.desk
     status: conditional
-    review_flag: "Supplemental curriculum materials: before reviewing, read ADE's \"A message from Supt Horne about supplemental curriculum\" (https://www.azed.gov/node/3742). The only source found for a July 2026 documentation change is a third-party guide, which is not acceptable."
+    review_flag: "General education supplemental material (handbook p. 23). Since 2026-07-01 the settlement removes the curriculum-document requirement and adds an attestation; check the settlement source's review flag."
+    supporting_sources: [az-settlement-2026]
     locator: "p. 23, Supplementary materials"
     quote: "Desk (which can accommodate up to two people) and chair for ESA student"
     conditions_text:
-      en: "A desk for up to two students and a chair for the ESA student are allowed. Other home furniture is not."
-      es: "Se permite un escritorio para hasta dos estudiantes y una silla para el estudiante ESA. Otros muebles del hogar no."
+      en: "A desk for up to two students and a chair for the ESA student are allowed. Other home furniture is not. Since July 1, 2026, you do not need a curriculum document for this item, but you must attest that it supports a curriculum and choose the course of study when you request it."
+      es: "Se permite un escritorio para hasta dos estudiantes y una silla para el estudiante ESA. Otros muebles del hogar no. Desde el 1 de julio de 2026 no necesita un documento de currículo para este artículo, pero debe declarar que apoya un currículo y elegir el curso de estudio al solicitarlo."
 
   - category: clothing.general
     status: not_allowed
@@ -203,7 +214,7 @@ rules:
       es: "Se permiten la colegiatura y las cuotas de una escuela calificada (no gubernamental)."
 
   - category: edu.online_classes
-    status: allowed
+    status: conditional
     locator: "p. 24, Online programs"
     quote: "Can only be used for online learning programs or subscriptions for the contract year."
     conditions_text:
@@ -280,22 +291,28 @@ rules:
       es: "Se permiten las cuotas de exámenes nacionales estandarizados de rendimiento."
 
   - category: edu.field_trip
-    status: allowed
-    review_flag: "Supplemental curriculum materials: before reviewing, read ADE's \"A message from Supt Horne about supplemental curriculum\" (https://www.azed.gov/node/3742). The only source found for a July 2026 documentation change is a third-party guide, which is not acceptable."
+    status: conditional
+    conditions:
+      requires_documentation: [curriculum_documentation]
+    review_flag: "On the handbook's p. 22 list of supplemental material that requires curricula. Settlement §2.1 keeps curriculum documentation for these items."
+    supporting_sources: [az-settlement-2026]
     locator: "p. 23, Supplementary materials"
     quote: "Single tickets for educational events or venues such as zoos, science or art museums"
     conditions_text:
-      en: "Single tickets for the ESA student to educational places like zoos and museums are allowed."
-      es: "Se permiten boletos individuales del estudiante ESA para lugares educativos como zoológicos y museos."
+      en: "Single tickets for the ESA student to educational places like zoos and museums are allowed. This item is on the handbook's list of supplemental material that requires curriculum documentation: submit a curriculum that recommends or requires it. The July 2026 settlement keeps that requirement."
+      es: "Se permiten boletos individuales del estudiante ESA para lugares educativos como zoológicos y museos. Este artículo está en la lista del manual de material complementario que requiere documentación de currículo: presente un currículo que lo recomiende o lo exija. El acuerdo de julio de 2026 mantiene ese requisito."
 
   - category: edu.camp
     status: conditional
-    review_flag: "Supplemental curriculum materials: before reviewing, read ADE's \"A message from Supt Horne about supplemental curriculum\" (https://www.azed.gov/node/3742). The only source found for a July 2026 documentation change is a third-party guide, which is not acceptable."
+    conditions:
+      requires_documentation: [curriculum_documentation]
+    review_flag: "On the handbook's p. 22 list of supplemental material that requires curricula. Settlement §2.1 keeps curriculum documentation for these items."
+    supporting_sources: [az-settlement-2026]
     locator: "p. 22, Supplementary materials"
     quote: "Educational camps (travel, overnight accommodations and food are not an allowable expense)"
     conditions_text:
-      en: "Educational camps are allowed, but travel, overnight stays and food are not."
-      es: "Se permiten los campamentos educativos, pero no el viaje, el hospedaje ni la comida."
+      en: "Educational camps are allowed, but travel, overnight stays and food are not. This item is on the handbook's list of supplemental material that requires curriculum documentation: submit a curriculum that recommends or requires it. The July 2026 settlement keeps that requirement."
+      es: "Se permiten los campamentos educativos, pero no el viaje, el hospedaje ni la comida. Este artículo está en la lista del manual de material complementario que requiere documentación de currículo: presente un currículo que lo recomiende o lo exija. El acuerdo de julio de 2026 mantiene ese requisito."
 
   - category: transport.general
     status: conditional
@@ -312,3 +329,27 @@ rules:
     conditions_text:
       en: "Only an individual membership for the ESA student. Family memberships are not allowed."
       es: "Solo una membresía individual para el estudiante ESA. Las membresías familiares no se permiten."
+
+  - category: instruments.accessories
+    status: allowed
+    locator: "p. 23, General education supplemental material"
+    quote: "Instrument accessories and maintenance"
+    supporting_sources: [az-settlement-2026]
+    last_verified: 2026-10-19
+    review_flag: "General education supplemental material (handbook p. 23). Since 2026-07-01 the settlement removes the curriculum-document requirement and adds an attestation; check the settlement source's review flag."
+    conditions_text:
+      en: "Instrument accessories and maintenance are on the general supplemental materials list. Since July 1, 2026, you do not need a curriculum document for this item, but you must attest that it supports a curriculum and choose the course of study when you request it."
+      es: "Los accesorios y el mantenimiento de instrumentos están en la lista general de materiales complementarios. Desde el 1 de julio de 2026 no necesita un documento de currículo para este artículo, pero debe declarar que apoya un currículo y elegir el curso de estudio al solicitarlo."
+
+  - category: watch.general
+    status: conditional
+    conditions:
+      requires_documentation: [curriculum_documentation]
+    locator: "p. 23, Supplemental material that requires curricula"
+    quote: "Watches (analog or digital)"
+    supporting_sources: [az-settlement-2026]
+    last_verified: 2026-10-19
+    review_flag: "On the handbook's list of supplemental material that requires curricula. Settlement §2.1 keeps curriculum documentation for these items."
+    conditions_text:
+      en: "Analog or digital watches without cellular service are allowed only with curriculum documentation that recommends or requires them. Smartwatches with cellular service are not allowed."
+      es: "Los relojes analógicos o digitales sin servicio celular se permiten solo con documentación de currículo que los recomiende o los exija. Los relojes inteligentes con servicio celular no se permiten."
