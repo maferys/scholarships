@@ -280,11 +280,11 @@ rules:
   - category: tech.phone
     status: not_allowed
     source: tx-tac-16
-    supporting_sources: [tx-families-page]
+    supporting_sources: [tx-families-page, tx-sb2]
     locator: "34 TAC §16.406 (closed list of approved expenses)"
     quote: "Program money may be used only at an approved provider for the following"
     last_verified: 2026-10-19
-    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Not yet checked against the codified TAC text."
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Education Code §29.359(a) also makes the list closed: money may be spent 'only for the following education-related expenses' (read via FindLaw 2026-10-19; check the official text). Owner kept 'likely not' on 2026-10-19. Not yet checked against the codified TAC text."
     conditions_text:
       en: "Phones are not in the list of approved expenses, and the list is closed. The only exception would be a device an approved provider requires or a physician prescribes, which is rare."
       es: "Los teléfonos no están en la lista de gastos aprobados, y la lista es cerrada. La única excepción sería un aparato que exija un proveedor aprobado o recete un médico, lo cual es raro."
@@ -292,11 +292,11 @@ rules:
   - category: tech.smartwatch
     status: not_allowed
     source: tx-tac-16
-    supporting_sources: [tx-families-page]
+    supporting_sources: [tx-families-page, tx-sb2]
     locator: "34 TAC §16.406 (closed list of approved expenses)"
     quote: "Program money may be used only at an approved provider for the following"
     last_verified: 2026-10-19
-    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Not yet checked against the codified TAC text."
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Education Code §29.359(a) also makes the list closed: money may be spent 'only for the following education-related expenses' (read via FindLaw 2026-10-19; check the official text). Owner kept 'likely not' on 2026-10-19. Not yet checked against the codified TAC text."
     conditions_text:
       en: "Smartwatches are not in the list of approved expenses, and the list is closed. The only exception would be a device an approved provider requires or a physician prescribes, which is rare."
       es: "Los relojes inteligentes no están en la lista de gastos aprobados, y la lista es cerrada. La única excepción sería un aparato que exija un proveedor aprobado o recete un médico, lo cual es raro."
@@ -304,11 +304,11 @@ rules:
   - category: tech.tv
     status: not_allowed
     source: tx-tac-16
-    supporting_sources: [tx-families-page]
+    supporting_sources: [tx-families-page, tx-sb2]
     locator: "34 TAC §16.406 (closed list of approved expenses)"
     quote: "Program money may be used only at an approved provider for the following"
     last_verified: 2026-10-19
-    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Not yet checked against the codified TAC text."
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Education Code §29.359(a) also makes the list closed: money may be spent 'only for the following education-related expenses' (read via FindLaw 2026-10-19; check the official text). Owner kept 'likely not' on 2026-10-19. Not yet checked against the codified TAC text."
     conditions_text:
       en: "TVs are not in the list of approved expenses, and the list is closed. The only exception would be a device an approved provider requires or a physician prescribes, which is rare."
       es: "Los televisores no están en la lista de gastos aprobados, y la lista es cerrada. La única excepción sería un aparato que exija un proveedor aprobado o recete un médico, lo cual es raro."
@@ -316,11 +316,11 @@ rules:
   - category: watch.general
     status: not_allowed
     source: tx-tac-16
-    supporting_sources: [tx-families-page]
+    supporting_sources: [tx-families-page, tx-sb2]
     locator: "34 TAC §16.406 (closed list of approved expenses)"
     quote: "Program money may be used only at an approved provider for the following"
     last_verified: 2026-10-19
-    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Not yet checked against the codified TAC text."
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Education Code §29.359(a) also makes the list closed: money may be spent 'only for the following education-related expenses' (read via FindLaw 2026-10-19; check the official text). Owner kept 'likely not' on 2026-10-19. Not yet checked against the codified TAC text."
     conditions_text:
       en: "Watches are not in the list of approved expenses, and the list is closed."
       es: "Los relojes no están en la lista de gastos aprobados, y la lista es cerrada."
@@ -328,11 +328,11 @@ rules:
   - category: clothing.general
     status: not_allowed
     source: tx-tac-16
-    supporting_sources: [tx-families-page]
+    supporting_sources: [tx-families-page, tx-sb2]
     locator: "34 TAC §16.406 (closed list of approved expenses)"
     quote: "Program money may be used only at an approved provider for the following"
     last_verified: 2026-10-19
-    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Not yet checked against the codified TAC text."
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Education Code §29.359(a) also makes the list closed: money may be spent 'only for the following education-related expenses' (read via FindLaw 2026-10-19; check the official text). Owner kept 'likely not' on 2026-10-19. Not yet checked against the codified TAC text."
     conditions_text:
       en: "Clothing is not in the list of approved expenses, and the list is closed. Only uniforms a private school requires are allowed."
       es: "La ropa no está en la lista de gastos aprobados, y la lista es cerrada. Solo se permiten los uniformes que exige una escuela privada."
@@ -340,11 +340,11 @@ rules:
   - category: bags.backpack
     status: not_allowed
     source: tx-tac-16
-    supporting_sources: [tx-families-page]
+    supporting_sources: [tx-families-page, tx-sb2]
     locator: "34 TAC §16.406 (closed list of approved expenses)"
     quote: "Program money may be used only at an approved provider for the following"
     last_verified: 2026-10-19
-    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Not yet checked against the codified TAC text."
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Education Code §29.359(a) also makes the list closed: money may be spent 'only for the following education-related expenses' (read via FindLaw 2026-10-19; check the official text). Owner kept 'likely not' on 2026-10-19. Not yet checked against the codified TAC text."
     conditions_text:
       en: "Backpacks are not in the list of approved expenses, and the list is closed."
       es: "Las mochilas no están en la lista de gastos aprobados, y la lista es cerrada."
@@ -352,11 +352,11 @@ rules:
   - category: furniture.desk
     status: not_allowed
     source: tx-tac-16
-    supporting_sources: [tx-families-page]
+    supporting_sources: [tx-families-page, tx-sb2]
     locator: "34 TAC §16.406 (closed list of approved expenses)"
     quote: "Program money may be used only at an approved provider for the following"
     last_verified: 2026-10-19
-    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Not yet checked against the codified TAC text."
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Education Code §29.359(a) also makes the list closed: money may be spent 'only for the following education-related expenses' (read via FindLaw 2026-10-19; check the official text). Owner kept 'likely not' on 2026-10-19. Not yet checked against the codified TAC text."
     conditions_text:
       en: "Desks and furniture are not in the list of approved expenses, and the list is closed."
       es: "Los escritorios y muebles no están en la lista de gastos aprobados, y la lista es cerrada."
@@ -364,11 +364,11 @@ rules:
   - category: sports.equipment
     status: not_allowed
     source: tx-tac-16
-    supporting_sources: [tx-families-page]
+    supporting_sources: [tx-families-page, tx-sb2]
     locator: "34 TAC §16.406 (closed list of approved expenses)"
     quote: "Program money may be used only at an approved provider for the following"
     last_verified: 2026-10-19
-    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Not yet checked against the codified TAC text."
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Education Code §29.359(a) also makes the list closed: money may be spent 'only for the following education-related expenses' (read via FindLaw 2026-10-19; check the official text). Owner kept 'likely not' on 2026-10-19. Not yet checked against the codified TAC text."
     conditions_text:
       en: "Sports equipment is not in the list of approved expenses, and the list is closed."
       es: "El equipo deportivo no está en la lista de gastos aprobados, y la lista es cerrada."
@@ -376,11 +376,11 @@ rules:
   - category: membership.gym
     status: not_allowed
     source: tx-tac-16
-    supporting_sources: [tx-families-page]
+    supporting_sources: [tx-families-page, tx-sb2]
     locator: "34 TAC §16.406 (closed list of approved expenses)"
     quote: "Program money may be used only at an approved provider for the following"
     last_verified: 2026-10-19
-    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Not yet checked against the codified TAC text."
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Education Code §29.359(a) also makes the list closed: money may be spent 'only for the following education-related expenses' (read via FindLaw 2026-10-19; check the official text). Owner kept 'likely not' on 2026-10-19. Not yet checked against the codified TAC text."
     conditions_text:
       en: "Gym and family memberships are not in the list of approved expenses, and the list is closed."
       es: "Las membresías de gimnasio o familiares no están en la lista de gastos aprobados, y la lista es cerrada."
@@ -388,11 +388,11 @@ rules:
   - category: edu.field_trip
     status: not_allowed
     source: tx-tac-16
-    supporting_sources: [tx-families-page]
+    supporting_sources: [tx-families-page, tx-sb2]
     locator: "34 TAC §16.406 (closed list of approved expenses)"
     quote: "Program money may be used only at an approved provider for the following"
     last_verified: 2026-10-19
-    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Not yet checked against the codified TAC text."
+    review_flag: "Label inferred from the closed list in 34 TAC §16.406 and the Comptroller's approved-expenses list (read 2026-10-19), which do not name this item. Education Code §29.359(a) also makes the list closed: money may be spent 'only for the following education-related expenses' (read via FindLaw 2026-10-19; check the official text). Owner kept 'likely not' on 2026-10-19. Not yet checked against the codified TAC text."
     conditions_text:
       en: "Museum, zoo and field-trip tickets are not in the list of approved expenses, and the list is closed."
       es: "Las entradas a museos, zoológicos y excursiones no están en la lista de gastos aprobados, y la lista es cerrada."
