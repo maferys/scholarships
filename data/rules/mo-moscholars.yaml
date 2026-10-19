@@ -1,0 +1,300 @@
+# Missouri MOScholars rules. RSMo 166.705 and 15 CSR 50-5 are tier 1; the Treasurer's
+# parent handbook is tier 2; Odyssey help articles are tier 3. The program is marked
+# settling, so only tier 1 rules can show "likely eligible" or "likely not eligible".
+# Quotes come from text extractions read on 2026-10-19 and need checking against the sources.
+program: mo-moscholars
+defaults:
+  segment: all
+  source: rsmo-166-705
+  effective_from: 2026-07-01
+  effective_to: 2027-06-30
+  last_verified: 2026-10-19
+  verified_by: claude
+  review_status: draft
+  conditions:
+    requires_approved_vendor: true
+submit_tip:
+  en: "Buy through the Odyssey Marketplace or request a tuition payment in Odyssey. Ask your EAO or the Treasurer before paying out of pocket, since it is not confirmed that families can be paid back."
+  es: "Compre en el Odyssey Marketplace o solicite el pago de colegiatura en Odyssey. Pregunte a su EAO o al Tesorero antes de pagar de su bolsillo, porque no está confirmado que se le pueda reembolsar a la familia."
+submit_tip_review_flag: "Reimbursement is unconfirmed. 15 CSR 50-5.050(6)(A) allows a parent to request a qualified withdrawal, but Odyssey's Missouri articles describe only Marketplace and tuition payments. Mafe is asking Missouri families."
+
+rules:
+  - category: tech.computer
+    status: conditional
+    source: csr-15-50-5
+    supporting_sources: [rsmo-166-705]
+    conditions:
+      requires_approved_vendor: true
+      frequency: { count: 1, per_years: 3 }
+    locator: "15 CSR 50-5.050(6)(B)3; RSMo 166.705.1(4)(j)"
+    quote: "shall be limited to a single computer device per student every three (3) years"
+    conditions_text:
+      en: "Computer hardware that helps meet the student's educational needs is allowed, limited to one computer device every three years unless your EAO approves more. Buy it from an approved vendor."
+      es: "Se permite el equipo de computación que ayuda a las necesidades educativas del estudiante, con un límite de un aparato cada tres años salvo que su EAO apruebe más. Cómprelo con un vendedor aprobado."
+
+  - category: tech.tablet
+    status: conditional
+    source: csr-15-50-5
+    supporting_sources: [rsmo-166-705, odyssey-mo-marketplace-categories]
+    conditions:
+      requires_approved_vendor: true
+      frequency: { count: 1, per_years: 3 }
+    locator: "15 CSR 50-5.050(6)(B)3; Odyssey Marketplace categories, Computers & Technology"
+    quote: "shall be limited to a single computer device per student every three (3) years"
+    review_flag: "Confirm that a tablet counts as the student's one computer device every three years."
+    conditions_text:
+      en: "Tablets are listed in the Odyssey Marketplace. They count as the student's computer device, one every three years unless your EAO approves more."
+      es: "Las tabletas aparecen en el Odyssey Marketplace. Cuentan como el aparato de computación del estudiante, uno cada tres años salvo que su EAO apruebe más."
+
+  - category: tech.phone
+    status: not_allowed
+    source: csr-15-50-5
+    supporting_sources: [odyssey-mo-eligible-expenses]
+    locator: "15 CSR 50-5.050(6)(B)3"
+    quote: "Smartphones are specifically excluded from this category of expenses."
+    conditions_text:
+      en: "Smartphones are specifically excluded."
+      es: "Los teléfonos inteligentes están excluidos expresamente."
+
+  - category: tech.printer
+    status: allowed
+    source: odyssey-mo-marketplace-categories
+    locator: "Computers & Technology"
+    quote: "Printers"
+    review_flag: "The same list includes printer ink, but RSMo 166.705.1(5)(a) bans consumable educational supplies. Confirm whether ink is eligible."
+    conditions_text:
+      en: "Printers are listed in the Odyssey Marketplace. Ink is also listed, but the law bans consumable supplies, so ask before buying ink."
+      es: "Las impresoras aparecen en el Odyssey Marketplace. La tinta también aparece, pero la ley prohíbe los útiles consumibles, así que pregunte antes de comprar tinta."
+
+  - category: tech.printer_3d
+    status: conditional
+    source: odyssey-mo-purchase-restrictions
+    conditions:
+      requires_approved_vendor: true
+      frequency: { count: 1, per_years: 3 }
+    locator: "Purchase restrictions table"
+    quote: "3D Printer | 1 purchase every 3 years"
+    conditions_text:
+      en: "3D printers are limited to one purchase every three years."
+      es: "Las impresoras 3D tienen un límite de una compra cada tres años."
+
+  - category: tech.headphones
+    status: allowed
+    source: odyssey-mo-marketplace-categories
+    locator: "Computers & Technology"
+    quote: "Headphones"
+    conditions_text:
+      en: "Headphones are listed in the Odyssey Marketplace."
+      es: "Los audífonos aparecen en el Odyssey Marketplace."
+
+  - category: tech.calculator
+    status: allowed
+    source: odyssey-mo-marketplace-categories
+    locator: "Other Electronics"
+    quote: "Calculators"
+    conditions_text:
+      en: "Calculators are listed in the Odyssey Marketplace."
+      es: "Las calculadoras aparecen en el Odyssey Marketplace."
+
+  - category: tech.keyboard
+    status: allowed
+    source: odyssey-mo-marketplace-categories
+    locator: "Computers & Technology"
+    quote: "Keyboards"
+    conditions_text:
+      en: "Keyboards are listed in the Odyssey Marketplace."
+      es: "Los teclados aparecen en el Odyssey Marketplace."
+
+  - category: tech.accessories
+    status: allowed
+    source: odyssey-mo-marketplace-categories
+    locator: "Computers & Technology"
+    quote: "Computer Accessories"
+    conditions_text:
+      en: "Computer accessories, mice, webcams and monitors are listed in the Odyssey Marketplace."
+      es: "Los accesorios de computadora, ratones, cámaras web y monitores aparecen en el Odyssey Marketplace."
+
+  - category: software.educational
+    status: conditional
+    source: odyssey-mo-marketplace-categories
+    locator: "Software"
+    quote: "Individual subscriptions only; family plans and lifetime subscriptions are not eligible."
+    conditions_text:
+      en: "Educational software is listed. Subscriptions must be for one student: family plans and lifetime subscriptions are not eligible."
+      es: "El software educativo aparece en la lista. Las suscripciones deben ser para un estudiante: los planes familiares y las suscripciones de por vida no son elegibles."
+
+  - category: supplies.school
+    status: not_allowed
+    locator: "RSMo 166.705.1(5)(a)"
+    quote: "Consumable educational supplies including, but not limited to, paper, pens, pencils, or markers"
+    conditions_text:
+      en: "Consumable supplies such as paper, pens, pencils, markers, folders and notebooks are not allowed."
+      es: "No se permiten útiles consumibles como papel, plumas, lápices, marcadores, carpetas y cuadernos."
+
+  - category: books.textbooks
+    status: conditional
+    locator: "RSMo 166.705.1(4)(b)"
+    quote: "Textbooks required by a qualified school"
+    review_flag: "The statute covers textbooks a qualified school requires. Odyssey's Marketplace also lists general books and workbooks; confirm how this applies to homeschool families."
+    conditions_text:
+      en: "Textbooks a qualified school requires are allowed. The Odyssey Marketplace also lists books and workbooks."
+      es: "Se permiten los libros de texto que exige una escuela calificada. El Odyssey Marketplace también incluye libros y cuadernos de trabajo."
+
+  - category: curriculum.packaged
+    status: allowed
+    locator: "RSMo 166.705.1(4)(e); definition in 166.700"
+    quote: "a complete course of study for a particular content area or grade level, including any supplemental materials"
+    conditions_text:
+      en: "Curriculum, meaning a complete course of study for a subject or grade, is allowed."
+      es: "Se permite el currículo, es decir, un curso de estudio completo de una materia o grado."
+
+  - category: toys.general
+    status: conditional
+    source: odyssey-mo-marketplace-categories
+    locator: "Educational materials, footnote"
+    quote: "LEGO kits are not eligible."
+    conditions_text:
+      en: "STEM kits and learning manipulatives are listed. LEGO kits are not eligible, and general toys and games are not mentioned."
+      es: "Los kits STEM y los materiales manipulativos de aprendizaje aparecen en la lista. Los kits de LEGO no son elegibles, y los juguetes y juegos en general no se mencionan."
+
+  - category: instruments.musical
+    status: not_allowed
+    source: mo-parent-handbook
+    locator: "p. 5, Ineligible expenses"
+    quote: "Musical instruments"
+    review_flag: "Only the handbook lists instruments as ineligible. Odyssey's articles don't mention them, and its approved-vendor list includes names that suggest instrument sellers. Confirm with the Treasurer."
+    conditions_text:
+      en: "The Treasurer's handbook lists musical instruments as ineligible. Odyssey doesn't mention them, so confirm before buying."
+      es: "El manual del Tesorero incluye los instrumentos musicales como no elegibles. Odyssey no los menciona, así que confirme antes de comprar."
+
+  - category: sports.equipment
+    status: not_allowed
+    source: mo-parent-handbook
+    locator: "p. 5, Ineligible expenses"
+    quote: "Sports equipment"
+    review_flag: "Only the handbook lists sports equipment as ineligible; Odyssey doesn't mention it. Confirm with the Treasurer."
+    conditions_text:
+      en: "The Treasurer's handbook lists sports equipment as ineligible."
+      es: "El manual del Tesorero incluye el equipo deportivo como no elegible."
+
+  - category: furniture.desk
+    status: not_allowed
+    source: mo-parent-handbook
+    locator: "p. 5, Ineligible expenses"
+    quote: "Furnishings (e.g. a desk or chair)"
+    conditions_text:
+      en: "Furniture such as a desk or chair is listed as ineligible."
+      es: "Los muebles, como un escritorio o una silla, aparecen como no elegibles."
+
+  - category: edu.field_trip
+    status: not_allowed
+    source: mo-parent-handbook
+    locator: "p. 5, Ineligible expenses"
+    quote: "Field trips"
+    conditions_text:
+      en: "Field trips and tickets to events are listed as ineligible."
+      es: "Las excursiones y las entradas a eventos aparecen como no elegibles."
+
+  - category: membership.gym
+    status: not_allowed
+    source: mo-parent-handbook
+    locator: "p. 5, Ineligible expenses"
+    quote: "Membership to organizations"
+    conditions_text:
+      en: "Memberships to organizations are listed as ineligible."
+      es: "Las membresías a organizaciones aparecen como no elegibles."
+
+  - category: edu.private_school_tuition
+    status: conditional
+    locator: "RSMo 166.705.1(4)(a)"
+    quote: "Tuition or fees at a qualified school"
+    conditions_text:
+      en: "Tuition and fees at a qualified school in Missouri are allowed and are paid straight to the school through Odyssey. Tuition at a private school outside Missouri is not."
+      es: "Se permiten la colegiatura y las cuotas de una escuela calificada en Missouri, y se pagan directamente a la escuela por Odyssey. La colegiatura de una escuela privada fuera de Missouri no."
+
+  - category: edu.tutoring
+    status: conditional
+    supporting_sources: [odyssey-mo-purchase-restrictions]
+    conditions:
+      requires_approved_vendor: true
+      max_amount: 1000
+    locator: "RSMo 166.705.1(4)(d); Odyssey purchase restrictions table"
+    quote: "Tutoring services"
+    conditions_text:
+      en: "Tutoring from an approved provider is allowed, up to $1,000 per individual lesson."
+      es: "Se permite la tutoría con un proveedor aprobado, hasta $1,000 por clase individual."
+
+  - category: edu.lessons.music
+    status: conditional
+    source: odyssey-mo-marketplace-categories
+    locator: "Tutoring, Fine Arts Instruction; Educational Learning, Online Music"
+    quote: "Fine Arts Instruction"
+    conditions_text:
+      en: "Music instruction is listed under tutoring and online learning, from an approved provider, up to $1,000 per lesson."
+      es: "La enseñanza de música aparece en tutoría y aprendizaje en línea, con un proveedor aprobado, hasta $1,000 por clase."
+
+  - category: edu.lessons.art
+    status: conditional
+    source: odyssey-mo-marketplace-categories
+    locator: "Online Classes, Art Class; Educational Learning, Online Art"
+    quote: "Art Class"
+    conditions_text:
+      en: "Art classes are listed among online classes and fine-arts tutoring, from an approved provider."
+      es: "Las clases de arte aparecen entre las clases en línea y la tutoría de bellas artes, con un proveedor aprobado."
+
+  - category: edu.lessons.language
+    status: conditional
+    source: odyssey-mo-marketplace-categories
+    locator: "Educational Learning"
+    quote: "Online Foreign Language"
+    conditions_text:
+      en: "Online foreign-language programs are listed, from an approved provider. In-person language lessons are not mentioned."
+      es: "Los programas de idiomas en línea aparecen en la lista, con un proveedor aprobado. Las clases de idiomas en persona no se mencionan."
+
+  - category: edu.online_classes
+    status: conditional
+    source: odyssey-mo-marketplace-categories
+    supporting_sources: [rsmo-166-705]
+    locator: "Online Classes; RSMo 166.705.1(4)(f)"
+    quote: "General Education Class"
+    conditions_text:
+      en: "Online classes and private virtual school tuition are allowed from an approved provider."
+      es: "Se permiten las clases en línea y la colegiatura de una escuela virtual privada, con un proveedor aprobado."
+
+  - category: edu.therapy
+    status: conditional
+    supporting_sources: [odyssey-mo-purchase-restrictions]
+    conditions:
+      requires_approved_vendor: true
+      max_amount: 1000
+    locator: "RSMo 166.705.1(4)(c); Odyssey purchase restrictions table"
+    quote: "Educational therapies or services from a licensed or accredited practitioner or provider"
+    conditions_text:
+      en: "Educational therapies, such as speech, occupational, physical or behavioral therapy, are allowed from a licensed or accredited provider, up to $1,000 per session."
+      es: "Se permiten las terapias educativas, como la de lenguaje, ocupacional, física o conductual, con un proveedor con licencia o acreditado, hasta $1,000 por sesión."
+
+  - category: edu.testing
+    status: allowed
+    locator: "RSMo 166.705.1(4)(g)"
+    quote: "Fees for a nationally standardized norm-referenced achievement test"
+    conditions_text:
+      en: "Fees for standardized achievement tests, AP and IB exams and college admission exams are allowed."
+      es: "Se permiten las cuotas de exámenes estandarizados de aprovechamiento, exámenes AP e IB y exámenes de admisión a la universidad."
+
+  - category: edu.camp
+    status: conditional
+    supporting_sources: [csr-15-50-5]
+    locator: "RSMo 166.705.1(4)(k); 15 CSR 50-5.050(6)(B)5"
+    quote: "Summer education programs do not include child care provided by a child-care facility"
+    conditions_text:
+      en: "Summer education programs and specialized after-school programs are allowed. Child care is not, and recreational camps are not mentioned."
+      es: "Se permiten los programas educativos de verano y los programas especializados después de clases. El cuidado infantil no, y los campamentos recreativos no se mencionan."
+
+  - category: transport.general
+    status: conditional
+    supporting_sources: [csr-15-50-5]
+    locator: "RSMo 166.705.1(4)(l); 15 CSR 50-5.050(6)(B)2"
+    quote: "Transportation costs for mileage to and from a qualified school"
+    conditions_text:
+      en: "Only mileage to and from a qualified school is allowed, at no more than the state mileage rate."
+      es: "Solo se permite el kilometraje de ida y vuelta a una escuela calificada, sin pasar de la tarifa estatal por milla."

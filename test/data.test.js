@@ -217,3 +217,16 @@ test('gap rules added 2026-10-19 get the expected labels', async () => {
   assert.equal(label('tx-tefa', 'supplies.art'), 'depends');
   assert.equal(label('tx-tefa', 'edu.lessons.music'), 'depends');
 });
+
+test('Missouri and Wyoming are settling: only tier 1 rules keep a firm label', async () => {
+  const { evaluate } = await import('../src/lib/eligibility.js');
+  const data = loadData();
+  const label = (programId, categoryId) => evaluate(data, { programId, segment: 'all', categoryId }, new Date('2026-10-19')).label;
+  assert.equal(label('mo-moscholars', 'tech.phone'), 'likely_not_eligible');
+  assert.equal(label('mo-moscholars', 'supplies.school'), 'likely_not_eligible');
+  assert.equal(label('mo-moscholars', 'instruments.musical'), 'depends');
+  assert.equal(label('mo-moscholars', 'tech.headphones'), 'depends');
+  assert.equal(label('wy-esa', 'tech.computer'), 'likely_eligible');
+  assert.equal(label('wy-esa', 'tech.phone'), 'depends');
+  assert.equal(label('wy-esa', 'edu.lessons.music'), 'depends');
+});
