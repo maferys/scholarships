@@ -197,6 +197,9 @@ test('drafts are never published by a Pages production build', async () => {
   assert.equal(shouldIncludeDrafts({ CF_PAGES: '1', CF_PAGES_BRANCH: 'main' }), false);
   assert.equal(shouldIncludeDrafts({ CF_PAGES: '1', CF_PAGES_BRANCH: 'main', INCLUDE_DRAFT_RULES: 'true' }), false);
   assert.equal(shouldIncludeDrafts({ CF_PAGES: '1', CF_PAGES_BRANCH: 'phase1-finder' }), true);
+  assert.equal(shouldIncludeDrafts({ WORKERS_CI: '1', WORKERS_CI_BRANCH: 'main' }), false);
+  assert.equal(shouldIncludeDrafts({ WORKERS_CI: '1', WORKERS_CI_BRANCH: 'main', INCLUDE_DRAFT_RULES: 'true' }), false);
+  assert.equal(shouldIncludeDrafts({ WORKERS_CI: '1', WORKERS_CI_BRANCH: 'phase1-finder' }), true);
   assert.equal(shouldIncludeDrafts({ INCLUDE_DRAFT_RULES: 'true' }), true);
   assert.equal(shouldIncludeDrafts({}), false);
 });

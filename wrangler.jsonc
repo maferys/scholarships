@@ -1,0 +1,34 @@
+// Cloudflare Workers config. The dashboard shows these bindings read-only.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "scholarships",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "scholarships",
+      "database_id": "8e7325d9-93da-4e2b-819f-fa77a833636c",
+      "migrations_dir": "migrations"
+    }
+  ],
+  // Weekly retention cleanup, Mondays 15:00 UTC (see src/lib/retention.js).
+  "triggers": { "crons": ["0 15 * * 1"] },
+  "observability": { "enabled": true },
+  // Branch previews use a separate test database, so test clicks never reach the real tables.
+  // Its migrations are applied with wrangler.preview-migrations.jsonc.
+  "previews": {
+    "d1_databases": [
+      {
+        "binding": "DB",
+        "database_name": "scholarships-preview",
+        "database_id": "ff5e4fbd-154e-477d-a966-07babe3f2ac0"
+      }
+    ]
+  }
+}

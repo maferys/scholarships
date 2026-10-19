@@ -1,0 +1,12 @@
+// Applies migrations to the preview test database (same database as previews.d1_databases in wrangler.jsonc):
+//   npx wrangler d1 migrations apply PREVIEW_DB --remote --config wrangler.preview-migrations.jsonc
+{
+  "d1_databases": [
+    {
+      "binding": "PREVIEW_DB",
+      "database_name": "scholarships-preview",
+      "database_id": "ff5e4fbd-154e-477d-a966-07babe3f2ac0",
+      "migrations_dir": "migrations"
+    }
+  ]
+}

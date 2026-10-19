@@ -16,7 +16,8 @@ schema/*.json             JSON Schemas for the files above
 scripts/build-data.mjs    validates data/ and writes src/generated/data.json for the site
 src/lib/eligibility.js    the only code that decides labels (see "Answer rules")
 src/lib/match.js          maps what a parent types to a category
-functions/api/*.js        Cloudflare Pages Functions: email signup, wrong-answer reports, anonymous usage events (D1)
+functions/api/*.js        API handlers: email signup, wrong-answer reports, anonymous usage events (D1)
+worker/index.js           Cloudflare Worker: routes /api/* to the handlers, serves dist/, runs the weekly cleanup
 ```
 
 ### Answer rules
@@ -60,7 +61,7 @@ npm run build:preview  # preview: drafts included
 ```sh
 npm run build:preview
 npx wrangler d1 migrations apply scholarships --local       # creates a local SQLite copy of the D1 schema
-npx wrangler pages dev                                      # serves dist/ and functions/ on http://localhost:8788, using wrangler.toml's DB binding
+npx wrangler dev                                            # serves dist/ and the API on http://localhost:8787, using wrangler.jsonc's DB binding
 # in another terminal:
 curl -X POST localhost:8788/api/event -H 'content-type: text/plain' \
   -d '{"program":"az-esa","query":"Laptop me@x.com","label":"likely_eligible"}'
@@ -80,10 +81,8 @@ npx wrangler d1 execute scholarships --local --command "SELECT * FROM events"
 ### Retention
 
 - `events` and `reports` are deleted once they are older than `RETENTION_MONTHS` (12) in
-  [`scripts/retention.mjs`](scripts/retention.mjs). Change the constant there to change the period.
-- `.github/workflows/retention.yml` runs the cleanup every Monday (and on demand from the Actions tab). It needs the
-  repository secrets `CLOUDFLARE_API_TOKEN` (with D1 edit permission) and `CLOUDFLARE_ACCOUNT_ID`; until they are
-  set, it skips with a warning and deletes nothing.
+  [`src/lib/retention.js`](src/lib/retention.js). Change the constant there to change the period.
+- The Worker's cron trigger (`wrangler.jsonc`, Mondays 15:00 UTC) runs the cleanup. It needs no token or secret.
 - To run it by hand: `npx wrangler d1 execute scholarships --remote --command "$(node scripts/retention.mjs)"`
   (use `--local` for the local database).
 - `subscribers` are kept until the person unsubscribes.
@@ -96,24 +95,31 @@ Do not send any email to subscribers until every item is done:
 - [ ] A sender address on the site's own domain is set up and can receive replies.
 - [ ] Every email links to the published privacy policy page.
 
-## Deploy (Cloudflare Pages)
+## Deploy (Cloudflare Workers)
 
-`wrangler.toml` is the source of truth for bindings, so the dashboard shows them read-only.
+The site is one Worker with static assets. `wrangler.jsonc` is the source of truth for bindings and the cron, so the
+dashboard shows them read-only.
 
-1. **D1 database.** Done on 2026-10-19: `scholarships` (location hint ENAM), id in both `database_id` lines of
-   `wrangler.toml`, with `0001_init.sql` applied and recorded in `d1_migrations`.
-2. **GitHub secrets.** Create a Cloudflare API token (My Profile > API Tokens > Create Token > Custom token) with
-   the permission Account > D1 > Edit. Add it to the repository secrets as `CLOUDFLARE_API_TOKEN`, together with
-   `CLOUDFLARE_ACCOUNT_ID` (shown on the dashboard's account home). The `D1 migrations` and `Data retention`
-   workflows use them.
-3. **Tables.** Run the `D1 migrations` workflow from the Actions tab (it also runs when main gets a new migration).
-4. **Pages project.** Workers & Pages > Create > Pages > Connect to Git, choose this repository, and set the production
-   branch `main`, build command `npm run build`, and output directory `dist`. Node 22 comes from `.node-version`.
+1. **D1 database.** Done on 2026-10-19: `scholarships` (location hint ENAM), id in `wrangler.jsonc`, with
+   `0001_init.sql` applied and recorded in `d1_migrations`.
+2. **Worker and Git.** The Worker `scholarships` exists. In Workers & Pages > scholarships > Settings > Build, connect
+   this repository and set:
+   - Build command: `npm run build`
+   - Deploy command: `npx wrangler deploy`
+   - Branch control: production branch `main`, with **Enable Preview Builds** turned on.
+     The preview command is the default, `npx wrangler preview`.
+   - Node 22 comes from `.node-version`.
+3. **What each build publishes.**
    - Production (main) publishes only rules with `review_status: reviewed` and `es_reviewed: true`.
-   - Every other branch gets a preview deployment that includes drafts (`CF_PAGES_BRANCH` is not `main`).
-   - Previews use the same database for now.
-5. **Optional.** Set `SITE_URL` to the production URL and `PUBLIC_CF_ANALYTICS_TOKEN` (Cloudflare Web Analytics, cookie-free)
-   as build variables.
+   - Every other branch gets a preview URL that includes drafts (`WORKERS_CI_BRANCH` is not `main`).
+   - Previews use a separate test database, `scholarships-preview` (created 2026-10-19, schema applied), so
+     test searches, signups and reports stay out of the real tables.
+4. **GitHub secrets (later).** Only the `D1 migrations` workflow needs them (it migrates the test database, then
+   the real one). Create a Cloudflare API token
+   (My Profile > API Tokens > Create Token > Custom token) with Account > D1 > Edit, and add it to the repository
+   secrets as `CLOUDFLARE_API_TOKEN`, together with `CLOUDFLARE_ACCOUNT_ID` (shown on the account home).
+5. **Optional.** Set `SITE_URL` to the production URL and `PUBLIC_CF_ANALYTICS_TOKEN` (Cloudflare Web Analytics,
+   cookie-free) as build variables.
 
 ## Keeping data fresh
 

@@ -1,4 +1,4 @@
-# Applies migrations/ to the remote D1 database. Runs on demand and when main gets a new migration.
+# Applies migrations/ to the preview test database and the real D1 database. Runs on demand and when main gets a new migration.
 # Needs repository secrets CLOUDFLARE_API_TOKEN (D1 edit) and CLOUDFLARE_ACCOUNT_ID.
 name: D1 migrations
 on:
@@ -16,6 +16,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
+      - run: npm ci
       - name: Apply migrations
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -25,8 +27,5 @@ jobs:
             echo "::error::CLOUDFLARE_API_TOKEN is not set."
             exit 1
           fi
-          if grep -q REPLACE_WITH_D1_DATABASE_ID wrangler.toml; then
-            echo "::error::Put the D1 database id in wrangler.toml first."
-            exit 1
-          fi
-          npx --yes wrangler@4 d1 migrations apply scholarships --remote
+          npx wrangler d1 migrations apply PREVIEW_DB --remote --config wrangler.preview-migrations.jsonc
+          npx wrangler d1 migrations apply scholarships --remote
