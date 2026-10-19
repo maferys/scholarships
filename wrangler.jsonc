@@ -4,6 +4,9 @@
   "name": "scholarships",
   "main": "worker/index.js",
   "compatibility_date": "2026-10-01",
+  // Wrangler builds the site itself before deploy or preview, so dist/ exists even if the dashboard
+  // build command is empty.
+  "build": { "command": "npm run build" },
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
